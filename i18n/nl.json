@@ -1,0 +1,36 @@
+{
+  "@metadata": {
+    "authors": [
+      "[https://www.archixl.nl Youri van den Bogert]"
+    ]
+  },
+  "nora-skin-desc": "NL Design System (NORA) skin voor MediaWiki",
+  "nora-toc-heading": "Op deze pagina",
+  "nora-user-menu-text": "Gebruikersmenu",
+  "nora-menu-help": "Hulp nodig?",
+  "nora-skiplinks-to-content": "Naar de inhoud",
+  "nora-skiplinks-to-navigation": "Naar de navigatie",
+  "nora-toggle-menu": "Toon menu",
+  "nora-page-actions": "Overige pagina handelingen bekijken",
+  "nora-parser-function-error-parameter": "Fout in de parserfunctie $1: ongeldige of invalide parameter $2",
+  "nora-smart-comments": "SmartComments",
+  "nora-smart-comments-on": "Aan",
+  "nora-smart-comments-off": "Uit",
+  "nora-information-panel-gewijzigd": "Gewijzigd",
+  "nora-information-panel-verplichting": "Verplichting",
+  "nora-information-panel-beheerregime": "Beheerregime",
+  "nora-information-panel-fase": "Fase",
+  "nora-information-panel-contactpersoon": "Contactpersoon",
+  "nora-information-panel-inhoudelijk_eigenaar": "Inhoudelijk eigenaar",
+  "nora-information-panel-beheerder": "Beheerder",
+  "nora-information-panel-aangemaakt_op": "Aangemaakt op",
+  "nora-information-panel-laatste_wijziging": "Laatste wijziging",
+  "nora-information-panel-bijdrager": "Bijdrager",
+  "nora-information-panel-bijdragers": "Bijdragers",
+  "nora-information-panel-versies": "Versies",
+  "nora-information-panel-mate_van_verplichting": "Mate van verplichting",
+  "nora-information-panel-publicatiedatum": "Publicatiedatum",
+  "nora-link-overview-invalid-items-string": "De parameter 'items' van de link-overzicht-functie bevat een ongeldige string. Het formaat is als volgt: [[pagina|link tekst|omschrijving tekst]].",
+  "nora-information-panel-toggle-collapse": "Verberg details",
+  "nora-information-panel-toggle-expand": "Toon meer details"
+}

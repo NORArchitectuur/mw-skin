@@ -1,0 +1,36 @@
+{
+  "@metadata": {
+    "authors": [
+      "[https://www.archixl.nl Youri van den Bogert]"
+    ]
+  },
+  "nora-skin-desc": "NL Design System (NORA) skin for MediaWiki",
+  "nora-toc-heading": "On this page",
+  "nora-user-menu-text": "User menu",
+  "nora-menu-help": "Need help?",
+  "nora-skiplinks-to-content": "Go to content",
+  "nora-skiplinks-to-navigation": "Go to navigation",
+  "nora-toggle-menu": "Show menu",
+  "nora-page-actions": "View other page actions",
+  "nora-parser-function-error-parameter": "Error in parser function $1: invalid parameter $2",
+  "nora-smart-comments": "SmartComments",
+  "nora-smart-comments-on": "On",
+  "nora-smart-comments-off": "Off",
+  "nora-information-panel-gewijzigd": "Modified",
+  "nora-information-panel-verplichting": "Obligation",
+  "nora-information-panel-beheerregime": "Management regime",
+  "nora-information-panel-fase": "Phase",
+  "nora-information-panel-contactpersoon": "Contact person",
+  "nora-information-panel-inhoudelijke_eigenaar": "Content owner",
+  "nora-information-panel-beheerder": "Manager",
+  "nora-information-panel-aangemaakt_op": "Created on",
+  "nora-information-panel-laatste_wijziging": "Last change",
+  "nora-information-panel-bijdrager": "Contributor",
+  "nora-information-panel-bijdragers": "Contributors",
+  "nora-information-panel-versies": "Versions",
+  "nora-information-panel-mate_van_verplichting": "Degree of obligation",
+  "nora-information-panel-publicatiedatum": "Publication date",
+  "nora-link-overview-invalid-items-string": "The 'items' parameter of the link-overview function contains an invalid string. The format is as follows: [[page|link text|description text]].",
+  "nora-information-panel-toggle-collapse": "Hide details",
+  "nora-information-panel-toggle-expand": "Show more details"
+}

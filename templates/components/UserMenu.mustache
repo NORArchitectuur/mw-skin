@@ -1,0 +1,18 @@
+<li class="navigation-item with-dropdown">
+    <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
+        <span class="visually-hidden">{{skinMessages.userMenuAltText}}</span>
+        <i class="ti ti-user-circle"></i>
+    </a>
+    <ul class="navigation-item-dropdown-menu align-left" aria-hidden="true" role="menu" id="userMenu">
+        {{#user.isRegistered}}
+            {{{portletsModified.userMenu.html-items}}}
+        {{/user.isRegistered}}
+        {{^user.isRegistered}}
+            <li class="navigation-item">
+                <a href="{{user.loginLink}}" class="navigation-link">
+                    {{user.login-text}}
+                </a>
+            </li>
+        {{/user.isRegistered}}
+    </ul>
+</li>

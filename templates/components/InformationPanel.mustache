@@ -1,0 +1,47 @@
+<section id="information-panel" aria-expanded="false" aria-live="polite">
+    <div class="panel-items-header">
+        {{#header}}
+            {{#items}}
+                <div class="column">
+                    {{{.}}}
+                </div>
+            {{/items}}
+        {{/header}}
+    </div>
+    <div class="panel-items-overview">
+        {{#columns}}
+            <div class="panel-item">
+                <label>{{label}}</label>
+                <div class="panel-content">
+                    {{{content}}}
+                    {{#additionalLinks}}
+                        <a href="{{href}}" class="link-alternative link-with-icon">
+                            <i class="ti {{icon}}"></i>
+                            <span>{{text}}</span>
+                        </a>
+                    {{/additionalLinks}}
+                </div>
+            </div>
+        {{/columns}}
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="column contributors">
+                {{#footer.contributors}}
+                    <a href="{{href}}" class="profile-picture">
+                        <img src="{{image}}" alt="{{name}}"/>
+                    </a>
+                {{/footer.contributors}}
+                <a href="#" class="label-link" id="contributors">
+                    {{footer.contributorCount}} {{footer.contributors-text}}
+                </a>
+            </div>
+            <div class="column right">
+                <a href="#" class="link-with-icon">
+                    <span>{{skinMessages.informationPanelToggleExpand}}</span>
+                    <i class="ti ti-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+{{!
+    Please note; this skin only supports the 'navigation' level in MediaWiki:Sidebar.
+
+    For example:
+        * navigation
+        ** referentiearchitectuur|Referentiearchitectuur
+        ** kennismodel|Kennismodel
+        ** kennisdeling|Kennisdeling
+        ** nora_familie|NORA Familie
+        ** toolbox|Toolbox
+        ** vakmanschap|Vakmanschap
+!}}{{#sidebar.navigation}}
+    <li class="navigation-item">
+        <a href="{{href}}" id="{{id}}" class="navigation-link{{#active}} active{{/active}}">
+            {{text}}
+        </a>
+    </li>
+{{/sidebar.navigation}}

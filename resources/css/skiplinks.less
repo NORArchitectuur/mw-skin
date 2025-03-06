@@ -1,0 +1,16 @@
+section.skip-links {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+
+  .navigation-item {
+    position: absolute;
+    top: -20000px;
+
+    &:focus,
+    &:active {
+      top: 0;
+    }
+  }
+}

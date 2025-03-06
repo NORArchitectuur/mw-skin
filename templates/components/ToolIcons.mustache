@@ -1,0 +1,15 @@
+{{#user.isRegistered}}
+    {{{portletsModified.quickToolbar.html-items}}}
+    <li class="tools-item navigation-item smartcomments-toggler with-background with-dropdown">
+        <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="smartCommentsMenu">
+            {{skinMessages.smartComments}} <span class="status">Uit</span>
+        </a>
+        {{#has-smartcomments}}
+        <ul class="navigation-item-dropdown-menu align-left" role="menu" id="smartCommentsMenu" aria-hidden="true">
+            <li class="navigation-item sic-enable-commenting" id="ca-comments" role="none">
+                <a class="navigation-link" href="#">Aan</a>
+            </li>
+        </ul>
+        {{/has-smartcomments}}
+    </li>
+{{/user.isRegistered}}

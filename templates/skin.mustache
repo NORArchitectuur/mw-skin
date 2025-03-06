@@ -1,0 +1,130 @@
+<!-- Skip links -->
+<section class="skip-links">
+    {{>components/SkipLinks}}
+</section>
+<!-- /Skip links -->
+
+<!-- Header and navigation bar -->
+<header class="navigation-bar">
+
+    <!-- Navigation toggler -->
+    <div class="navigation-toggle-container">
+        <button class="theme-button navigation-toggle" aria-label="{{skinMessages.toggleMenu}}" aria-haspopup="true" aria-expanded="false" aria-controls="mainNavigation">
+            <i class="ti ti-menu"></i>
+        </button>
+    </div>
+    <!-- Navigation toggler -->
+
+    <!-- Logo -->
+    <a href="{{link-mainpage}}" class="navigation-bar-logo">
+        <img src="/skins/NORA/resources/images/logo-nora.svg" alt="NORA" />
+    </a>
+    <!-- /Logo -->
+
+    <!-- Menu items -->
+    <div class="navigation-bar-navigation-container">
+        <ul class="navigation-bar-navigation" role="menu" id="mainNavigation">
+            {{>components/MainNavigation}}
+        </ul>
+    </div>
+    <!-- /Menu items -->
+
+    <div class="navigation-bar-search-links-container">
+        <!-- Searchbar -->
+        <div class="navigation-bar-search">
+            {{#data-search-box}}{{>components/SearchForm}}{{/data-search-box}}
+        </div>
+        <!-- /Searchbar -->
+
+        <!-- Secondary nav -->
+        <ul class="navigation-bar-secondary-nav">
+            <li class="navigation-item">
+                <a href="/index.php/Speciaal:Zoeken" class="navigation-link">
+                    <span class="visually-hidden">Zoeken</span>
+                    <i class="ti ti-search"></i>
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a href="{{main-navigation.help.link}}" class="navigation-link{{#main-navigation.help.active}} active{{/main-navigation.help.active}}">
+                    <span class="visually-hidden">{{skinMessages.helpText}}</span>
+                    <i class="ti ti-help"></i>
+                </a>
+            </li>
+            {{>components/UserMenu}}
+        </ul>
+        <!-- /Secondary nav -->
+    </div>
+
+</header>
+<!-- /Header and navigation bar -->
+
+<!-- BreadCrumbs and tools -->
+<section class="breadcrumb-tools-container{{#components.background-image}} with-background-image{{/components.background-image}}">
+    <div class="breadcrumb-container">
+        {{{html-subtitle}}}
+    </div>
+    {{^is-specialpage}}
+    <div class="tools-container">
+        <ul class="tools">
+            {{>components/ToolIcons}}
+            {{>components/ToolActions}}
+        </ul>
+    </div>
+    {{/is-specialpage}}
+</section>
+<!-- /BreadCrumbs and tools -->
+
+<!-- PageContent -->
+<div class="page-content">
+    {{#components.background-image}}
+        <!-- Background image -->
+        <figure class="page-content__visual-banner">
+            <img
+                    src="{{components.background-image}}"
+                    class="page-content__visual-banner-image"
+                    alt=""
+            />
+        </figure>
+        <!-- /Background image -->
+    {{/components.background-image}}
+
+    <!-- Content -->
+    <main id="content" class="page-content__content-wrapper">
+        <!-- Article -->
+        <div class="{{#data-toc}}page-section-article{{/data-toc}}{{^data-toc}}page-section-wide{{/data-toc}}">
+            {{#data-toc}}
+                {{>components/Sidebar}}
+            {{/data-toc}}
+
+            <!-- Main content -->
+            {{#data-toc}}<section class="content-container">{{/data-toc}}
+                {{>components/MainContent}}
+            {{#data-toc}}</section>{{/data-toc}}
+            <!-- /Main content -->
+        </div>
+        <!-- /Article -->
+
+        <!-- Information panel -->
+        <div class="page-section-wide">
+            {{#components.information-panel}}
+                {{> components/InformationPanel}}
+            {{/components.information-panel}}
+        </div>
+        <!-- /Information panel -->
+    </main>
+    <!-- /Content -->
+
+</div>
+<!-- /PageContent -->
+
+<footer class="footer">
+    {{{footer.top}}}
+    <div class="footer-container-bottom">
+        <div class="footer-quick-links">
+            {{{footer.bottom.left}}}
+        </div>
+        <div class="copyright">
+            {{{footer.bottom.right}}}
+        </div>
+    </div>
+</footer>

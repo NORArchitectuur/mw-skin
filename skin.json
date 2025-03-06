@@ -1,0 +1,103 @@
+{
+  "name": "NORA Skin",
+  "version": "1.0.0",
+  "author": "[https://www.archixl.nl Youri van den Bogert]",
+  "license-name": "© 2016-2025 ArchiXL",
+  "descriptionmsg": "nora-skin-desc",
+  "type": "skin",
+  "requires": {
+    "MediaWiki": ">= 1.39.0",
+    "extensions": {
+      "SemanticMediaWiki": ">= 4.0"
+    }
+  },
+  "AutoloadNamespaces": {
+    "MediaWiki\\Skin\\NORA\\": "includes/"
+  },
+  "ValidSkinNames": {
+    "nora": {
+      "class": "MediaWiki\\Skin\\NORA\\Skin",
+      "args": [
+        {
+          "name": "nora",
+          "responsive": true,
+          "templateDirectory": "skins/NORA/templates",
+          "styles": [
+            "skins.nora.styles",
+            "skins.nora.upstream.styles"
+          ],
+          "scripts": [
+            "skins.nora.scripts"
+          ]
+        }
+      ]
+    }
+  },
+  "MessagesDirs": {
+    "NORA": [
+      "i18n"
+    ]
+  },
+  "ResourceModules": {
+    "skins.nora.styles": {
+      "styles": [
+        "resources/css/mw-nora-components.css",
+        "resources/css/mw-custom.css",
+        "resources/css/main.less"
+      ]
+    },
+    "skins.nora.smartcomments": {
+      "styles": [
+        "resources/css/smartcomments.less"
+      ],
+      "scripts": [
+        "resources/js/smartcomments.js"
+      ],
+      "dependencies": [
+        "ext.smartcomments"
+      ]
+    },
+    "skins.nora.scripts": {
+      "scripts": [
+        "resources/js/information-panel.js",
+        "resources/js/submenus.js",
+        "resources/js/navigation.js",
+        "resources/js/toc.js",
+        "resources/js/export-rdf.js",
+        "resources/js/icon-only.js"
+      ],
+      "messages": [
+        "nora-information-panel-toggle-collapse",
+        "nora-information-panel-toggle-expand",
+        "nora-smart-comments-on",
+        "nora-smart-comments-off"
+      ],
+      "dependencies": [
+        "jquery.ui"
+      ]
+    }
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "",
+    "remoteSkinPath": "NORA"
+  },
+  "ExtensionFunctions": [
+    "MediaWiki\\Skin\\NORA\\Setup::onExtensionFunction"
+  ],
+  "config": {
+    "NoraBackgroundCoverProperty": {
+      "value": "Plaatje"
+    },
+    "NoraElementtypeProperty": {
+      "value": "Elementtype"
+    },
+    "NoraLandingspageElementtype": {
+      "value": "Landingspagina"
+    },
+    "NoraHelpTitle": {
+      "value": "Project:Help"
+    }
+  },
+  "load_composer_autoloader": true,
+  "manifest_version": 2
+}
