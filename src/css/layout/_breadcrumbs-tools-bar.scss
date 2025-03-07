@@ -1,0 +1,94 @@
+@use '../themes/nora/components/breadcrumbs-tools-bar/mixins' as breadcrumbs-tools-bar;
+@use '../themes/nora/components/icon-only-button/mixins' as icon-only-button;
+@use '../abstracts/icon';
+@use '../themes/nora/abstracts/helpers';
+
+.breadcrumb-tools-container {
+  @include breadcrumbs-tools-bar.breadcrumbs-tools-bar;
+
+  /** Since the html has nog structure for Page Body Component */
+	position: sticky;
+	top: 0;
+	z-index: 1;
+  
+  @at-root .page-body--scrolled & {
+    box-shadow: var(--nora-page-body-scrolled-header-container-box-shadow);
+  }
+
+  @include helpers.large-vw {
+    top: 3.75rem;
+  }
+}
+
+.tools-container {
+
+  .tools {
+    @include breadcrumbs-tools-bar.tools-list;
+
+    // Reset gap
+    gap: 0;
+  }
+
+  .tools-item:not(:last-child) {
+    display: none;
+
+    @include helpers.large-vw {
+      display: block;
+    }
+  }
+
+  .navigation-item-icon-only a {
+    @include icon-only-button.icon-only-button;
+
+    .visually-hidden {
+      @include icon-only-button.label;
+    }
+
+    .ti {
+      @include icon-only-button.icon;
+
+      color: inherit;
+    }
+  }
+
+  .navigation-item-icon-only:last-child a {
+    background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);;
+  }
+
+  .smartcomments-toggler {
+    margin-inline: var(--nora-breadcrumbs-tools-bar-tools-container-column-gap);
+
+    a {
+      background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);
+      border-radius: var(--nora-breadcrumbs-tools-bar-smart-comments-button-border-radius);
+      color: inherit;
+      display: flex;
+      gap: .5rem;
+      text-decoration: none;
+      padding-inline-start: .75rem;
+      padding-inline-end: .625rem;
+      padding-block: .5rem;
+      font-size: .9375rem;
+      line-height: 1.3333333333333;
+
+      .status {
+        align-items: center;
+        display: flex;
+        gap: .5rem;
+        justify-content: space-between;
+        padding-inline-start: .5rem;
+        border-inline-start: .0625rem solid var(--nora-color-gray-100);
+        min-width: 3.625rem;
+
+        &::after {
+          @include icon.make(icon.$ti-chevron-down);
+
+          font-size: 1rem;
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
+  }
+
+}

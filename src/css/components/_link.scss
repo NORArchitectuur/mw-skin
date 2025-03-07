@@ -1,0 +1,32 @@
+@use '@nl-design-system-candidate/link-css/html/link.scss';
+@use '@utrecht/focus-ring-css/src/mixin' as utrecht-focus-ring;
+
+.nora-theme {
+  // Map utrecht-link variables to nl-link
+  --nl-link-text-decoration-line: var(--utrecht-link-text-decoration);
+  --nl-link-text-decoration-thickness: var(--utrecht-link-text-decoration-thickness);
+  --nl-link-text-underline-offset: var(--utrecht-link-text-underline-offset);
+  --nl-link-hover-text-decoration-line: var(--utrecht-link-hover-text-decoration);
+  --nl-link-hover-text-decoration-thickness: var(--utrecht-link-hover-text-decoration-thickness);
+  // Not yet used in @nl-design-system-candidate/link-css package
+  // --nl-link-focus-visible-text-decoration-line: var(--utrecht-link-focus-visible-text-decoration);
+  // --nl-link-focus-visible-text-decoration-thickness: var(--utrecht-link-focus-visible-text-decoration-thickness);
+  --nl-link-color: var(--utrecht-link-color);
+  --nl-link-hover-color: var(--utrecht-link-hover-color);
+  --nl-link-active-color: var(--utrecht-link-active-color);
+  --nl-link-focus-visible-color: var(--utrecht-link-focus-color);
+
+  // Add missing focus ring tokens
+  --utrecht-focus-outline-color: var(--nora-focus-outline-color);
+  --utrecht-focus-outline-offset: .1875rem;
+  --utrecht-focus-outline-width: var(--nora-focus-outline-width);
+}
+
+// Custom focus-visible style since this is not yet available in @nl-design-system-candidate/link-css
+a:any-link:focus-visible {
+  @include utrecht-focus-ring.utrecht-focus-visible;
+
+  --_nl-link-state-color: var(--utrecht-link-focus-color);
+  --_nl-link-state-text-decoration-line: var(--utrecht-link-focus-visible-text-decoration);
+  background-color: var(--utrecht-link-focus-background-color);
+}

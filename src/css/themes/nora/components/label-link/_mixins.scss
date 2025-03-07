@@ -1,0 +1,38 @@
+@mixin label-link {
+  background-color: var(--nora-label-link-background-color);
+  border: var(--nora-label-link-border);
+  border-radius: var(--nora-label-link-border-radius);
+  display: inline-block;
+  font-size: var(--nora-label-link-font-size);
+  line-height: var(--nora-label-link-line-height);
+  padding-block: var(--nora-label-link-padding-block);
+  padding-inline: var(--nora-label-link-padding-inline);
+
+  &:any-link {
+    text-decoration: none;
+  }
+
+  &:any-link:hover {
+    background-color: var(--nora-label-link-hover-background-color);
+    border-color: var(--nora-label-link-hover-border-color);
+    color: var(--nora-label-link-hover-color);
+  }
+
+  &:any-link:active {
+    background-color: var(--nora-label-link-active-background-color);
+    border-color: var(--nora-label-link-active-border-color);
+    color: var(--nora-label-link-active-color);
+  }
+
+  &:any-link:focus {
+    background-color: var(--nora-label-link-focus-background-color);
+    border-color: var(--nora-label-link-focus-border-color);
+    color: var(--nora-label-link-focus-color);
+  }
+
+  &:any-link:focus-visible {
+    background-color: var(--nora-label-link-focus-visible-background-color);
+    border-color: var(--nora-label-link-focus-visible-border-color);
+    color: var(--nora-label-link-focus-visible-color);
+  }
+}

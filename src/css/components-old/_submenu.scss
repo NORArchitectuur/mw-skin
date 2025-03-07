@@ -1,0 +1,71 @@
+@use 'sass:map';
+@use 'sass:color';
+@use '../abstracts/variables';
+@use '../themes/nora/abstracts/helpers';
+
+$base-submenu-color: #fff;
+
+li.navigation-item.with-dropdown {
+	position: relative;
+	ul.navigation-item-dropdown-menu {
+		@include helpers.reset-list;
+		
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		right: auto;
+		z-index: map.get(variables.$z-index, "submenu");
+		li.navigation-item {
+			background: $base-submenu-color;
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+			.navigation-link {
+				@include helpers.button-link-state-colors("nora-navigation-bar-navigation-item");
+				&:visited {
+					color: black;
+				}
+				color: black;
+				display: block;
+				background: #fff;
+				zoom: 0.95;
+				&:hover, &:focus, &:focus-visible {
+					border-radius: 0;
+				}
+				&:hover {
+					color: white;
+				}
+			}
+			&.info {
+				font-size: 11px;
+				padding: 1em .5em .2em;
+				font-weight: bold;
+				text-transform: uppercase;
+				border-radius: .25em;
+				margin-bottom: -.2em;
+				background: #f5f5f5;
+			}
+			&:last-child {
+				.navigation-dropdown-item {
+					border-bottom: 2px solid color.adjust($base-submenu-color, $lightness: -10%);
+				}
+			}
+		}
+		li.separator {
+			height: 1px;
+			background: #cacaca;
+		}
+		&.align-left {
+			right: 0;
+		}
+		&.align-right {
+			left: 0;
+		}
+	}
+
+	.navigation-item-dropdown-menu[aria-hidden="false"] {
+		opacity: 1;
+		transition: opacity 0.2s ease;
+		visibility: visible;
+	}
+
+}

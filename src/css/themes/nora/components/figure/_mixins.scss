@@ -1,0 +1,21 @@
+@mixin figure {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nora-figure-gap);
+}
+
+@mixin media {
+  border-radius: var(--nora-figure-media-border-radius);
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@mixin caption {
+  color: var(--nora-figure-figcaption-color);
+  display: flex;
+  font-size: var(--nora-figure-figcaption-font-size);
+  gap: var(--nora-figure-figcaption-gap);
+  line-height: var(--nora-figure-figcaption-line-height);
+}

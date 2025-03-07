@@ -1,0 +1,54 @@
+@use '../../../abstracts/helpers';
+
+@mixin article-section {
+  @include helpers.padding(nora-page-section-article);
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nora-page-section-article-container-gap);
+  position: relative;
+
+  @include helpers.large-vw {
+    flex-direction: row-reverse;
+    gap: var(--nora-page-section-article-container-max-gap);
+    padding-inline: 0;
+    width: min(100% - calc(var(--nora-page-section-article-padding-inline-start) + var(--nora-page-section-article-padding-inline-end)), var(--nora-page-section-article-container-max-width));
+  }
+}
+
+@mixin side-column {
+  position: relative;
+
+  @include helpers.large-vw {
+    flex: 1;
+    max-width: var(--nora-page-section-article-navigation-max-width);
+    /** Not using a min-width seems to work better */
+    // min-width: var(--nora-page-section-article-navigation-min-width);
+  }
+}
+
+@mixin content {
+  @include helpers.large-vw {
+    flex: 1;
+    max-width: var(--nora-page-section-article-content-max-width);
+    min-width: var(--nora-page-section-article-content-min-width);
+  }
+}
+
+@mixin background-decorator {
+  @include helpers.large-vw {
+    background-color: var(--nora-page-section-article-background-decorator-background-color);
+    border-radius: var(--nora-page-section-article-background-decorator-border-radius);
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -3.5rem;
+    left: -3.5rem;
+    bottom: auto;
+    height: 10rem;
+    pointer-events: none;
+    z-index: -1;
+  }
+}

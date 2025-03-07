@@ -1,0 +1,23 @@
+section.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  figure {
+    width: 100%;
+    height: 350px;
+    margin: 0;
+    opacity: 0.30;
+  }
+
+  @include respond-to("md") {
+    display: none;
+  }
+}
+
+@include respond-to-bigger-than("lg") {
+  .breadcrumb-tools-container.with-background-image {
+    margin-bottom: 2em;
+  }
+}

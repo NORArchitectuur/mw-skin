@@ -1,0 +1,85 @@
+@use '../../abstracts/helpers';
+
+@mixin information-panel {
+  border: var(--nora-information-panel-border);
+  border-radius: var(--nora-information-panel-border-radius);
+  font-size: var(--nora-information-panel-font-size);
+  line-height: var(--nora-information-panel-line-height);
+  overflow: hidden;
+}
+
+@mixin header {
+  background-color: var(--nora-information-panel-header-background-color);
+  border-block-end: var(--nora-information-panel-header-border-bottom);
+  display: grid;
+  gap: var(--nora-information-panel-header-gap);
+  padding-block: var(--nora-information-panel-header-padding-block);
+  padding-inline: var(--nora-information-panel-header-padding-inline);
+
+  @include helpers.large-vw {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+@mixin header-group {
+  border-inline-start: var(--nora-information-panel-header-group-border-left);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nora-information-panel-header-group-gap);
+  overflow: hidden;
+  padding-inline: var(--nora-information-panel-header-group-padding-inline-start);
+}
+
+@mixin header-contact-group {
+  align-items: center;
+  border-inline-start: none;
+  display: flex;
+  flex-direction: row;
+  gap: var(--nora-information-panel-primary-contact-gap);
+  padding-inline-start: 0;
+}
+
+@mixin header-contact-group-avatar {
+  flex: 0 0 auto;
+}
+
+@mixin labelled-content {
+  display: flex;
+  gap: var(--nora-information-panel-labelled-content-gap);
+}
+
+@mixin labelled-content-key {
+  color: var(--nora-information-panel-label-color);
+  white-space: nowrap;
+
+  &::after {
+    content: ":";
+  }
+}
+
+@mixin labelled-content-value {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin overview {
+  
+}
+
+@mixin footer {
+  display: flex;
+  justify-content: space-between;
+  padding-block: var(--nora-information-panel-footer-padding-block);
+  padding-inline: var(--nora-information-panel-footer-padding-inline);
+}
+
+@mixin footer-contributors-wrapper {
+  display: none;
+
+  @include helpers.large-vw {
+    display: flex;
+  }
+}

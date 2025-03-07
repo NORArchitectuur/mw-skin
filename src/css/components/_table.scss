@@ -1,0 +1,89 @@
+@use '@utrecht/table-css/src/mixin' as utrecht-table;
+
+// Add margin variables
+.nora-theme {
+  --utrecht-table-margin-block-end: 1.5rem;
+  --utrecht-table-margin-block-start: 1.5rem;
+  --utrecht-table-caption-text-align: start;
+}
+
+.wikitable-container--overflow-inline {
+  overflow: auto;
+}
+
+.wikitable {
+  @include utrecht-table.utrecht-table;
+  @include utrecht-table.utrecht-table--distanced;
+
+  caption {
+    @include utrecht-table.utrecht-table__caption;
+  }
+
+  thead {
+    @include utrecht-table.utrecht-table__header;
+  }
+
+  tbody {
+    @include utrecht-table.utrecht-table__body;
+  }
+
+  th {
+    @include utrecht-table.utrecht-table__header-cell;
+  }
+
+  th,
+  td {
+    @include utrecht-table.utrecht-table__cell;
+  }
+
+  // Add padding on headers
+  th {
+    padding-block-end: var(--utrecht-table-header-padding-block-end);
+    padding-block-start: var(--utrecht-table-header-padding-block-start);
+  }
+
+  td:first-child,
+  th:first-child {
+    @include utrecht-table.utrecht-table__cell--first;
+  }
+
+  td:last-child,
+  th:last-child {
+    @include utrecht-table.utrecht-table__cell--last;
+  }
+
+  thead tr:last-child th {
+    @include utrecht-table.utrecht-table__cell--last-header-row;
+  }
+
+  thead>tr>th.numeric,
+  tfoot>tr>th.numeric,
+  th[scope="column"].numeric {
+    @include utrecht-table.utrecht-table__cell--numeric-column;
+  }
+
+  td.numeric {
+    @include utrecht-table.utrecht-table__cell--numeric-column;
+    @include utrecht-table.utrecht-table__cell--numeric-data;
+  }
+
+  &>tr:nth-child(even)>td,
+  &>tr:nth-child(even)>th {
+    @include utrecht-table.utrecht-table__row--alternate-even;
+  }
+
+  &>tr:nth-child(odd)>td,
+  &>tr:nth-child(odd)>th {
+    @include utrecht-table.utrecht-table__row--alternate-odd;
+  }
+
+  &>tbody>tr:nth-child(even)>td,
+  &>tbody>tr:nth-child(even)>th {
+    @include utrecht-table.utrecht-table__row--alternate-even;
+  }
+
+  &>tbody>tr:nth-child(odd)>td,
+  &>tbody>tr:nth-child(odd)>th {
+    @include utrecht-table.utrecht-table__row--alternate-odd;
+  }
+}

@@ -1,0 +1,15 @@
+$viewport: (
+	xs: 480px,
+	sm: 576px,
+	// This is the minumum width for the navbar to be displayed correctly
+	md: 999px,
+	lg: 1128px,
+	xl: 1130px
+);
+
+$z-index: (
+	skip-links: 1004,
+	header: 1003,
+	submenu: 1002,
+	navbar: 1001,
+)

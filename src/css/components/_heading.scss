@@ -1,0 +1,47 @@
+@use '@utrecht/heading-1-css/src/mixin' as heading-1;
+@use '@utrecht/heading-2-css/src/html/mixin' as heading-2;
+@use '@utrecht/heading-3-css/src/html/mixin' as heading-3;
+@use '@utrecht/heading-4-css/src/html/mixin' as heading-4;
+@use '@utrecht/heading-5-css/src/html/mixin' as heading-5;
+@use '@utrecht/heading-6-css/src/html/mixin' as heading-6;
+
+/**
+ * Fix heading font-size variables
+ */
+.nora-theme {
+  --utrecht-heading-4-font-size: calc(var(--utrecht-heading-5-font-size) * var(--nora-typography-heading-scale));
+  --utrecht-heading-3-font-size: calc(var(--utrecht-heading-4-font-size) * var(--nora-typography-heading-scale));
+  --utrecht-heading-2-font-size: calc(var(--utrecht-heading-3-font-size) * var(--nora-typography-heading-scale));
+  --utrecht-heading-1-font-size: calc(var(--utrecht-heading-2-font-size) * var(--nora-typography-heading-scale));
+}
+
+.mw-first-heading {
+  @include heading-1.utrecht-heading-1;
+
+  /**
+   * Revert margin-block-end to browser default
+   */
+  margin-block-end: revert;
+}
+
+.mw-body-content {
+
+  @include heading-2.utrecht-html-h2;
+  @include heading-3.utrecht-html-h3;
+  @include heading-4.utrecht-html-h4;
+  @include heading-5.utrecht-html-h5;
+  @include heading-6.utrecht-html-h6;
+
+  /**
+   * Revert margins to browser default
+   */
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-end: revert;
+    margin-block-start: revert;
+  }
+
+}

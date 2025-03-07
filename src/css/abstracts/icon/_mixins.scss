@@ -1,0 +1,24 @@
+@use './variables';
+
+@mixin wrapper {
+  display: block;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{variables.$icomoon-font-family}' !important;
+  font-size: var(--todo-icon-only-button-icon-size);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+  speak: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin make($icon-name) {
+  @include wrapper;
+
+  content: $icon-name;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "nora-components",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@nl-design-system-candidate/link-css": "^1.0.0",
+    "@utrecht/focus-ring-css": "^2.3.0",
+    "@utrecht/heading-1-css": "^1.4.0",
+    "@utrecht/heading-2-css": "^1.4.0",
+    "@utrecht/heading-3-css": "^1.4.0",
+    "@utrecht/heading-4-css": "^1.4.0",
+    "@utrecht/heading-5-css": "^1.4.0",
+    "@utrecht/heading-6-css": "^1.4.0",
+    "@utrecht/heading-css": "^1.4.0",
+    "@utrecht/ordered-list-css": "^1.4.0",
+    "@utrecht/paragraph-css": "^2.2.0",
+    "@utrecht/table-css": "^1.4.0",
+    "@utrecht/unordered-list-css": "^1.4.0",
+    "sass-embedded": "^1.83.4",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "@nl-design-system-community/nora-design-tokens": "1.7.0",
+    "@utrecht/link-css": "^1.5.0"
+  }
+}

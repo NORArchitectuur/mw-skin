@@ -1,0 +1,87 @@
+@use '../themes/nora/components/anchor-navigation/mixins' as anchor-navigation;
+@use '../abstracts/icon';
+@use '../themes/nora/abstracts/helpers';
+
+.content-navigation-container {
+  border-radius: .25rem;
+  border: 1px solid var(--nora-color-gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: .5rem;
+
+  @include helpers.large-vw {
+    @include anchor-navigation.anchor-navigation;
+
+    border-radius: unset;
+    border: unset;
+    padding: unset;
+    position: sticky;
+    top: 11rem;
+  }
+
+  h6 {
+    @include anchor-navigation.heading;
+
+    a {
+      align-items: center;
+      color: inherit;
+      display: flex;
+      justify-content: space-between;
+      padding-block: .25rem;
+      text-decoration: none;
+
+      @include helpers.large-vw {
+        cursor: inherit;
+        display: block;
+        padding-block: unset;
+        pointer-events: none;
+      }
+
+      &::after {
+        @include icon.make(icon.$ti-chevron-down);
+
+        width: 1rem;
+        height: 1rem;
+        font-size: 1rem;
+
+        @include helpers.large-vw {
+          display: none;
+        }
+      }
+
+      &[aria-expanded="true"]::after {
+        content: icon.$ti-chevron-up;
+      }
+    }
+  }
+}
+
+.content-navigation-nav {
+  @include anchor-navigation.items-list;
+
+  border-top: 1px solid var(--nora-color-gray-100);
+  display: none;
+  padding-block-start: .75rem;
+
+  @include helpers.large-vw {
+    border-top: unset;
+    display: flex;
+    padding-block-start: unset;
+  }
+
+  &[aria-hidden="false"] {
+    display: flex;
+  }
+
+  .navigation-link {
+    @include anchor-navigation.link;
+
+    &::before {
+      @include anchor-navigation.link-icon;
+      @include icon.make(icon.$ti-arrow-right);
+
+      font-size: var(--nora-anchor-nav-item-icon-size);
+    }
+  }
+}

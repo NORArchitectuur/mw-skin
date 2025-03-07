@@ -1,0 +1,31 @@
+@mixin button-link-state-colors($component) {
+		color: var(--#{$component}-color);
+		transition: all .1s ease-in-out;
+	
+		&:visited {
+			color: var(--#{$component}-color);
+		}
+	
+		&:hover,
+		&:focus-within,
+		&:focus {
+			color: var(--#{$component}-hover-color);
+			background-color: var(--#{$component}-hover-background-color);
+		}
+	
+		&:active {
+			color: var(--#{$component}-active-color);
+			background-color: var(--#{$component}-active-background-color);
+		}
+	
+		&:focus-visible {
+			color: var(--#{$component}-focus-visible-color);
+			background-color: var(--#{$component}-focus-visible-background-color);
+		}
+	
+		&.active {
+			color: var(--#{$component}-current-color);
+			background-color: var(--#{$component}-current-background-color);
+		}
+
+}

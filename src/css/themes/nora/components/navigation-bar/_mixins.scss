@@ -1,0 +1,218 @@
+@use '../../abstracts/helpers';
+
+$show-search-breakpoint: 75rem;
+
+@mixin navigation-bar {
+  @include helpers.padding('nora-navigation-bar');
+
+  align-items: center;
+  background-color: var(--nora-navigation-bar-background-color);
+  display: flex;
+  min-height: 3.75rem;
+  position: relative;
+
+  @include helpers.large-vw {
+    flex-wrap: wrap;
+  }
+}
+
+@mixin menu-toggle-wrapper {
+  display: block;
+  margin-inline-end: var(--nora-navigation-bar-navigation-container-column-gap);
+
+  @include helpers.large-vw {
+    display: none;
+  }
+}
+
+@mixin menu-toggle-button {
+  background-color: var(--nora-color-blue-700);
+}
+
+@mixin menu-toggle-button-icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@mixin logo-link {
+  display: block;
+  text-decoration: none;
+
+  @include helpers.large-vw {
+    margin-inline-end: var(--nora-navigation-bar-navigation-container-column-gap);
+  }
+}
+
+@mixin logo-image {
+  display: block;
+  height: var(--nora-navigation-bar-logo-height);
+}
+
+@mixin mainnav-list {
+  @include helpers.reset-list;
+
+  display: none;
+
+  @include helpers.large-vw {
+    display: flex;
+    gap: var(--nora-navigation-bar-navigation-container-items-column-gap);
+  }
+}
+
+@mixin vertical-mainnav-list {
+  @include helpers.padding(nora-navigation-bar-vertical-navigation-container);
+
+  background-color: var(--nora-navigation-bar-background-color);
+  display: block;
+  inset: 100% 0 auto 0;
+  position: absolute;
+  z-index: 1;
+}
+
+@mixin vertical-mainnav-list-item {
+  @include helpers.padding(nora-navigation-bar-vertical-navigation-item);
+
+  &:not(:last-of-type) {
+    border-block-end: var(--nora-navigation-bar-vertical-navigation-item-border);
+  }
+}
+
+@mixin mainnav-link {
+  @include helpers.padding('nora-navigation-bar-navigation-item');
+  @include helpers.button-link-state-colors('nora-navigation-bar-navigation-item');
+
+  border-radius: var(--nora-navigation-bar-navigation-item-border-radius);
+  display: block;
+  font-size: var(--nora-navigation-bar-navigation-item-font-size);
+  font-weight: unset;
+  line-height: var(--nora-navigation-bar-navigation-item-line-height);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@mixin vertical-mainnav-link {
+  display: block;
+  color: var(--nora-navigation-bar-vertical-navigation-item-color);
+  font-size: var(--nora-navigation-bar-vertical-navigation-item-font-size);
+  font-weight: var(--nora-navigation-bar-vertical-navigation-item-font-weight);
+  line-height: var(--nora-navigation-bar-navigation-item-line-height);
+  text-decoration: none;
+}
+
+@mixin utilities-wrapper {
+  align-items: center;
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: end;
+  padding-inline-start: var(--nora-navigation-bar-utilities-container-padding-inline-start);
+  max-width: var(--nora-navigation-bar-utilities-container-max-width);
+  gap: var(--nora-navigation-bar-utilities-container-column-gap);
+  margin-inline-start: auto;
+}
+
+@mixin search-form {
+  flex: 1;
+  display: flex;
+
+  @include helpers.large-vw {
+    display: none;
+  }
+
+  @include helpers.mq($show-search-breakpoint) {
+    display: flex;
+  }
+}
+
+@mixin search-field {
+  @include helpers.reset-input;
+  @include helpers.padding('nora-navigation-bar-search-field');
+  @include helpers.button-link-state-colors(nora-navigation-bar-search-field);
+
+  background-color: var(--nora-navigation-bar-search-field-background-color);
+  border-top-left-radius: var(--nora-navigation-bar-search-field-border-top-left-radius);
+  border-top-right-radius: var(--nora-navigation-bar-search-field-border-top-right-radius);
+  border-bottom-right-radius: var(--nora-navigation-bar-search-field-border-bottom-right-radius);
+  border-bottom-left-radius: var(--nora-navigation-bar-search-field-border-bottom-left-radius);
+  color: var(--nora-navigation-bar-search-field-color);
+  flex: 1;
+  font-family: var(--nora-navigation-bar-search-field-font-family);
+  font-size: var(--nora-navigation-bar-search-field-font-size);
+  line-height: var(--nora-navigation-bar-search-field-line-height);
+  min-width: 5rem;
+  width: 5rem;
+
+  &::placeholder {
+    color: var(--nora-navigation-bar-search-field-color);
+  }
+
+  &:hover {
+    background-color: var(--nora-navigation-bar-search-field-hover-background-color);
+    color: var(--nora-navigation-bar-search-field-hover-color);
+
+  }
+
+  &:focus {
+    background-color: var(--nora-navigation-bar-search-field-focus-background-color);
+    color: var(--nora-navigation-bar-search-field-focus-value-color);
+
+    &::placeholder {
+      color: var(--nora-navigation-bar-search-field-focus-color);
+    }
+  }
+
+  &:focus-visible {
+    background-color: var(--nora-navigation-bar-search-field-focus-background-color);
+    color: var(--nora-navigation-bar-search-field-focus-value-color);
+
+    &::placeholder {
+      color: var(--nora-navigation-bar-search-field-focus-color);
+    }
+  }
+}
+
+@mixin search-form-button {
+  @include helpers.reset-input;
+  @include helpers.padding('nora-navigation-bar-search-form-button');
+  @include helpers.button-link-state-colors(nora-navigation-bar-search-form-button);
+
+  background-color: var(--nora-navigation-bar-search-form-button-background-color);
+  color: var(--nora-navigation-bar-search-form-button-color);
+  border-top-left-radius: var(--nora-navigation-bar-search-form-button-border-top-left-radius);
+  border-top-right-radius: var(--nora-navigation-bar-search-form-button-border-top-right-radius);
+  border-bottom-right-radius: var(--nora-navigation-bar-search-form-button-border-bottom-right-radius);
+  border-bottom-left-radius: var(--nora-navigation-bar-search-form-button-border-bottom-left-radius);
+  cursor: pointer;
+}
+
+@mixin search-form-button-icon {
+  width: var(--nora-navigation-bar-search-form-button-icon-size);
+  height: var(--nora-navigation-bar-search-form-button-icon-size);
+  fill: currentColor;
+}
+
+@mixin utilities-list {
+  @include helpers.reset-list;
+
+  display: flex;
+}
+
+@mixin search-utility-link {
+  display: none;
+
+  @include helpers.large-vw {
+    display: block;
+  }
+
+  @include helpers.mq($show-search-breakpoint) {
+    display: none;
+  }
+}
+
+@mixin help-utility-link {
+  display: none;
+
+  @include helpers.large-vw {
+    display: block;
+  }
+}

@@ -1,0 +1,62 @@
+@use '../../abstracts/helpers';
+
+@mixin anchor-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nora-anchor-nav-gap);
+}
+
+@mixin heading {
+  color: var(--nora-anchor-nav-header-color);
+  font-size: var(--nora-anchor-nav-header-font-size);
+  font-weight: unset;
+  letter-spacing: var(--nora-anchor-nav-header-letter-spacing);
+  line-height: var(--nora-anchor-nav-header-line-height);
+  margin: 0;
+  padding-inline: var(--nora-anchor-nav-header-wrapper-padding-inline);
+  text-transform: var(--nora-anchor-nav-header-text-transform);
+}
+
+@mixin items-list {
+  @include helpers.reset-list;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--nora-anchor-nav-items-wrapper-gap);
+}
+
+@mixin link {
+  --icon-color: var(--nora-anchor-nav-item-icon-color);
+
+  @include helpers.padding(nora-anchor-nav-item);
+
+  color: var(--nora-anchor-nav-item-color);
+  display: flex;
+  font-size: var(--nora-anchor-nav-item-font-size);
+  gap: .75rem;
+  line-height: var(--nora-anchor-nav-item-line-height);
+  text-decoration: none;
+  transition: color .1s ease-in-out;
+
+  &:hover {
+    --icon-color: var(--nora-anchor-nav-item-hover-icon-color);
+
+    color: var(--nora-anchor-nav-item-hover-color);
+  }
+
+  &:focus-visible {
+    --icon-color: var(--nora-anchor-nav-item-focus-visible-icon-color);
+
+    color: var(--nora-anchor-nav-item-focus-visible-color);
+    background-color: var(--nora-anchor-nav-item-focus-visible-background-color);
+  }
+}
+
+@mixin link-icon {
+  color: var(--icon-color);
+  display: block;
+  width: var(--nora-anchor-nav-item-icon-size);
+  height: var(--nora-anchor-nav-item-icon-size);
+  transition: color .1s ease-in-out;
+
+}

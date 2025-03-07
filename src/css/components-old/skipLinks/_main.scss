@@ -1,0 +1,17 @@
+section.skip-links {
+  position: absolute;
+  z-index: map-get($z-index, 'skip-links');
+  width: 100%;
+  text-align: center;
+
+  .navigation-item {
+    @include navigation-item("nora-footer-link");
+    position: absolute;
+    top: -20000px;
+
+    &:focus,
+    &:active {
+      top: 0;
+    }
+  }
+}

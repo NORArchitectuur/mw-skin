@@ -1,0 +1,34 @@
+@use '../abstracts/icon';
+@use '../themes/nora/components/breadcrumb-navigation/mixins' as breadcrumb-navigation;
+
+.breadcrumbs {
+  @include breadcrumb-navigation.list;
+}
+
+.breadcrumb-item {
+  @include breadcrumb-navigation.item;
+}
+
+.breadcrumb-link {
+  @include breadcrumb-navigation.link;
+
+  &::before {
+    @include icon.make(icon.$ti-arrow-left);
+    
+    /** Corrections for icon font **/
+    font-size: var(--todo-breadcrumb-nav-link-icon-size);
+    margin-top: -2px;
+
+    @include breadcrumb-navigation.back-icon;
+  }
+}
+
+.breadcrumb-item:last-child {
+  .breadcrumb-link {
+    @include breadcrumb-navigation.current-page;
+
+    cursor: inherit;
+    pointer-events: none;
+    text-decoration: none;
+  }
+}

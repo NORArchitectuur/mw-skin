@@ -1,0 +1,28 @@
+@mixin visual-banner {
+  display: block;
+  height: var(--nora-page-content-visual-banner-height);
+  margin: 0;
+  position: relative;
+  z-index: -1;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    
+    /** TODO custom property from theme for background is not working correctly */
+    background: linear-gradient(0deg, rgba( #000000, 0.4), rgba( #000000, 0) 100%);
+  }
+}
+
+@mixin visual-banner-image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+@mixin with-visual-banner-content-wrapper {
+  margin-block-start: var(--nora-page-content-with-visual-banner-content-wrapper-margin-block-start);
+}

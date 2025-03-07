@@ -1,0 +1,195 @@
+@use '../themes/nora/components/information-panel/mixins' as information-panel;
+@use '../themes/nora/components/avatar/mixins' as avatar;
+@use '../themes/nora/components/data-summary/mixins' as data-summary;
+@use '../abstracts/icon/variables' as icons;
+@use '../themes/nora/abstracts/helpers';
+
+#information-panel {
+  @include information-panel.information-panel;
+
+  p {
+    margin: 0;
+  }
+
+  .nora-avatar {
+    height: 3.375rem;
+    width: 3.375rem;
+  }
+}
+
+.panel-items-header {
+  @include information-panel.header;
+
+  >.column {
+    @include information-panel.header-group;
+
+    &:first-child {
+      @include information-panel.header-contact-group;
+    }
+  }
+
+  .column-content {
+    @include information-panel.labelled-content;
+
+    b {
+      @include information-panel.labelled-content-key;
+
+      font-weight: var(--nora-document-font-weight);
+
+      &::after {
+        display: none;
+      }
+    }
+
+    >span {
+
+      display: contents;
+
+      >p {
+        display: contents;
+
+        &:not(:has(> a)) {
+          @include information-panel.labelled-content-value;
+        }
+      }
+
+      >a,
+      >p>a {
+        @include information-panel.labelled-content-value;
+      }
+    }
+  }
+
+  .contact-details-wrapper {
+    display: flex;
+    gap: var(--nora-information-panel-primary-contact-gap);
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .contact-details {
+    overflow-x: hidden;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    .ti {
+      font-size: 1.25rem;
+    }
+
+    a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+  }
+
+}
+
+.panel-items-overview {
+  @include information-panel.overview;
+}
+
+.panel-footer {
+  .row {
+    @include information-panel.footer;
+  }
+
+  .contributors {
+    @include information-panel.footer-contributors-wrapper;
+
+    .profile-picture {
+      height: 2rem;
+      width: 2rem;
+
+      &:not(:first-child) {
+        margin-left: -1rem;
+      }
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:focus-visible {
+        z-index: 2;
+      }
+    }
+
+    .label-link {
+      align-content: center;
+      background-color: var(--nora-information-panel-contributors-label-background-color);
+      border: var(--nora-information-panel-contributors-label-border);
+      border-radius: 100vw;
+      color: var(--nora-information-panel-contributors-label-color);
+      font-size: var(--nora-information-panel-contributors-label-font-size);
+      margin-left: -1rem;
+      padding-inline: var(--nora-information-panel-contributors-label-padding-inline);
+      text-decoration: none;
+    }
+
+  }
+
+  .column.right {
+    margin-inline-start: auto;
+  }
+
+  .link-with-icon {
+    align-items: center;
+    display: flex;
+    text-decoration-line: none;
+    gap: var(--utrecht-link-column-gap);
+
+    span {
+      text-decoration-line: underline;
+      text-decoration-thickness: inherit;
+      text-underline-offset: inherit;
+    }
+
+    i {
+      font-size: 1.25rem;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+}
+
+#information-panel[aria-expanded="true"] {
+
+  .panel-items-header,
+  .panel-footer .contributors {
+    display: none;
+  }
+
+  .panel-footer {
+    a {
+      i {
+        &:before {
+          content: icons.$ti-chevron-up;
+        }
+      }
+    }
+  }
+}
+
+#information-panel[aria-expanded="false"] {
+  .panel-items-overview {
+    display: none;
+  }
+}
+
+.panel-items-overview {
+  .panel-item {
+    @include data-summary.item;
+
+    >label {
+      @include data-summary.key;
+    }
+
+    >.panel-content {
+      @include data-summary.value-wrapper;
+    }
+  }
+}
