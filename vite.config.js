@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
+  base: '/skins/NORA/dist/',
   css: {
     preprocessorOptions: {
       scss: {
@@ -23,10 +24,7 @@ export default defineConfig({
       },
       output: {
         assetFileNames: (assetInfo) => {
-          if (/\.(woff2?|eot|ttf|otf)$/.test(assetInfo.names[0])) {
-            return 'skins/NORA/resources/fonts/[name][extname]'; // Fonts gaan nu in dist/skins/NORA/resources/fonts/
-          }
-          return '[name][extname]';
+          return 'assets/[name][extname]';
         }
       }
     }
