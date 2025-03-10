@@ -1,0 +1,45 @@
+@use '../themes/nora/components/footer/mixins' as footer;
+
+.footer {
+  @include footer.footer;
+
+  .navigation-link {
+    @include footer.link;
+  }
+}
+
+.footer-container-top {
+  @include footer.groups-wrapper;
+
+  /** Mimic the presence of a footer.container element by adding margin and max-width. */
+  margin: 0 auto var(--nora-footer-container-gap) auto;
+  max-width: var(--nora-footer-container-max-width);
+}
+
+.footer-top-item {
+  @include footer.link-group;
+}
+
+.navigation-header-item {
+  @include footer.group-heading-link;
+}
+
+.footer-block-navigation {
+  @include footer.link-group-sub-links-list;
+}
+
+.footer-container-bottom { 
+  @include footer.secondary-wrapper;
+
+  /** Mimic the presence of a footer.container element by adding margin and max-width. */
+  margin: 0 auto;
+  max-width: var(--nora-footer-container-max-width);
+}
+
+.footer-quick-navigation {
+  @include footer.secondary-links-list;
+}
+
+.copyright p {
+  @include footer.copyright;
+}

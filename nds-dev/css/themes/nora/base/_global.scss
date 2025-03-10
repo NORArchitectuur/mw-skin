@@ -1,0 +1,18 @@
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-variant-ligatures: none;
+	-webkit-font-variant-ligatures: none;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	font-family: var(--nora-document-font-family);
+	font-size: var(--nora-document-font-size);
+	line-height: var(--nora-document-line-height);
+	font-weight: var(--nora-document-font-weight);
+	margin: 0;
+	overflow-x: hidden;
+}

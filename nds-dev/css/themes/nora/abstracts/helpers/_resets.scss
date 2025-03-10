@@ -1,0 +1,12 @@
+@mixin reset-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-input {
+  appearance: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}

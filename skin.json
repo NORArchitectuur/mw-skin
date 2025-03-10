@@ -41,8 +41,8 @@
   "ResourceModules": {
     "skins.nora.styles": {
       "styles": [
-        "resources/css/mw-nora-components.css",
-        "resources/css/mw-custom.css",
+        "dist/assets/mw-nora-components.css",
+        "dist/assets/mw-custom.css",
         "resources/css/main.less"
       ]
     },

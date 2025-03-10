@@ -1,0 +1,21 @@
+@use '@utrecht/unordered-list-css/src/html/mixin' as unordered-list;
+
+/**
+ * Fix list item margins
+ */
+.nora-theme {
+  --utrecht-unordered-list-item-margin-block-end: .5rem;
+  --utrecht-unordered-list-item-margin-block-start: .5rem;
+}
+
+.mw-body-content {
+  @include unordered-list.utrecht-html-ul;
+
+  /**
+   * Revert margins to browser default
+   */
+   ul {
+     margin-block-end: revert;
+     margin-block-start: revert;
+   }
+}

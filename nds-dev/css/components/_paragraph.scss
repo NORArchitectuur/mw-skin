@@ -1,0 +1,20 @@
+@use '@utrecht/paragraph-css/src/mixin' as paragraph;
+
+.mw-body-content {
+
+  p {
+    @include paragraph.utrecht-paragraph;
+
+    small {
+      @include paragraph.utrecht-paragraph--small;
+    }
+  }
+
+  /**
+   * Revert margins to browser default
+   */
+   p {
+     margin-block-end: revert;
+     margin-block-start: revert;
+   }
+}

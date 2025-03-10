@@ -1,0 +1,64 @@
+@use '../themes/nora/components/link-overview/mixins' as link-overview;
+@use '../abstracts/icon';
+
+.link-overview {
+  @include link-overview.link-overview;
+
+  .heading {
+    @include link-overview.heading;
+  }
+
+  .items {
+    @include link-overview.items-wrapper;
+  }
+
+  .link-item > a {
+    @include link-overview.item;
+
+    color: var(--nora-link-overview-item-description-color);
+    text-decoration-line: none;
+    transition: all .1s ease-in-out;
+
+    &::after {
+      @include icon.make(icon.$ti-arrow-right);
+      @include link-overview.item-icon;
+      
+      display: block;
+      font-size: 1.5rem;
+    }
+  }
+
+  .link-item-content {
+    @include link-overview.item-content;
+  }
+
+  .name {
+    @include link-overview.item-name;
+    
+    display: block;
+  }
+
+  .link-item > a:hover .name {
+    @include link-overview.item-hover-name;
+  }
+
+  .link-item > a:focus-visible .name {
+    @include link-overview.item-focus-visible-name;
+  }
+
+  .description {
+    @include link-overview.item-description;
+  }
+
+  .link-item > a:focus-visible .description {
+    @include link-overview.item-focus-visible-description;
+  }
+
+  .link-item > a:hover::after {
+    @include link-overview.item-hover-icon;
+  }
+
+  .link-item > a:focus-visible::after {
+    @include link-overview.item-hover-icon;
+  }
+}

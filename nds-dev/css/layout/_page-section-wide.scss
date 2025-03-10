@@ -1,0 +1,16 @@
+@use '../themes/nora/components/page-section/article/mixins' as article-section;
+@use '../themes/nora/abstracts/helpers';
+
+.page-section-wide {
+  @include article-section.article-section;
+
+  & {
+    display: block;
+  }
+}
+
+.page-content:has(.page-content__visual-banner) .page-section-wide:first-child {
+  &::before {
+    @include article-section.background-decorator;
+  }
+}

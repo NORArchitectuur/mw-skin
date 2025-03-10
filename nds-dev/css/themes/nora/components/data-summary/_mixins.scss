@@ -1,0 +1,36 @@
+@use '../../abstracts/helpers';
+
+@mixin item {
+  background-color: var(--nora-data-summary-item-alternate-odd-background-color);
+  border-bottom: var(--nora-data-summary-item-border-bottom);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--nora-data-summary-item-font-size);
+  line-height: var(--nora-data-summary-item-line-height);
+  gap: var(--nora-data-summary-item-gap);
+  padding-block: var(--nora-data-summary-item-padding-block);
+  padding-inline: var(--nora-data-summary-item-padding-inline);
+
+  &:nth-child(even) {
+    background-color: var(--nora-data-summary-item-alternate-even-background-color);
+  }
+
+  @include helpers.large-vw {
+    flex-direction: row;
+  }
+}
+
+@mixin key {
+  color: var(--nora-data-summary-item-key-color);
+
+  @include helpers.large-vw {
+    width: 12rem;
+    flex-shrink: 0;
+  }
+}
+
+@mixin value-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}

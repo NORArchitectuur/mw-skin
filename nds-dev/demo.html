@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="nl" class="nora-theme">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NORA Components</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="css/mw-nora-components.scss">
+  <link rel="stylesheet" href="css/mw-custom.scss">
+</head>
+
+<body>
+
+  <header class="navigation-bar">
+
+    <!-- Navigation toggler -->
+    <div class="navigation-toggle-container">
+      <button class="theme-button navigation-toggle" aria-label="Toon menu" aria-haspopup="true" aria-expanded="false"
+        aria-controls="mainNavigation">
+        <!-- CHANGED: ti-menu instead of ti-menu2 -->
+        <i class="ti ti-menu"></i>
+        <!-- /CHANGED -->
+      </button>
+    </div>
+    <!-- Navigation toggler -->
+
+    <!-- Logo -->
+    <a href="/index.php/NORA_online" class="navigation-bar-logo">
+      <img src="/images/logo-nora.svg" alt="NORA">
+    </a>
+    <!-- /Logo -->
+
+    <!-- Menu items -->
+    <div class="navigation-bar-navigation-container">
+      <ul class="navigation-bar-navigation" role="menu" id="mainNavigation" aria-expanded="false">
+
+        <li class="navigation-item">
+          <a href="/index.php/Referentiearchitectuur" id="n-Referentiearchitectuur" class="navigation-link">
+            Referentiearchitectuur
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/Kennismodel" id="n-Kennismodel" class="navigation-link">
+            Kennismodel
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/Kennisdeling" id="n-Kennisdeling" class="navigation-link">
+            Kennisdeling
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/NORA_Familie" id="n-NORA-Familie" class="navigation-link">
+            NORA Familie
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/Toolbox" id="n-Toolbox" class="navigation-link">
+            Toolbox
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/Vakmanschap" id="n-Vakmanschap" class="navigation-link">
+            Vakmanschap
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- /Menu items -->
+
+    <div class="navigation-bar-search-links-container">
+      <!-- Searchbar -->
+      <div class="navigation-bar-search">
+        <form id="searchform" class="search-block-form show-block collapsible-menu-item" action="/index.php">
+          <input type="hidden" name="title" value="Speciaal:Zoeken">
+          <input type="search" name="search" placeholder="Doorzoek NORA2" aria-label="Doorzoek NORA2"
+            autocapitalize="sentences" title="Doorzoek NORA2 [⌃⌥f]" accesskey="f" id="searchInput">
+          <input type="submit" name="go" value="OK" title="Naar een pagina met deze naam gaan als deze bestaat"
+            class="searchButton" id="searchButton">
+        </form>
+      </div>
+      <!-- /Searchbar -->
+
+      <!-- Secondary nav -->
+      <ul class="navigation-bar-secondary-nav">
+        <!-- CHANGED: added extra item for search -->
+        <li class="navigation-item">
+          <a href="/index.php/Speciaal:Zoeken" class="navigation-link">
+            <span class="visually-hidden">Zoeken</span>
+            <i class="ti ti-search"></i>
+          </a>
+        </li>
+        <!-- /CHANGED -->
+        <li class="navigation-item">
+          <a href="/index.php/NORA2:Help" class="navigation-link">
+            <span class="visually-hidden">Gebruikersmenu</span>
+            <i class="ti ti-help"></i>
+          </a>
+        </li>
+        <li class="navigation-item with-dropdown">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
+            <span class="visually-hidden"></span>
+            <i class="ti ti-user-circle"></i>
+          </a>
+          <ul class="navigation-item-dropdown-menu align-left" aria-hidden="true" role="menu" id="userMenu">
+            <li id="pt-userpage" class="mw-list-item navigation-item"><a href="/index.php/Gebruiker:Yvdbogert"
+                title="Uw gebruikerspagina [⌃⌥.]" accesskey="." class="navigation-link">Yvdbogert</a></li>
+            <li id="pt-mytalk" class="mw-list-item navigation-item"><a href="/index.php/Overleg_gebruiker:Yvdbogert"
+                class="new navigation-link" title="Uw overlegpagina (de pagina bestaat niet) [⌃⌥n]"
+                accesskey="n">Overleg</a></li>
+            <li id="pt-adminlinks" class="mw-list-item navigation-item"><a
+                href="/index.php/Speciaal:Beheerdersverwijzingen" class="navigation-link">Koppelingen voor
+                beheerders</a></li>
+            <li id="pt-preferences" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:Voorkeuren"
+                title="Uw voorkeuren" class="navigation-link">Voorkeuren</a></li>
+            <li id="pt-watchlist" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:Volglijst"
+                title="Overzicht van pagina's die u volgt [⌃⌥l]" accesskey="l" class="navigation-link">Volglijst</a>
+            </li>
+            <li id="pt-mycontris" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:Bijdragen/Yvdbogert"
+                title="Overzicht van uw bijdragen [⌃⌥y]" accesskey="y" class="navigation-link">Bijdragen</a></li>
+            <li id="pt-logout" class="mw-list-item navigation-item"><a
+                href="/index.php?title=Speciaal:Afmelden&amp;returnto=YouriTest" data-mw="interface" title="Afmelden"
+                class="navigation-link">Afmelden</a></li>
+
+          </ul>
+        </li>
+      </ul>
+      <!-- /Secondary nav -->
+    </div>
+
+  </header>
+
+  <section class="breadcrumb-tools-container">
+    <div class="breadcrumb-container">
+      <div id="breadcrumbs2">
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs2-no-arrow breadcrumb-item"><a href="/index.php/NORA_online" title="NORA online"
+              class="breadcrumb-link">NORA</a></li>
+          <li class="breadcrumb-item"><a class="breadcrumb-link" href="">YouriTest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tools-container">
+      <ul class="tools">
+        <li id="ca-edit" class="tools-item navigation-item navigation-item-icon-only mw-list-item">
+          <a href="/index.php?title=YouriTest&amp;action=edit" class="tool-edit navigation-link">
+            <span class="visually-hidden">Bewerken</span>
+            <i class="ti ti-edit"></i>
+          </a>
+        </li>
+        <li id="ca-formedit" class="tools-item navigation-item navigation-item-icon-only mw-list-item">
+          <a href="/index.php?title=AES&amp;action=formedit" class="tool-formedit navigation-link">
+            <span class="visually-hidden">Bewerken</span>
+            <i class="ti ti-formedit"></i>
+          </a>
+        </li>
+        <li id="ca-unwatch" class="tools-item navigation-item navigation-item-icon-only mw-list-item">
+          <a href="/index.php?title=YouriTest&amp;action=unwatch" class="tool-unwatch navigation-link"
+            data-mw="interface">
+            <span class="visually-hidden">Niet volgen</span>
+            <i class="ti ti-unwatch"></i>
+          </a>
+        </li>
+        <li id="ca-history" class="tools-item navigation-item navigation-item-icon-only mw-list-item">
+          <a href="/index.php?title=YouriTest&amp;action=history" class="tool-history navigation-link">
+            <span class="visually-hidden">Geschiedenis weergeven</span>
+            <i class="ti ti-history"></i>
+          </a>
+        </li>
+
+        <li class="tools-item navigation-item smartcomments-toggler with-background with-dropdown">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false"
+            aria-controls="smartCommentsMenu">
+            SmartComments <span class="status">Uit</span>
+          </a>
+          <ul class="navigation-item-dropdown-menu align-left" role="menu" id="smartCommentsMenu" aria-hidden="true">
+            <li class="navigation-item sic-enable-commenting" id="ca-comments" role="none">
+              <a class="navigation-link" href="#">Aan</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="tools-item navigation-item with-background with-dropdown navigation-item-icon-only">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
+            <span class="visually-hidden">Overige pagina handelingen bekijken</span>
+            <i class="ti ti-dots"></i>
+          </a>
+          <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="toolsMenu">
+            <li class="navigation-item info">Naamruimten</li>
+            <li id="ca-nstab-main" class="selected mw-list-item navigation-item"><a href="/index.php/YouriTest"
+                title="Inhoudspagina bekijken [⌃⌥c]" accesskey="c" class="navigation-link">Pagina</a></li>
+            <li id="ca-talk" class="new mw-list-item navigation-item"><a
+                href="/index.php?title=Overleg:YouriTest&amp;action=edit&amp;redlink=1" rel="discussion"
+                title="Overleg over deze pagina (de pagina bestaat niet) [⌃⌥t]" accesskey="t"
+                class="navigation-link">Overleg</a></li>
+
+            <li class="navigation-item info">Meer</li>
+            <li id="ca-delete" class="mw-list-item navigation-item"><a
+                href="/index.php?title=YouriTest&amp;action=delete" title="Deze pagina verwijderen [⌃⌥d]" accesskey="d"
+                class="navigation-link">Verwijderen</a></li>
+            <li id="ca-move" class="mw-list-item navigation-item"><a
+                href="/index.php/Speciaal:PaginaHernoemen/YouriTest" title="Deze pagina hernoemen [⌃⌥m]" accesskey="m"
+                class="navigation-link">Hernoemen</a></li>
+            <li id="ca-protect" class="mw-list-item navigation-item"><a
+                href="/index.php?title=YouriTest&amp;action=protect" title="Deze pagina beveiligen [⌃⌥=]" accesskey="="
+                class="navigation-link">Beveiligen</a></li>
+            <li id="ca-unwatch" class="mw-watchlink mw-list-item navigation-item"><a
+                href="/index.php?title=YouriTest&amp;action=unwatch" data-mw="interface"
+                title="Deze pagina van mijn volglijst verwijderen [⌃⌥w]" accesskey="w" class="navigation-link"
+                aria-controls="mw-watchlink-notification">Niet volgen</a></li>
+            <li id="ca-smartbooks" class="mw-list-item navigation-item"><a
+                href="https://nora2.staging.wikixl.nl/index.php?title=YouriTest&amp;action=smartbook"
+                class="navigation-link">Pagina exporteren</a></li>
+            <li id="ca-purge" class="mw-list-item navigation-item"><a href="/index.php?title=YouriTest&amp;action=purge"
+                class="navigation-link">Vernieuwen</a></li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="page-content">
+    <figure class="page-content__visual-banner">
+      <img class="page-content__visual-banner-image" src='https://picsum.photos/id/116/1200/900' alt="">
+    </figure>
+
+    <main id="content" class="page-content__content-wrapper">
+      <div class="page-section-article">
+        <section class="content-navigation">
+          <div class="content-navigation-container">
+            <!-- Table of Contents -->
+            <h6>
+              <a href="#" aria-haspopup="true" aria-expanded="false" aria-controls="contentNavigationNav">
+                Op deze pagina
+              </a>
+            </h6>
+            <ul class="content-navigation-nav" id="contentNavigationNav" aria-hidden="true">
+              <li class="navigation-item">
+                <a class="navigation-link" href="#Random">De rol van referentiearchitecturen binnen de Nederlandse
+                  Overheid</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="#Ipsum">De NORA als referentie-architectuur voor de gehele overheid</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="#Dolor">Samenhang van de overheidsarchitecturen</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="#Amet">Meerwaarde samenspel NORA familieleden</a>
+              </li>
+            </ul>
+            <!-- /Table of Contents -->
+          </div>
+        </section>
+        <section class="content-container">
+          <h1 id="firstHeading" class="firstHeading mw-first-heading" style="display: flex; align-items: center;"><span
+              class="mw-page-title-main">YouriTest</span></h1>
+          <!--?xml encoding="utf-8" ?-->
+          <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="nl" dir="ltr">
+            <div class="mw-parser-output">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget tempor ligula, vitae tristique urna.
+                Quisque tristique vehicula magna, in vehicula risus condimentum sed. Aenean sodales vehicula tincidunt.
+                Etiam vel facilisis orci. Pellentesque auctor ipsum a ante facilisis, vel bibendum nulla fermentum. Ut
+                in
+                metus id turpis scelerisque efficitur vel vel lectus. </p>
+              <div class="link-overview">
+                <div class="heading">Verdieping</div>
+                <div class="items">
+                  <div class="link-item">
+                    <a href="Foo">
+                      <div class="link-item-content">
+                        <span class="name">EU Architectuur</span>
+                        <span class="description">Hoofdlijnen van de EU Architectuur</span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="link-item">
+                    <a href="hoofdpagina">
+                      <div class="link-item-content">
+                        <span class="name">NORA Gebruikersraad</span>
+                        <span class="description">Positionering van de NORA ten opzichte van de
+                          overheidsarchitecturen</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <h2><span class="mw-headline" id="Random">Genummerde lijst</span><span class="mw-editsection"><span
+                    class="mw-editsection-bracket">[</span><a
+                    href="/index.php?title=YouriTest&amp;action=edit&amp;section=1"
+                    title="Deelpagina bewerken: Random">bewerken</a><span class="mw-editsection-bracket">]</span></span>
+              </h2>
+              <ol>
+                <li>Genummerde lijst</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit sed do. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</li>
+                <li>Vivamus consequat odio non felis facilisis, vel euismod nulla.</li>
+                <li>Aliquam erat volutpat. Curabitur nec enim ac sapien suscipit pharetra.</li>
+                <li>Suspendisse potenti. Aenean vitae lectus id magna volutpat placerat.</li>
+                <li>Nullam facilisis magna et justo sollicitudin, vitae malesuada sapien.</li>
+              </ol>
+              <h2><span class="mw-headline" id="Random">Ongenummerde lijst</span><span class="mw-editsection"><span
+                    class="mw-editsection-bracket">[</span><a
+                    href="/index.php?title=YouriTest&amp;action=edit&amp;section=1"
+                    title="Deelpagina bewerken: Random">bewerken</a><span class="mw-editsection-bracket">]</span></span>
+              </h2>
+              <ul>
+                <li>Ongenummerde lijst</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do. Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit sed do. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</li>
+                <li>Vivamus consequat odio non felis facilisis, vel euismod nulla.</li>
+                <li>Aliquam erat volutpat. Curabitur nec enim ac sapien suscipit pharetra.</li>
+                <li>Suspendisse potenti. Aenean vitae lectus id magna volutpat placerat.</li>
+                <li>Nullam facilisis magna et justo sollicitudin, vitae malesuada sapien.</li>
+              </ul>
+              <!-- CHANGED: added div around table for responsiveness -->
+              <div class="wikitable-container--overflow-inline">
+                <!-- /CHANGED -->
+                <table class="sortable wikitable jquery-tablesorter">
+                  <caption>Sample Table
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th class="headerSort" tabindex="0" role="columnheader button" title="Oplopend sorteren">Column 1
+                      </th>
+                      <th class="headerSort" tabindex="0" role="columnheader button" title="Oplopend sorteren">Column 2
+                      </th>
+                      <th class="headerSort" tabindex="0" role="columnheader button" title="Oplopend sorteren">Column 3
+                      </th>
+                      <th class="headerSort" tabindex="0" role="columnheader button" title="Oplopend sorteren">Column 4
+                      </th>
+                      <th class="headerSort" tabindex="0" role="columnheader button" title="Oplopend sorteren">Column 5
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Apple</td>
+                      <td>Red</td>
+                      <td>Fruit</td>
+                      <td>Sweet</td>
+                      <td>Round
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Dog</td>
+                      <td>Brown</td>
+                      <td>Animal</td>
+                      <td>Loyal</td>
+                      <td>Friendly
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Car</td>
+                      <td>Blue</td>
+                      <td>Vehicle</td>
+                      <td>Fast</td>
+                      <td>Expensive
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Chair</td>
+                      <td>Black</td>
+                      <td>Furniture</td>
+                      <td>Stable</td>
+                      <td>Wooden
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Book</td>
+                      <td>White</td>
+                      <td>Object</td>
+                      <td>Informative</td>
+                      <td>Rectangular
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot></tfoot>
+                </table>
+              </div>
+              <!-- CHANGED: added div around table for responsiveness -->
+              <div class="wikitable-container--overflow-inline">
+                <!-- /CHANGED -->
+                <table class="wikitable">
+                  <caption>Sample Table
+                  </caption>
+                  <tbody>
+                    <tr>
+                      <th>Column 1</th>
+                      <th>Column 2</th>
+                      <th>Column 3</th>
+                      <th>Column 4</th>
+                      <th>Column 5
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>Apple</td>
+                      <td>Red</td>
+                      <td>Fruit</td>
+                      <td>Sweet</td>
+                      <td>Round
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Dog</td>
+                      <td>Brown</td>
+                      <td>Animal</td>
+                      <td>Loyal</td>
+                      <td>Friendly
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Car</td>
+                      <td>Blue</td>
+                      <td>Vehicle</td>
+                      <td>Fast</td>
+                      <td>Expensive
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Chair</td>
+                      <td>Black</td>
+                      <td>Furniture</td>
+                      <td>Stable</td>
+                      <td>Wooden
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Book</td>
+                      <td>White</td>
+                      <td>Object</td>
+                      <td>Informative</td>
+                      <td>Rectangular
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p><br>
+                <a href="/index.php/Hoofdpagina" class="label-link">Ga naar de hoofdpagina</a>
+              </p>
+              <p><a href="/index.php/Hoofdpagina" class="link-alternative link-with-icon"><i class="ti ti-alpha"></i>
+                  <span>Ga naar de hoofdpagina</span></a>
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget tempor ligula, vitae tristique urna.
+                Quisque tristique vehicula magna, in vehicula risus condimentum sed. Aenean sodales vehicula tincidunt.
+                Etiam vel facilisis orci. Pellentesque auctor ipsum a ante facilisis, vel bibendum nulla fermentum. Ut
+                in
+                metus id turpis scelerisque efficitur vel vel lectus. </p>
+              <p>Sed vel ipsum eget lectus fringilla efficitur. Proin
+                ac nisi sapien. Vestibulum sed orci neque. Aliquam erat volutpat. Curabitur volutpat diam id ornare
+                gravida.
+                Praesent fringilla lorem et fermentum pellentesque. Fusce varius tristique felis sed dictum. Mauris
+                lacinia
+                nisi vitae ligula scelerisque, quis ultricies eros facilisis. Maecenas vitae gravida sapien, non
+                ultricies
+                ex.
+              </p>
+              <p><small>Fusce varius tristique felis sed dictum. Mauris lacinia
+                  nisi vitae ligula scelerisque, quis ultricies eros facilisis. Maecenas vitae gravida sapien, non
+                  ultricies
+                  ex.</small></p>
+
+
+              <h2><span class="mw-headline" id="Random">Random</span><span class="mw-editsection"><span
+                    class="mw-editsection-bracket">[</span><a
+                    href="/index.php?title=YouriTest&amp;action=edit&amp;section=1"
+                    title="Deelpagina bewerken: Random">bewerken</a><span class="mw-editsection-bracket">]</span></span>
+              </h2>
+              <p>Integer lacinia vehicula sapien vel tincidunt. Curabitur molestie tellus in libero tincidunt fringilla.
+                Vestibulum sit amet risus in nulla laoreet posuere. Donec pellentesque lectus non feugiat interdum.
+                Etiam
+                auctor convallis metus, ac fringilla turpis hendrerit sit amet.</p>
+
+              <div class="thumb tnone">
+                <div class="thumbinner" style="width:852px;">
+                  <a href="" rel="nofollow">
+                    <img alt="" src="https://picsum.photos/id/103/1200/800" decoding="async" width="1200" height="800"
+                      class="thumbimage">
+                  </a>
+                  <div class="thumbcaption">
+                    <div class="magnify">
+                      <!-- CHANGED: tekst toegevoegd in link -->
+                      <a href="" class="internal" title="Vergroten">Afbeeldingsinformatie</a>
+                      <!-- /CHANGED -->
+                    </div>
+                    Hier komt de optionele caption met eventueel een <a href="" class="internal" title="">link</a>. Deze
+                    tekst kan ook langer zijn en over meerdere regels lopen. Deze tekst kan ook langer zijn en over
+                    meerdere
+                    regels lopen. Deze tekst kan ook langer zijn en over meerdere regels lopen.
+                  </div>
+                </div>
+              </div>
+
+              <p>Nam eu velit sed metus varius interdum.
+                Suspendisse imperdiet risus ut fringilla dictum. Ut fermentum, odio vel posuere hendrerit, turpis urna
+                luctus lacus, nec volutpat urna sem id orci. Sed eget mauris nulla. Cras vulputate vulputate enim, vel
+                mollis nisi dignissim sed. Nulla ultricies nunc in nulla sagittis, ut consequat quam dapibus. Nam
+                vehicula,
+                purus in pellentesque varius, ex erat sagittis quam, et vehicula eros mi a felis. Curabitur eget enim
+                non
+                urna rutrum tincidunt at non felis. Integer viverra leo non efficitur scelerisque.
+              </p>
+              <h3><span class="mw-headline" id="Ipsum">Ipsum</span><span class="mw-editsection"><span
+                    class="mw-editsection-bracket">[</span><a
+                    href="/index.php?title=YouriTest&amp;action=edit&amp;section=2"
+                    title="Deelpagina bewerken: Ipsum">bewerken</a><span class="mw-editsection-bracket">]</span></span>
+              </h3>
+              <p>Phasellus tristique, odio nec suscipit iaculis, sapien arcu malesuada arcu, ut egestas libero ipsum
+                eget
+                metus. Sed auctor ornare diam, et pellentesque arcu dictum sit amet. Donec sit amet velit bibendum,
+                blandit
+                lacus at, laoreet justo. Suspendisse ut purus erat. Ut vitae dolor sit amet neque cursus elementum ut
+                sed
+                enim. Integer vehicula sodales dolor, vel pharetra odio luctus at. Aliquam vestibulum massa sit amet
+                dapibus
+                tincidunt. Etiam posuere vehicula lectus at tempor. In ut lacinia sapien. Nam at sapien ut neque cursus
+                interdum. Aliquam tristique augue nec felis sodales, nec vestibulum lorem fermentum. Suspendisse in
+                consequat enim. Quisque feugiat volutpat risus, ac lacinia lorem dapibus quis. Fusce commodo vestibulum
+                ante, at gravida lectus sollicitudin in.
+              </p>
+              <h4><span class="mw-headline" id="Dolor">Dolor</span><span class="mw-editsection"><span
+                    class="mw-editsection-bracket">[</span><a
+                    href="/index.php?title=YouriTest&amp;action=edit&amp;section=3"
+                    title="Deelpagina bewerken: Dolor">bewerken</a><span class="mw-editsection-bracket">]</span></span>
+              </h4>
+              <p>Vestibulum nec odio eget orci tristique pretium. Nullam eleifend, dolor eget tempor lacinia, ex lorem
+                iaculis odio, quis dapibus purus magna vel urna. Nunc vestibulum eros eu neque pharetra, ac auctor urna
+                dictum. Integer sagittis lectus vel fermentum pharetra. Sed malesuada ex id sapien dapibus, nec egestas
+                nisi
+                scelerisque. Ut tempor erat nec nulla scelerisque, a dignissim sapien efficitur. Nam malesuada sagittis
+                metus sit amet porttitor. Duis tincidunt sem in justo porttitor, vel fringilla neque iaculis. Nam
+                fermentum
+                pharetra eros, id suscipit tortor suscipit ac. Ut venenatis nunc in lectus posuere, in fermentum metus
+                vehicula. Fusce aliquam dapibus nisi, ac cursus magna vulputate sed. Integer molestie libero non augue
+                congue, nec consectetur nisi iaculis. Quisque vitae eros vitae nulla consectetur finibus. Integer ut
+                sapien
+                non ligula vehicula facilisis.
+              </p>
+              <h5><span class="mw-headline" id="Amet">Amet</span><span class="mw-editsection"><span
+                    class="mw-editsection-bracket">[</span><a
+                    href="/index.php?title=YouriTest&amp;action=edit&amp;section=4"
+                    title="Deelpagina bewerken: Amet">bewerken</a><span class="mw-editsection-bracket">]</span></span>
+              </h5>
+              <p>Fusce ultricies ultricies suscipit. Proin consequat est at velit sodales convallis. Nulla fermentum
+                felis
+                at fermentum viverra. Donec bibendum augue et eros ultricies, vel feugiat felis rutrum. Cras scelerisque
+                consectetur metus, eget eleifend orci. Sed ut viverra ligula, id tincidunt justo. Mauris rhoncus augue
+                id
+                felis fermentum facilisis. Donec id neque in felis dignissim lacinia. Integer gravida sem in nisi
+                dictum,
+                id
+                fermentum lacus dictum. Ut et odio in ligula mattis tristique.
+              </p>
+
+              <nav class="nora-related-links" aria-labelledby="related-links-heading">
+                <h2 id="related-links-heading" class="nora-related-links__heading">Gerelateerde onderwerpen</h2>
+                <dl class="nora-related-links__group nora-related-links__group--parent">
+                  <dt class="nora-related-links__group-heading">Onderdeel van</dt>
+                  <dd class="nora-related-links__group-item">
+                    <a class="nora-related-links__link" href="#">
+                      <span class="nora-related-links__link-label">Interne Link</span>
+                    </a>
+                  </dd>
+                  <dd class="nora-related-links__group-item">
+                    <a class="nora-related-links__link" href="https://www.example.com">
+                      <span class="nora-related-links__link-label">Externe Link</span>
+                    </a>
+                  </dd>
+                  <dd class="nora-related-links__group-item">
+                    <a class="nora-related-links__link" href="#">
+                      <span class="nora-related-links__link-label">Interne Link</span>
+                    </a>
+                  </dd>
+                </dl>
+                <dl class="nora-related-links__group nora-related-links__group--related">
+                  <dt class="nora-related-links__group-heading">Speelt ook bij</dt>
+                  <dd class="nora-related-links__group-item">
+                    <a class="nora-related-links__link" href="#">
+                      <span class="nora-related-links__link-label">Interne Link</span>
+                    </a>
+                  </dd>
+                  <dd class="nora-related-links__group-item">
+                    <a class="nora-related-links__link" href="https://www.example.com">
+                      <span class="nora-related-links__link-label">Externe Link</span>
+                    </a>
+                  </dd>
+                </dl>
+                <dl class="nora-related-links__group nora-related-links__group--connected">
+                  <dt class="nora-related-links__group-heading">Verbonden met</dt>
+                  <dd class="nora-related-links__group-item">
+                    <a class="nora-related-links__link" href="#">
+                      <span class="nora-related-links__link-label">Interne Link</span>
+                    </a>
+                  </dd>
+                  <dd class="nora-related-links__group-item">
+                    <a class="nora-related-links__link" href="https://www.example.com">
+                      <span class="nora-related-links__link-label">Externe Link</span>
+                    </a>
+                  </dd>
+                  <dd class="nora-related-links__group-item">
+                    <a class="nora-related-links__link" href="#">
+                      <span class="nora-related-links__link-label">Interne Link</span>
+                    </a>
+                  </dd>
+                </dl>
+              </nav>
+          </div>
+
+        </section>
+      </div>
+
+      <div class="page-section-wide">
+
+        <section id="information-panel" aria-expanded="false" aria-live="polite">
+          <div class="panel-items-header">
+
+            <div class="column">
+
+              <div class="contact-details-wrapper">
+                <p><a href="/index.php/Gebruiker:M.M.Vos" class="nora-avatar"
+                    style="background-image: url('/images/Profielfoto_Marieke_Vos.jpg')" title="Gebruiker:M.M.Vos">Ga
+                    naar de gebruikerspagina van Gebruiker:M.M.Vos</a>
+                </p>
+                <div class="contact-details">
+                  <div class="column-content">
+                    <b>Contactpersoon: </b>
+                    <span>
+                      <p><a href="/index.php/Gebruiker:M.M.Vos" title="Gebruiker:M.M.Vos">M.M.Vos</a></p>
+                    </span>
+                  </div>
+                  <div>
+                    <span class="contact-link">
+                      <i class="ti ti-mail"></i>
+                      <a href="mailto:mail@example.com">mail@example.com</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="column">
+              <div class="column-content">
+                <b>Gewijzigd: </b>
+                <span>
+                  <p>24 januari 2025</p>
+                </span>
+              </div>
+              <div class="column-content">
+                <b>Verplichting: </b>
+                <span>
+                  <p>Wettelijk verplicht en een langer woord op dezelfde regel</p>
+                </span>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="column-content">
+                <b>Beheerregime: </b>
+                <span>
+                  <p><a href="/index.php/Inrichting_beheer_en_doorontwikkeling_van_NORA"
+                      title="Inrichting beheer en doorontwikkeling van NORA">Inrichting beheer en doorontwikkeling van
+                      NORA</a></p>
+                </span>
+              </div>
+              <div class="column-content">
+                <b>Fase: </b>
+                <span>
+                  <p><a href="/index.php/Afgeleid_principe" title="Afgeleid principe">Afgeleid principe</a></p>
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="panel-items-overview">
+            <div class="panel-item">
+              <label>Contactpersoon</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Contactpersoon&amp;action=edit&amp;redlink=1"
+                    class="new"
+                    title="NORA2:Informationpanel/Contactpersoon (de pagina bestaat niet)">NORA2:Informationpanel/Contactpersoon</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Inhoudelijk eigenaar</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Inhoudelijk_eigenaar&amp;action=edit&amp;redlink=1"
+                    class="new"
+                    title="NORA2:Informationpanel/Inhoudelijk eigenaar (de pagina bestaat niet)">NORA2:Informationpanel/Inhoudelijk
+                    eigenaar</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Beheerder</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Beheerder&amp;action=edit&amp;redlink=1" class="new"
+                    title="NORA2:Informationpanel/Beheerder (de pagina bestaat niet)">NORA2:Informationpanel/Beheerder</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Aangemaakt op</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Aangemaakt_op&amp;action=edit&amp;redlink=1"
+                    class="new"
+                    title="NORA2:Informationpanel/Aangemaakt op (de pagina bestaat niet)">NORA2:Informationpanel/Aangemaakt
+                    op</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Laatste wijziging</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Laatste_wijziging&amp;action=edit&amp;redlink=1"
+                    class="new"
+                    title="NORA2:Informationpanel/Laatste wijziging (de pagina bestaat niet)">NORA2:Informationpanel/Laatste
+                    wijziging</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Bijdragers</label>
+              <div class="panel-content">
+                <a href="/index.php/Gebruiker:M.M.Vos" class="label-link">Marieke Vos</a> <a
+                  href="/index.php/Gebruiker:Ericbrouwer" class="label-link">Eric Brouwer</a> <a
+                  href="/index.php/Gebruiker:ALangenacker" class="label-link">Anita Langenacker</a> <a
+                  href="/index.php/Gebruiker:Wendy_Pragt" class="label-link">Wendy Pragt</a> <a
+                  href="/index.php/Gebruiker:Jdirks2" class="label-link">Joris Dirks</a>
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Versies</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Versies&amp;action=edit&amp;redlink=1" class="new"
+                    title="NORA2:Informationpanel/Versies (de pagina bestaat niet)">NORA2:Informationpanel/Versies</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Mate van verplichting</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Mate_van_verplichting&amp;action=edit&amp;redlink=1"
+                    class="new"
+                    title="NORA2:Informationpanel/Mate van verplichting (de pagina bestaat niet)">NORA2:Informationpanel/Mate
+                    van verplichting</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Publicatiedatum</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Publicatiedatum&amp;action=edit&amp;redlink=1"
+                    class="new"
+                    title="NORA2:Informationpanel/Publicatiedatum (de pagina bestaat niet)">NORA2:Informationpanel/Publicatiedatum</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Beheerregime</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Beheerregime&amp;action=edit&amp;redlink=1"
+                    class="new"
+                    title="NORA2:Informationpanel/Beheerregime (de pagina bestaat niet)">NORA2:Informationpanel/Beheerregime</a>
+                </p>
+
+              </div>
+            </div>
+            <div class="panel-item">
+              <label>Fase</label>
+              <div class="panel-content">
+                <p><a href="/index.php?title=NORA2:Informationpanel/Fase&amp;action=edit&amp;redlink=1" class="new"
+                    title="NORA2:Informationpanel/Fase (de pagina bestaat niet)">NORA2:Informationpanel/Fase</a>
+                </p>
+
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="row">
+              <div class="column contributors">
+                <a href="/index.php/Gebruiker:M.M.Vos" class="profile-picture">
+                  <img src="/images/Profielfoto_Marieke_Vos.jpg" alt="Marieke Vos">
+                </a>
+                <a href="/index.php/Gebruiker:Ericbrouwer" class="profile-picture">
+                  <img src="/images/nora2/b/b6/Profielfoto_Eric_Brouwer.jpg" alt="Eric Brouwer">
+                </a>
+                <a href="/index.php/Gebruiker:ALangenacker" class="profile-picture">
+                  <img src="/images/nora2/0/08/Anita_pasfoto.jpg" alt="Anita Langenacker">
+                </a>
+                <a href="/index.php/Gebruiker:Wendy_Pragt" class="profile-picture">
+                  <img
+                    src="data:image/svg+xml;utf8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20role%3D%22img%22%20aria-label%3D%22Avatar%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%2380afa7%22%20%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%23000000%22%20font-size%3D%2242%22%20font-family%3D%22Arial%2C%20sans-serif%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EWe%3C%2Ftext%3E%3C%2Fsvg%3E"
+                    alt="Wendy Pragt">
+                </a>
+                <a href="/index.php/Gebruiker:Jdirks2" class="profile-picture">
+                  <img
+                    src="data:image/svg+xml;utf8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20role%3D%22img%22%20aria-label%3D%22Avatar%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%2369bb34%22%20%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%23000000%22%20font-size%3D%2242%22%20font-family%3D%22Arial%2C%20sans-serif%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EJd%3C%2Ftext%3E%3C%2Fsvg%3E"
+                    alt="Joris Dirks">
+                </a>
+                <a href="#" class="label-link" id="contributors">
+                  5 Bijdragers
+                </a>
+              </div>
+              <div class="column right">
+                <a href="#" class="link-with-icon">
+                  <span>Toon meer details</span>
+                  <i class="ti ti-chevron-down"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <!-- /CHANGED -->
+    <div class="noglossary footer-container-top">
+      <div class="footer-top-item"><a href="/index.php/Referentiearchitectuur"
+          class="navigation-header-item navigation-item">Referentiearchitectuur</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a href="/index.php/Dienstverlening" class="navigation-link"
+              title="Dienstverlening">Dienstverlening</a></li>
+          <li class="navigation-item"><a href="/index.php/Grondslagenlaag" class="navigation-link"
+              title="Grondslagenlaag">Grondslagenlaag</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Organisatielaag&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Organisatielaag (de pagina bestaat niet)">Organisatielaag</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Informatiellaag&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Informatiellaag (de pagina bestaat niet)">Informatiellaag</a></li>
+          <li class="navigation-item"><a href="/index.php/Applicatielaag" class="navigation-link"
+              title="Applicatielaag">Applicatielaag</a></li>
+          <li class="navigation-item"><a href="/index.php?title=IT-infrastructuurlaag&amp;action=edit&amp;redlink=1"
+              class="new navigation-link"
+              title="IT-infrastructuurlaag (de pagina bestaat niet)">IT-infrastructuurlaag</a></li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/Kennismodel"
+          class="navigation-header-item navigation-item">Kennismodel</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a href="/index.php/Bindende_Architectuurafspraken" class="navigation-link"
+              title="Bindende Architectuurafspraken">Bindende Architectuurafspraken</a></li>
+          <li class="navigation-item"><a href="/index.php?title=DNA_NORA_Familie&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="DNA NORA Familie (de pagina bestaat niet)">DNA NORA Familie</a></li>
+          <li class="navigation-item"><a
+              href="/index.php?title=Overige_architectuurelementen&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Overige architectuurelementen (de pagina bestaat niet)">Overige
+              architectuurelementen</a></li>
+          <li class="navigation-item"><a
+              href="/index.php?title=Kennismodel_Community_%26_Structuur&amp;action=edit&amp;redlink=1"
+              class="new navigation-link"
+              title="Kennismodel Community &amp;amp; Structuur (de pagina bestaat niet)">Kennismodel Community &amp;
+              Structuur</a></li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/Kennisdeling"
+          class="navigation-header-item navigation-item">Kennisdeling</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a href="/index.php/Basisconcept_van_Dienstverlening" class="navigation-link"
+              title="Basisconcept van Dienstverlening">Basisconcept van Dienstverlening</a></li>
+          <li class="navigation-item"><a href="/index.php/Gegevensmanagement" class="navigation-link"
+              title="Gegevensmanagement">Gegevensmanagement</a></li>
+          <li class="navigation-item"><a href="/index.php/Identity_%26_Access_Management_(IAM)" class="navigation-link"
+              title="Identity &amp;amp; Access Management (IAM)">Identity &amp; Access Management (IAM)</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Overige_thema%27s&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Overige thema&amp;#39;s (de pagina bestaat niet)">Overige thema's</a>
+          </li>
+          <li class="navigation-item"><a href="/index.php?title=Overige_onderwerpen&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Overige onderwerpen (de pagina bestaat niet)">Overige onderwerpen</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/NORA_Familie" class="navigation-header-item navigation-item">NORA
+          Familie</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a
+              href="/index.php?title=Nederlandse_Overheidsarchitecturen&amp;action=edit&amp;redlink=1"
+              class="new navigation-link"
+              title="Nederlandse Overheidsarchitecturen (de pagina bestaat niet)">Nederlandse Overheidsarchitecturen</a>
+          </li>
+          <li class="navigation-item"><a href="/index.php?title=EU_Architectuur&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="EU Architectuur (de pagina bestaat niet)">EU Architectuur</a></li>
+          <li class="navigation-item"><a href="/index.php?title=ADO&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="ADO (de pagina bestaat niet)">ADO</a></li>
+          <li class="navigation-item"><a
+              href="/index.php?title=Groepen_binnen_de_NORA_Familie&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Groepen binnen de NORA Familie (de pagina bestaat niet)">Groepen binnen
+              de NORA Familie</a></li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/Toolbox"
+          class="navigation-header-item navigation-item">Toolbox</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a href="/index.php/PSA" class="mw-redirect navigation-link" title="PSA">PSA
+              (Project Startarchitectuur)</a></li>
+          <li class="navigation-item"><a href="/index.php/Vijflaagsmodel" class="navigation-link"
+              title="Vijflaagsmodel">Vijflaagsmodel</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Archimate&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Archimate (de pagina bestaat niet)">Archimate</a></li>
+          <li class="navigation-item"><a
+              href="/index.php?title=Semantisch_Zoeken_%26_Exporteren&amp;action=edit&amp;redlink=1"
+              class="new navigation-link"
+              title="Semantisch Zoeken &amp;amp; Exporteren (de pagina bestaat niet)">Semantisch Zoeken &amp;
+              Exporteren</a></li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/Vakmanschap"
+          class="navigation-header-item navigation-item">Vakmanschap</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a
+              href="/index.php?title=Beginnend_Overheidsarchitecten&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Beginnend Overheidsarchitecten (de pagina bestaat niet)">Beginnend
+              Overheidsarchitecten</a></li>
+          <li class="navigation-item"><a href="/index.php?title=NORA_Review&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="NORA Review (de pagina bestaat niet)">NORA Review</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Meeloopdagen&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Meeloopdagen (de pagina bestaat niet)">Meeloopdagen</a></li>
+          <li class="navigation-item"><a href="/index.php/Opleidingen" class="navigation-link"
+              title="Opleidingen">Opleidingen</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Kennissessies&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Kennissessies (de pagina bestaat niet)">Kennissessies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-container-bottom">
+      <div class="footer-quick-links">
+        <div class="noglossary">
+          <ul class="footer-quick-navigation">
+            <li class="navigation-item"><a href="/index.php?title=NORA_Online&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="NORA Online (de pagina bestaat niet)">Home</a></li>
+            <li class="navigation-item"><a href="/index.php/Over_NORA" class="navigation-link" title="Over NORA">Over
+                NORA</a></li>
+            <li class="navigation-item"><a href="/index.php/Actueel" class="mw-redirect navigation-link"
+                title="Actueel">Nieuws &amp; Agenda</a></li>
+            <li class="navigation-item"><a href="/index.php?title=Contact&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="Contact (de pagina bestaat niet)">Contact</a></li>
+            <li class="navigation-item"><a href="/index.php?title=Help&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="Help (de pagina bestaat niet)">Help</a></li>
+            <li class="navigation-item"><a href="/index.php?title=Groepen&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="Groepen (de pagina bestaat niet)">Groepen</a></li>
+            <li class="navigation-item"><a href="/index.php?title=Profielen&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="Profielen (de pagina bestaat niet)">Profielen</a></li>
+            <li class="navigation-item"><a
+                href="/index.php?title=Compliancy_%26_Verantwoording&amp;action=edit&amp;redlink=1"
+                class="new navigation-link"
+                title="Compliancy &amp;amp; Verantwoording (de pagina bestaat niet)">Compliancy &amp; Verantwoording</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="noglossary">
+          <div class="mw-parser-output">
+            <p><a href="javascript:void(0);" class="mw-lingo-term" data="" lingo="" term=""
+                id="99666c88feb5c87872f455e90fba2eac">NORA</a> wordt beheerd door ICTU
+            </p>
+          </div>
+          <div class="mw-lingo-tooltip" id="99666c88feb5c87872f455e90fba2eac">
+            <div class="mw-lingo-definition navigation-not-searchable">
+              <div class="mw-lingo-definition-text">
+                <p>Nederlandse Overheid Referentie Architectuur.
+                </p>
+              </div>
+              <div class="mw-lingo-definition-link"><a href="https://nora2.staging.wikixl.nl/index.php/NORA"
+                  rel="nofollow" class="external text"><span class="mw-lingo-definition-link-container">Ga naar de
+                    pagina met de definitie van 'NORA'</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

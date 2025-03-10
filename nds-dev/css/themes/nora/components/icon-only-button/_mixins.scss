@@ -1,0 +1,37 @@
+@use '../../abstracts/helpers';
+
+@mixin icon-only-button($inverse: false) {
+  @include helpers.reset-input;
+  @include helpers.padding(todo-icon-only-button);
+
+  border-radius: var(--todo-icon-only-button-border-radius);
+  display: block;
+  text-decoration: none;
+
+  @if $inverse {
+    @include helpers.button-link-state-colors(todo-icon-only-button-inverse);
+
+    background-color: var(--todo-icon-only-button-inverse-background-color);
+    color: var(--todo-icon-only-button-inverse-color);
+  } @else {
+    @include helpers.button-link-state-colors(todo-icon-only-button);
+
+    background-color: var(--todo-icon-only-button-background-color);
+    color: var(--todo-icon-only-button-color);
+  }
+
+  .icon {
+    @include icon;
+  }
+}
+
+@mixin icon {
+  display: block;
+  fill: inherit;
+  height: var(--todo-icon-only-button-icon-size);
+  width: var(--todo-icon-only-button-icon-size);
+}
+
+@mixin label {
+  @include helpers.visually-hidden;
+}

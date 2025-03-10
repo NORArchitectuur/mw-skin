@@ -1,0 +1,128 @@
+@use '../themes/nora/components/navigation-bar/mixins' as navigation-bar;
+@use '../themes/nora/components/icon-only-button/mixins' as icon-only-button;
+@use '../themes/nora/abstracts/helpers';
+@use '../abstracts/icon';
+
+.navigation-bar {
+	@include navigation-bar.navigation-bar;
+
+	& {
+		z-index: 2;
+	}
+
+	@include helpers.large-vw {
+		/** Since the html has nog structure for Page Body Component */
+		position: sticky;
+		top: 0;
+	}
+}
+
+
+.navigation-toggle-container {
+	@include navigation-bar.menu-toggle-wrapper;
+}
+
+.navigation-toggle {
+	@include icon-only-button.icon-only-button(true);
+	@include navigation-bar.menu-toggle-button;
+
+	.ti-menu {
+		@include navigation-bar.menu-toggle-button-icon;
+
+		font-size: 1.5rem;
+	}
+
+	&[aria-expanded="true"] .ti-menu {
+		&::before {
+			content: icon.$ti-chevron-up;
+		}
+	}
+}
+
+.navigation-bar-logo {
+	@include navigation-bar.logo-link;
+
+	img {
+		@include navigation-bar.logo-image;
+	}
+}
+
+.navigation-bar-navigation {
+	@include navigation-bar.mainnav-list;
+
+	.navigation-link {
+		@include helpers.large-vw {
+			@include navigation-bar.mainnav-link;
+		}
+	}
+
+	&.expanded {
+		@include navigation-bar.vertical-mainnav-list;
+
+		.navigation-item {
+			@include navigation-bar.vertical-mainnav-list-item;
+		}
+
+		.navigation-link {
+			@include navigation-bar.vertical-mainnav-link;
+		}
+	}
+}
+
+.navigation-bar-search-links-container {
+	@include navigation-bar.utilities-wrapper;
+}
+
+.navigation-bar-search {
+	display: contents;
+
+	.search-block-form {
+		@include navigation-bar.search-form;
+	}
+
+	input[type="search"] {
+		@include navigation-bar.search-field;
+	}
+
+	input[type="submit"] {
+		@include navigation-bar.search-form-button;
+
+		/** Add icon and size since there is no separate icon */
+		background-image: url('/images/icon-search-white.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: var(--nora-navigation-bar-search-form-button-icon-size);
+		width: calc(var(--nora-navigation-bar-search-form-button-padding-inline-start) + var(--nora-navigation-bar-search-form-button-padding-inline-end) + var(--nora-navigation-bar-search-form-button-icon-size));
+		text-indent: -99999px;
+
+		&:focus-visible {
+			background-image: url('/images/icon-search-black.svg');
+		}
+	}
+}
+
+
+.navigation-bar-secondary-nav {
+	@include navigation-bar.utilities-list;
+
+	.navigation-item:first-child {
+		@include navigation-bar.search-utility-link;
+	}
+
+	.navigation-item:nth-child(2) {
+		@include navigation-bar.help-utility-link;
+	}
+
+	.navigation-link {
+		@include icon-only-button.icon-only-button(true);
+	}
+}
+
+.navigation-item-dropdown-menu {
+	padding-top: 0.75rem;
+	width: 225px;
+
+	a {
+		font-size: calc(var(--nora-navigation-bar-navigation-item-font-size) - 10%);
+	}
+}

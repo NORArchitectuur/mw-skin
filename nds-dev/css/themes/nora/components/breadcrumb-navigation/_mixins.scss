@@ -1,0 +1,86 @@
+@use '../../abstracts/helpers';
+
+@mixin list {
+  @include helpers.reset-list;
+
+  display: flex;
+  column-gap: var(--todo-breadcrumb-nav-column-gap);
+}
+
+@mixin item {
+  &:not(:nth-last-child(2)) {
+    display: none;
+
+    @include helpers.large-vw {
+      display: block;
+    }
+  }
+
+  &:not(:last-child) {
+    @include helpers.large-vw {
+      align-items: center;
+      display: flex;
+      gap: var(--todo-breadcrumb-nav-link-icon-column-gap);
+
+      &::after {
+        content: "";
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuNTQ3NDkgMTQuNTI1TDkuNTUyNDkgMS40NzQ5OEgxMC40NTI1TDYuNDQ3NDkgMTQuNTI1SDUuNTQ3NDlaIiBmaWxsPSIjRDlEOUQ5Ii8+Cjwvc3ZnPg==');
+        display: block;
+        width: 1rem;
+        height: 1rem;        
+      }
+    }
+  }
+}
+
+@mixin link {
+  @include helpers.padding(todo-breadcrumb-nav-link);
+
+  align-items: center;
+  display: flex;
+  font-size: var(--todo-breadcrumb-nav-font-size);
+  font-weight: var(--todo-breadcrumb-nav-font-weight);
+  gap: var(--todo-breadcrumb-nav-link-icon-column-gap);
+  line-height: var(--todo-breadcrumb-nav-line-height);
+  
+  &:any-link {
+    color: var(--todo-breadcrumb-nav-link-color);
+    text-decoration-line: var(--todo-breadcrumb-nav-link-text-decoration);
+  }
+
+  @include helpers.large-vw {
+    display: block;
+
+    &:any-link:hover {
+      color: var(--todo-breadcrumb-nav-link-hover-color);
+      text-decoration: underline;
+    }
+
+    &:any-link:active {
+      color: var(--todo-breadcrumb-nav-link-active-color);
+    }
+
+    &:any-link:focus-visible {
+      color: var(--todo-breadcrumb-nav-link-focus-color);
+      background-color: var(--todo-breadcrumb-nav-link-focus-background-color);
+    }
+  }
+}
+
+@mixin back-icon {
+  color: inherit;
+  height: var(--todo-breadcrumb-nav-link-icon-size);
+  width: var(--todo-breadcrumb-nav-link-icon-size);
+
+  @include helpers.large-vw {
+    display: none;
+  }
+}
+
+@mixin current-page {
+  color: var(--todo-breadcrumb-nav-link-current-color);
+
+  &:any-link:focus-visible {
+    color: var(--todo-breadcrumb-nav-link-focus-color);
+  }
+}

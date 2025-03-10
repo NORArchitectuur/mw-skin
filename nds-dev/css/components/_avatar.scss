@@ -1,0 +1,17 @@
+@use '../themes/nora/components/avatar/mixins' as avatar;
+
+.nora-avatar {
+  @include avatar.avatar(5rem);
+
+  background-size: cover;
+  background-position: center;
+  text-indent: -99999px;
+}
+
+.profile-picture {
+  @include avatar.avatar(5rem);
+  
+  img {
+    @include avatar.image;
+  }
+}

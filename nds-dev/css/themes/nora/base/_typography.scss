@@ -1,0 +1,39 @@
+// Source Sans 3 Regular - font-weight: 400
+@font-face {
+  font-family: 'Source Sans 3';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: url('source-sans/WOFF2/TTF/SourceSans3-Regular.ttf.woff2') format('woff2'),
+    url('source-sans/WOFF/OTF/SourceSans3-Regular.otf.woff') format('woff');
+}
+
+// Source Sans 3 Regular Italic - font-weight: 400
+@font-face {
+  font-family: 'Source Sans 3';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  src: url('source-sans/WOFF2/TTF/SourceSans3-It.ttf.woff2') format('woff2'),
+    url('source-sans/WOFF/OTF/SourceSans3-It.otf.woff') format('woff');
+}
+
+// Source Sans 3 SemiBold - font-weight: 600
+@font-face {
+  font-family: 'Source Sans 3';
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  src: url('source-sans/WOFF2/TTF/SourceSans3-Semibold.ttf.woff2') format('woff2'),
+    url('source-sans/WOFF/OTF/SourceSans3-Semibold.otf.woff') format('woff');
+}
+
+// Source Sans 3 SemiBold Italic - font-weight: 600
+@font-face {
+  font-family: 'Source Sans 3';
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  src: url('source-sans/WOFF2/TTF/SourceSans3-SemiboldIt.ttf.woff2') format('woff2'),
+    url('source-sans/WOFF/OTF/SourceSans3-SemiboldIt.otf.woff') format('woff');
+}

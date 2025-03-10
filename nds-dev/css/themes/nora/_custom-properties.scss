@@ -1,0 +1,23 @@
+$large-vw-breakpoint: 62rem; // = 992px (bootstrap breakpoint)
+
+// Fixes and customization
+.nora-theme {
+
+  // Fix font variable
+  --nora-typography-font-family-primary: 'Source Sans 3', sans-serif;
+
+  // Fix for information-panel
+  --nora-information-panel-font-size: var(--nora-inforamtion-panel-font-size);
+  --nora-information-panel-contributors-label-font-size: var(--nora-inforamtion-panel-contributors-label-font-size);
+
+  // Fixes for navigation-bar-padding
+  --nora-navigation-bar-padding-block-start: .375rem;
+  --nora-navigation-bar-padding-block-end: .375rem;
+  @media (min-width: $large-vw-breakpoint) {
+    --nora-navigation-bar-padding-block-start: .5rem;
+    --nora-navigation-bar-padding-block-end: .5rem;
+  }
+
+  
+
+}

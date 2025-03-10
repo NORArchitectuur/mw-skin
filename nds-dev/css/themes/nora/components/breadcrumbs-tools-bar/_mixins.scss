@@ -1,0 +1,17 @@
+@use '../../abstracts/helpers';
+
+@mixin breadcrumbs-tools-bar {
+  @include helpers.padding(nora-breadcrumbs-tools-bar);
+
+  align-items: center;
+  background-color: var(--nora-breadcrumbs-tools-bar-background-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin tools-list {
+  @include helpers.reset-list;
+
+  display: flex;
+  gap: var(--nora-breadcrumbs-tools-bar-tools-container-column-gap);
+}

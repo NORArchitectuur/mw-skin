@@ -1,0 +1,13 @@
+@use '../themes/nora/components/page-content/mixins' as page-content;
+
+.page-content__visual-banner {
+  @include page-content.visual-banner;
+}
+
+.page-content__visual-banner-image {
+  @include page-content.visual-banner-image;
+}
+
+.page-content:has(.page-content__visual-banner) > .page-content__content-wrapper {
+  @include page-content.with-visual-banner-content-wrapper;
+}
