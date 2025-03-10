@@ -2,6 +2,5 @@ composer.lock
 node_modules/
 vendor/
 .DS_Store
-dist/index.html
 dist/images/
-public/
+nora-design-system/public/

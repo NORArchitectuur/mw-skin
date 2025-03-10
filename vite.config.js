@@ -3,6 +3,7 @@ import path from 'path';
 
 export default defineConfig({
   base: '/skins/NORA/dist/',
+  root: 'nds-dev',
   css: {
     preprocessorOptions: {
       scss: {
@@ -16,11 +17,11 @@ export default defineConfig({
     }
   },
   build: {
+    outDir: path.resolve(__dirname, 'dist'),
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'index.html'),
-        'mw-nora-components': path.resolve(__dirname, 'src/css/mw-nora-components.scss'),
-        'mw-custom': path.resolve(__dirname, 'src/css/mw-custom.scss')
+        'mw-nora-components': path.resolve(__dirname, 'nora-design-system/css/mw-nora-components.scss'),
+        'mw-custom': path.resolve(__dirname, 'nora-design-system/css/mw-custom.scss')
       },
       output: {
         assetFileNames: (assetInfo) => {
