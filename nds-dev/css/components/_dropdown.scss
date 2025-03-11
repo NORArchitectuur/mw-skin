@@ -1,0 +1,161 @@
+@use '../themes/nora/abstracts/helpers';
+@use '../abstracts/icon';
+
+// ID's with corresponding icons
+$dropdown-link-icons: (
+	ca-delete: icon.$ti-trash,
+	ca-move: icon.$ti-pencil,
+	ca-protect: icon.$ti-lock,
+	ca-smartbooks: icon.$ti-file-export,
+	ca-purge: icon.$ti-refresh,
+	pt-userpage: icon.$ti-user-circle,
+	pt-mytalk: icon.$ti-messages,
+	pt-adminlinks: icon.$ti-links-overview,
+	pt-preferences: icon.$ti-settings,
+	pt-watchlist: icon.$ti-file-star,
+	pt-mycontris: icon.$ti-file-user,
+	pt-logout: icon.$ti-logout,
+);
+
+.navigation-item.with-dropdown {
+	position: relative;
+}
+
+.navigation-item-dropdown-menu {
+	@include helpers.reset-list;
+
+	background-color: white;
+	border-radius: var(--nora-border-radius-sm);
+	box-shadow: var(--nora-box-shadow-md), 0 0 1px rgba(0, 0, 0, .3);
+	inset: 100% 0 auto auto;
+	margin-top: var(--nora-space-100);
+	max-width: 24rem;
+	min-width: 16rem;
+	padding-block: var(--nora-space-100);
+	position: absolute;
+	visibility: visible;
+
+	&.align-left {
+		left: auto;
+		right: 0;
+	}
+
+	&.align-right {
+		left: 0;
+		right: auto;
+	}
+
+	&[aria-hidden="true"] {
+		visibility: hidden;
+	}
+
+	&#smartCommentsMenu {
+		min-width: 12rem;
+	}
+
+	>.navigation-item.info {
+		background-color: var(--nora-color-gray-50);
+		font-size: var(--nora-link-overview-header-font-size);
+		font-weight: var(--nora-link-overview-header-font-weight);
+		letter-spacing: var(--nora-link-overview-header-letter-spacing);
+		line-height: var(--nora-link-overview-header-line-height);
+		margin: var(--nora-space-100) 0;
+		padding-block: var(--nora-space-150);
+		padding-inline: var(--nora-space-200);
+		text-transform: var(--nora-link-overview-header-text-transform);
+
+		&:first-child {
+			border-start-start-radius: var(--nora-border-radius-sm);
+			border-start-end-radius: var(--nora-border-radius-sm);
+			margin-block-start: calc(var(--nora-space-100) * -1);
+		}
+	}
+
+	>.navigation-item:not(#ca-nstab-main, #ca-talk) {
+		>.navigation-link {
+			color: inherit;
+			display: flex;
+			font-size: var(--nora-typography-font-size-sm);
+			gap: var(--nora-space-100);
+			line-height: var(--nora-typography-line-height-115);
+			padding-block: var(--nora-space-75);
+			padding-inline-end: var(--nora-space-400);
+			padding-inline-start: var(--nora-space-200);
+			text-decoration-line: none;
+			white-space: nowrap;
+
+			&:hover {
+				background-color: var(--nora-color-blue-800);
+				color: var(--nora-color-white);
+			}
+
+			&:active {
+				background-color: var(--nora-color-blue-900);
+			}
+
+			&::before {
+				@include icon.wrapper;
+
+				content: '';
+				font-size: var(--nora-size-450);
+				flex: 0 0 auto;
+				height: var(--nora-size-450);
+				width: var(--nora-size-450);
+			}
+		}
+
+		@each $id, $icon in $dropdown-link-icons {
+			&##{$id} .navigation-link::before {
+				content: $icon;
+			}
+		}
+	}
+
+	>.navigation-item#ca-nstab-main,
+	>.navigation-item#ca-talk {
+		display: block;
+		float: left;
+		margin-bottom: var(--nora-space-100);
+
+		>.navigation-link {
+			display: block;
+			font-size: var(--nora-typography-font-size-sm);
+			line-height: var(--nora-typography-line-height-115);
+			padding-block: var(--nora-space-100);
+			padding-inline: var(--nora-space-150);
+			text-decoration-line: none;
+			background-color: var(--nora-color-gray-50);
+			color: inherit;
+		}
+
+		&.selected >.navigation-link {
+			background-color: var(--nora-color-blue-700);
+			color: var(--nora-color-white);
+			cursor: default;
+			pointer-events: none;
+		}
+
+		&:not(.selected) >.navigation-link:hover {
+			color: var(--nora-interaction-color);
+		}
+	}
+
+	>.navigation-item#ca-nstab-main {
+		padding-left: var(--nora-space-200);
+	}
+
+	>.navigation-item#ca-nstab-main >.navigation-link {
+		border-start-start-radius: var(--nora-border-radius-sm);
+		border-end-start-radius: var(--nora-border-radius-sm);
+	}
+
+	>.navigation-item#ca-talk >.navigation-link {
+		border-start-end-radius: var(--nora-border-radius-sm);
+		border-end-end-radius: var(--nora-border-radius-sm);
+	}
+
+	>.navigation-item#ca-talk + .navigation-item.info {
+		clear: left;
+	}
+
+}

@@ -105,24 +105,15 @@
 .navigation-bar-secondary-nav {
 	@include navigation-bar.utilities-list;
 
-	.navigation-item:first-child {
+	> .navigation-item:first-child {
 		@include navigation-bar.search-utility-link;
 	}
 
-	.navigation-item:nth-child(2) {
+	> .navigation-item:nth-child(2) {
 		@include navigation-bar.help-utility-link;
 	}
 
-	.navigation-link {
+	> .navigation-item > .navigation-link {
 		@include icon-only-button.icon-only-button(true);
-	}
-}
-
-.navigation-item-dropdown-menu {
-	padding-top: 0.75rem;
-	width: 225px;
-
-	a {
-		font-size: calc(var(--nora-navigation-bar-navigation-item-font-size) - 10%);
 	}
 }

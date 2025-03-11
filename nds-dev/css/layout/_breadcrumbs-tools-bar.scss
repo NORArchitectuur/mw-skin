@@ -37,7 +37,7 @@
     }
   }
 
-  .navigation-item-icon-only a {
+  .navigation-item-icon-only > a {
     @include icon-only-button.icon-only-button;
 
     .visually-hidden {
@@ -51,14 +51,14 @@
     }
   }
 
-  .navigation-item-icon-only:last-child a {
+  .navigation-item-icon-only:last-child > a {
     background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);;
   }
 
   .smartcomments-toggler {
     margin-inline: var(--nora-breadcrumbs-tools-bar-tools-container-column-gap);
 
-    a {
+    > a {
       background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);
       border-radius: var(--nora-breadcrumbs-tools-bar-smart-comments-button-border-radius);
       color: inherit;

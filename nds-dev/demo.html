@@ -128,7 +128,6 @@
             <li id="pt-logout" class="mw-list-item navigation-item"><a
                 href="/index.php?title=Speciaal:Afmelden&amp;returnto=YouriTest" data-mw="interface" title="Afmelden"
                 class="navigation-link">Afmelden</a></li>
-
           </ul>
         </li>
       </ul>
@@ -180,11 +179,13 @@
             aria-controls="smartCommentsMenu">
             SmartComments <span class="status">Uit</span>
           </a>
+
           <ul class="navigation-item-dropdown-menu align-left" role="menu" id="smartCommentsMenu" aria-hidden="true">
             <li class="navigation-item sic-enable-commenting" id="ca-comments" role="none">
               <a class="navigation-link" href="#">Aan</a>
             </li>
           </ul>
+
         </li>
 
         <li class="tools-item navigation-item with-background with-dropdown navigation-item-icon-only">
@@ -193,34 +194,28 @@
             <i class="ti ti-dots"></i>
           </a>
           <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="toolsMenu">
-            <li class="navigation-item info">Naamruimten</li>
+            <li class="navigation-item info">Weergave</li>
             <li id="ca-nstab-main" class="selected mw-list-item navigation-item"><a href="/index.php/YouriTest"
                 title="Inhoudspagina bekijken [⌃⌥c]" accesskey="c" class="navigation-link">Pagina</a></li>
             <li id="ca-talk" class="new mw-list-item navigation-item"><a
                 href="/index.php?title=Overleg:YouriTest&amp;action=edit&amp;redlink=1" rel="discussion"
                 title="Overleg over deze pagina (de pagina bestaat niet) [⌃⌥t]" accesskey="t"
                 class="navigation-link">Overleg</a></li>
-
             <li class="navigation-item info">Meer</li>
-            <li id="ca-delete" class="mw-list-item navigation-item"><a
-                href="/index.php?title=YouriTest&amp;action=delete" title="Deze pagina verwijderen [⌃⌥d]" accesskey="d"
-                class="navigation-link">Verwijderen</a></li>
+            <li id="ca-purge" class="mw-list-item navigation-item"><a href="/index.php?title=YouriTest&amp;action=purge"
+                class="navigation-link">Vernieuwen</a></li>
             <li id="ca-move" class="mw-list-item navigation-item"><a
                 href="/index.php/Speciaal:PaginaHernoemen/YouriTest" title="Deze pagina hernoemen [⌃⌥m]" accesskey="m"
                 class="navigation-link">Hernoemen</a></li>
-            <li id="ca-protect" class="mw-list-item navigation-item"><a
-                href="/index.php?title=YouriTest&amp;action=protect" title="Deze pagina beveiligen [⌃⌥=]" accesskey="="
-                class="navigation-link">Beveiligen</a></li>
-            <li id="ca-unwatch" class="mw-watchlink mw-list-item navigation-item"><a
-                href="/index.php?title=YouriTest&amp;action=unwatch" data-mw="interface"
-                title="Deze pagina van mijn volglijst verwijderen [⌃⌥w]" accesskey="w" class="navigation-link"
-                aria-controls="mw-watchlink-notification">Niet volgen</a></li>
+            <li id="ca-delete" class="mw-list-item navigation-item"><a
+                href="/index.php?title=YouriTest&amp;action=delete" title="Deze pagina verwijderen [⌃⌥d]" accesskey="d"
+                class="navigation-link">Verwijderen</a></li>
             <li id="ca-smartbooks" class="mw-list-item navigation-item"><a
                 href="https://nora2.staging.wikixl.nl/index.php?title=YouriTest&amp;action=smartbook"
                 class="navigation-link">Pagina exporteren</a></li>
-            <li id="ca-purge" class="mw-list-item navigation-item"><a href="/index.php?title=YouriTest&amp;action=purge"
-                class="navigation-link">Vernieuwen</a></li>
-
+            <li id="ca-protect" class="mw-list-item navigation-item"><a
+                href="/index.php?title=YouriTest&amp;action=protect" title="Deze pagina beveiligen [⌃⌥=]" accesskey="="
+                class="navigation-link">Beveiligen</a></li>
           </ul>
         </li>
       </ul>
@@ -615,7 +610,7 @@
                   </dd>
                 </dl>
               </nav>
-          </div>
+            </div>
 
         </section>
       </div>
@@ -993,6 +988,7 @@
     </div>
   </footer>
 
+  <script type="module" src="demo.js"></script>
 </body>
 
 </html>
