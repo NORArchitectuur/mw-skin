@@ -4,6 +4,7 @@
 @use './themes/nora/abstracts/helpers';
 
 @use './components/dropdown';
+@use './components/tooltip';
 
 .visually-hidden {
 	@include helpers.visually-hidden;
