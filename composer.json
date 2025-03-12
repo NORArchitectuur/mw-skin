@@ -33,5 +33,10 @@
     "psr-4": {
       "MediaWiki\\Skin\\NORA\\": "includes/"
     }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }

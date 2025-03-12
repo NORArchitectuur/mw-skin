@@ -122,7 +122,7 @@ class Skin extends SkinMustache {
 				)
 			],
 			'toolMenus' => [
-				( new Portlet( $data['data-portlets-sidebar']['array-portlets-rest'][0] ) )->rewrite(
+				( new Portlet( $data['data-portlets-sidebar']['array-portlets-rest'][0] ?? [] ) )->rewrite(
 					self::DEFAULT_MENU_LI_CLASS,
 					self::DEFAULT_MENU_A_CLASS,
 					[

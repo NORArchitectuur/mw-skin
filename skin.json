@@ -65,7 +65,8 @@
         "resources/js/toc.js",
         "resources/js/export-rdf.js",
         "resources/js/icon-only.js",
-        "resources/js/namespace-choice.js"
+        "resources/js/namespace-choice.js",
+        "resources/js/responsive-tools.js"
       ],
       "messages": [
         "nora-information-panel-toggle-collapse",
