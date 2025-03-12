@@ -51,8 +51,12 @@
     }
   }
 
-  .navigation-item-icon-only:last-child > a {
-    background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);;
+  .navigation-item-icon-only.with-background:not(:last-child) {
+    margin-inline-end: var(--nora-breadcrumbs-tools-bar-tools-container-column-gap);
+  }
+
+  .navigation-item-icon-only.with-background > a {
+    background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);
   }
 
   .smartcomments-toggler {
