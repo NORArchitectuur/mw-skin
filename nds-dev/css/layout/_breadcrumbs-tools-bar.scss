@@ -29,7 +29,7 @@
     gap: 0;
   }
 
-  .tools-item:not(:last-child) {
+  .tools-item:not(:nth-last-child(1), :nth-last-child(2)) {
     display: none;
 
     @include helpers.large-vw {
