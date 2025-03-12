@@ -96,9 +96,11 @@ class PortletChoice extends RewriteComponent {
 			$container->appendChild($radio);
 			$container->appendChild($label);
 		}
+
+		$finalHtml = str_replace('<?xml encoding="utf-8" ?>', '', $dom->saveHTML($container));
 		
 		// Replace the original HTML
-		$portlet['html-items'] = str_replace('<?xml encoding="utf-8" ?>', '', $dom->saveHTML($container));
+		$portlet['html-items'] = '<li class="portlet-choice-container">' . $finalHtml . '</li>';
 		
 		return $portlet;
 	}
