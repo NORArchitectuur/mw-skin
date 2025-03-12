@@ -8,6 +8,7 @@ use MediaWiki\Skin\NORA\Components\InformationPanel;
 use MediaWiki\Skin\NORA\HTMLRewriter\BaseRewriter;
 use MediaWiki\Skin\NORA\HTMLRewriter\Components\IconOnlyPortlet;
 use MediaWiki\Skin\NORA\HTMLRewriter\Components\Portlet;
+use MediaWiki\Skin\NORA\HTMLRewriter\Components\PortletChoice;
 use MediaWiki\Skin\NORA\HTMLRewriter\Rewriter;
 use SkinMustache;
 use Title;
@@ -103,9 +104,10 @@ class Skin extends SkinMustache {
 							$data['data-portlets']['data-namespaces']['label'] .
 						'</li>'
 				],
-				( new Portlet( $data['data-portlets']['data-namespaces'] ) )->rewrite(
-					self::DEFAULT_MENU_LI_CLASS,
-					self::DEFAULT_MENU_A_CLASS
+				( new PortletChoice( $data['data-portlets']['data-namespaces'] ) )->rewrite(
+					'namespace-choice-container',
+					'namespace-choice-radio',
+					'namespace-choice-label'
 				),
 				[
 					'html-items' =>
@@ -120,7 +122,14 @@ class Skin extends SkinMustache {
 				)
 			],
 			'toolMenus' => [
-
+				( new Portlet( $data['data-portlets-sidebar']['array-portlets-rest'][0] ) )->rewrite(
+					self::DEFAULT_MENU_LI_CLASS,
+					self::DEFAULT_MENU_A_CLASS,
+					[
+						't-recentchangeslinked',
+						't-print'
+					]
+				)
 			],
 			'quickToolbar' => ( new IconOnlyPortlet( $data['data-portlets']['data-nora-tool-icons'] ) )->rewrite()
 		];
@@ -203,6 +212,7 @@ class Skin extends SkinMustache {
 			'userMenuAltText' => $this->msg( 'nora-user-menu-text' ),
 			'helpText' => $this->msg( 'nora-menu-help' ),
 			'contentMenu' => $this->msg( 'nora-page-actions' ),
+			'toolsMenu' => $this->msg( 'nora-tools-menu' ),
 			'smartComments' => $this->msg( 'nora-smart-comments' ),
 			'informationPanelToggleExpand' => $this->msg( 'nora-information-panel-toggle-expand' )
 		];

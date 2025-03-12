@@ -1,10 +1,21 @@
 {{#user.isRegistered}}
 <li class="tools-item navigation-item with-background with-dropdown navigation-item-icon-only">
     <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
+        <span class="visually-hidden">{{skinMessages.toolsMenu}}</span>
+        <i class="ti ti-tools"></i>
+    </a>
+    <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="toolsMenu">
+        {{#portletsModified.toolMenus}}
+            {{{html-items}}}
+        {{/portletsModified.toolMenus}}
+    </ul>
+</li>
+<li class="tools-item navigation-item with-background with-dropdown navigation-item-icon-only">
+    <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="contentMenu">
         <span class="visually-hidden">{{skinMessages.contentMenu}}</span>
         <i class="ti ti-dots"></i>
     </a>
-    <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="toolsMenu">
+    <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="contentMenu">
         {{#portletsModified.contentMenus}}
             {{{html-items}}}
         {{/portletsModified.contentMenus}}

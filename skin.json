@@ -43,7 +43,8 @@
       "styles": [
         "dist/assets/mw-nora-components.css",
         "dist/assets/mw-custom.css",
-        "resources/css/main.less"
+        "resources/css/main.less",
+        "resources/css/namespace-choice.less"
       ]
     },
     "skins.nora.smartcomments": {
@@ -64,7 +65,8 @@
         "resources/js/navigation.js",
         "resources/js/toc.js",
         "resources/js/export-rdf.js",
-        "resources/js/icon-only.js"
+        "resources/js/icon-only.js",
+        "resources/js/namespace-choice.js"
       ],
       "messages": [
         "nora-information-panel-toggle-collapse",

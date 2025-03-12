@@ -12,6 +12,7 @@
   "nora-skiplinks-to-navigation": "Go to navigation",
   "nora-toggle-menu": "Show menu",
   "nora-page-actions": "View other page actions",
+  "nora-tools-menu": "Tools menu",
   "nora-parser-function-error-parameter": "Error in parser function $1: invalid parameter $2",
   "nora-smart-comments": "SmartComments",
   "nora-smart-comments-on": "On",

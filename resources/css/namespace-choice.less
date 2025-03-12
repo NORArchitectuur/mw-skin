@@ -1,0 +1,50 @@
+/**
+ * Styles for the namespace choice radio buttons
+ */
+
+.namespace-choice-container {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  width: fit-content;
+}
+
+.namespace-choice-radio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked + .namespace-choice-label {
+    background-color: #0060df;
+    color: white;
+  }
+
+  &:focus-visible + .namespace-choice-label {
+    outline: 2px solid #000;
+    outline-offset: 1px;
+  }
+}
+
+.namespace-choice-label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin: 0;
+  font-weight: normal;
+
+  &:hover {
+    background-color: #eaeaea;
+    color: #333;
+  }
+}
+
+/* When the radio is checked, also style the hover state */
+.namespace-choice-radio:checked + .namespace-choice-label:hover {
+  background-color: #0050c9;
+  color: white;
+} 
