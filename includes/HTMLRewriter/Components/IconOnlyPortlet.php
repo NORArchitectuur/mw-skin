@@ -17,6 +17,7 @@ class IconOnlyPortlet extends RewriteComponent {
 
 		$dom = $this->getDOMDocument( $portlet['html-items'] );
 		$xpath = new DOMXPath( $dom );
+		
 		foreach ( $xpath->query( "//a" ) as $item ) {
 			// Remove unwanted attributes
 			$item->removeAttribute( 'title' );

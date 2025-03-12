@@ -29,7 +29,7 @@
     gap: 0;
   }
 
-  .tools-item:not(:last-child) {
+  .tools-item:not(:nth-last-child(1), :nth-last-child(2)) {
     display: none;
 
     @include helpers.large-vw {
@@ -37,7 +37,7 @@
     }
   }
 
-  .navigation-item-icon-only a {
+  .navigation-item-icon-only > a {
     @include icon-only-button.icon-only-button;
 
     .visually-hidden {
@@ -51,14 +51,18 @@
     }
   }
 
-  .navigation-item-icon-only:last-child a {
-    background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);;
+  .navigation-item-icon-only.with-background:not(:last-child) {
+    margin-inline-end: var(--nora-breadcrumbs-tools-bar-tools-container-column-gap);
+  }
+
+  .navigation-item-icon-only.with-background > a {
+    background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);
   }
 
   .smartcomments-toggler {
     margin-inline: var(--nora-breadcrumbs-tools-bar-tools-container-column-gap);
 
-    a {
+    > a {
       background-color: var(--nora-breadcrumbs-tools-bar-smart-comments-button-background-color);
       border-radius: var(--nora-breadcrumbs-tools-bar-smart-comments-button-border-radius);
       color: inherit;

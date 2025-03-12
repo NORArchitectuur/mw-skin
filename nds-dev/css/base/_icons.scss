@@ -19,6 +19,91 @@
   }
 }
 
+.ti-tools {
+  &:before {
+    content: $ti-tools; 
+  }
+}
+.ti-external-link {
+  &:before {
+    content: $ti-external-link; 
+  }
+}
+.ti-file-user {
+  &:before {
+    content: $ti-file-user; 
+  }
+}
+.ti-file-star {
+  &:before {
+    content: $ti-file-star; 
+  }
+}
+.ti-logout {
+  &:before {
+    content: $ti-logout; 
+  }
+}
+.ti-settings {
+  &:before {
+    content: $ti-settings; 
+  }
+}
+.ti-links-overview {
+  &:before {
+    content: $ti-links-overview; 
+  }
+}
+.ti-files {
+  &:before {
+    content: $ti-files; 
+  }
+}
+.ti-pencil {
+  &:before {
+    content: $ti-pencil; 
+  }
+}
+.ti-upload {
+  &:before {
+    content: $ti-upload; 
+  }
+}
+.ti-link {
+  &:before {
+    content: $ti-link; 
+  }
+}
+.ti-arrow-right-to-arc {
+  &:before {
+    content: $ti-arrow-right-to-arc; 
+  }
+}
+.ti-list-details {
+  &:before {
+    content: $ti-list-details; 
+  }
+}
+.ti-refresh {
+  &:before {
+    content: $ti-refresh; 
+  }
+}
+.ti-trash {
+  &:before {
+    content: $ti-trash; 
+  }
+}
+.ti-file-export {
+  &:before {
+    content: $ti-file-export; 
+  }
+}
+.ti-lock {
+  &:before {
+    content: $ti-lock; 
+  }
+}
 .ti-code-dots {
   &:before {
     content: $ti-code-dots; 

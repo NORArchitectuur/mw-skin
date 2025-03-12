@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NORA Components</title>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- jQuery UI Stylesheet -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- jQuery UI JavaScript -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="css/mw-nora-components.scss">
   <link rel="stylesheet" href="css/mw-custom.scss">
 </head>
@@ -128,7 +133,6 @@
             <li id="pt-logout" class="mw-list-item navigation-item"><a
                 href="/index.php?title=Speciaal:Afmelden&amp;returnto=YouriTest" data-mw="interface" title="Afmelden"
                 class="navigation-link">Afmelden</a></li>
-
           </ul>
         </li>
       </ul>
@@ -149,31 +153,19 @@
     </div>
     <div class="tools-container">
       <ul class="tools">
-        <li id="ca-edit" class="tools-item navigation-item navigation-item-icon-only mw-list-item">
-          <a href="/index.php?title=YouriTest&amp;action=edit" class="tool-edit navigation-link">
-            <span class="visually-hidden">Bewerken</span>
-            <i class="ti ti-edit"></i>
-          </a>
-        </li>
-        <li id="ca-formedit" class="tools-item navigation-item navigation-item-icon-only mw-list-item">
-          <a href="/index.php?title=AES&amp;action=formedit" class="tool-formedit navigation-link">
-            <span class="visually-hidden">Bewerken</span>
-            <i class="ti ti-formedit"></i>
-          </a>
-        </li>
-        <li id="ca-unwatch" class="tools-item navigation-item navigation-item-icon-only mw-list-item">
-          <a href="/index.php?title=YouriTest&amp;action=unwatch" class="tool-unwatch navigation-link"
-            data-mw="interface">
-            <span class="visually-hidden">Niet volgen</span>
-            <i class="ti ti-unwatch"></i>
-          </a>
-        </li>
-        <li id="ca-history" class="tools-item navigation-item navigation-item-icon-only mw-list-item">
-          <a href="/index.php?title=YouriTest&amp;action=history" class="tool-history navigation-link">
-            <span class="visually-hidden">Geschiedenis weergeven</span>
-            <i class="ti ti-history"></i>
-          </a>
-        </li>
+        <li id="ca-edit" class="tools-item navigation-item navigation-item-icon-only mw-list-item"><a
+            href="/index.php?title=Informatie&amp;action=edit" class="tool-edit navigation-link"
+            title="Bron bewerken"><span class="visually-hidden">Bron bewerken</span><i class="ti ti-edit"></i></a></li>
+        <li id="ca-formedit" class="tools-item navigation-item navigation-item-icon-only mw-list-item"><a
+            href="/index.php?title=Informatie&amp;action=formedit" class="tool-formedit navigation-link"
+            title="Bewerken"><span class="visually-hidden">Bewerken</span><i class="ti ti-formedit"></i></a></li>
+        <li id="ca-watch" class="tools-item navigation-item navigation-item-icon-only mw-list-item"><a
+            href="/index.php?title=Informatie&amp;action=watch" class="tool-watch navigation-link" data-mw="interface"
+            title="Volgen"><span class="visually-hidden">Volgen</span><i class="ti ti-watch"></i></a></li>
+        <li id="ca-history" class="tools-item navigation-item navigation-item-icon-only mw-list-item"><a
+            href="/index.php?title=Informatie&amp;action=history" class="tool-history navigation-link"
+            title="Geschiedenis weergeven"><span class="visually-hidden">Geschiedenis weergeven</span><i
+              class="ti ti-history"></i></a></li>
 
         <li class="tools-item navigation-item smartcomments-toggler with-background with-dropdown">
           <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false"
@@ -186,40 +178,68 @@
             </li>
           </ul>
         </li>
+        <li class="tools-item navigation-item with-background with-dropdown navigation-item-icon-only expanded">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu"
+            title="Tools menu">
+            <span class="visually-hidden">Tools menu</span>
+            <i class="ti ti-tools"></i>
+          </a>
+          <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="toolsMenu">
+            <li id="t-whatlinkshere" class="mw-list-item navigation-item"><a
+                href="/index.php/Speciaal:VerwijzingenNaarHier/Informatie"
+                title="Lijst met alle pagina's die naar deze pagina verwijzen [ctrl-option-j]" accesskey="j"
+                class="navigation-link">Verwijzingen naar deze pagina</a></li>
+            <li id="t-upload" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:Uploaden"
+                title="Bestanden uploaden [ctrl-option-u]" accesskey="u" class="navigation-link">Bestand uploaden</a>
+            </li>
+            <li id="t-specialpages" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:SpecialePaginas"
+                title="Lijst met alle speciale pagina's [ctrl-option-q]" accesskey="q" class="navigation-link">Speciale
+                pagina's</a></li>
+            <li id="t-permalink" class="mw-list-item navigation-item"><a
+                href="/index.php?title=Informatie&amp;oldid=70655"
+                title="Permanente koppeling naar deze versie van deze pagina" class="navigation-link">Permanente
+                koppeling</a></li>
+            <li id="t-smwbrowselink" class="mw-list-item navigation-item"><a
+                href="/index.php/Speciaal:Bekijken/:Informatie" rel="search" class="navigation-link">Eigenschappen
+                bekijken</a></li>
 
+          </ul>
+        </li>
         <li class="tools-item navigation-item with-background with-dropdown navigation-item-icon-only">
-          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="contentMenu"
+            title="Overige pagina handelingen bekijken">
             <span class="visually-hidden">Overige pagina handelingen bekijken</span>
             <i class="ti ti-dots"></i>
           </a>
-          <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="toolsMenu">
+          <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="contentMenu">
             <li class="navigation-item info">Naamruimten</li>
-            <li id="ca-nstab-main" class="selected mw-list-item navigation-item"><a href="/index.php/YouriTest"
-                title="Inhoudspagina bekijken [⌃⌥c]" accesskey="c" class="navigation-link">Pagina</a></li>
-            <li id="ca-talk" class="new mw-list-item navigation-item"><a
-                href="/index.php?title=Overleg:YouriTest&amp;action=edit&amp;redlink=1" rel="discussion"
-                title="Overleg over deze pagina (de pagina bestaat niet) [⌃⌥t]" accesskey="t"
-                class="navigation-link">Overleg</a></li>
-
+            <li class="portlet-choice-container">
+              <div class="namespace-choice-container">
+                <input type="radio" id="radio-ca-nstab-main" name="namespace-choice" class="namespace-choice-radio"
+                  value="ca-nstab-main" data-href="/index.php/Informatie" checked="">
+                <label for="radio-ca-nstab-main" class="namespace-choice-label"
+                  title="Inhoudspagina bekijken [c]">Pagina</label>
+                <input type="radio" id="radio-ca-talk" name="namespace-choice" class="namespace-choice-radio"
+                  value="ca-talk" data-href="/index.php?title=Overleg:Informatie&amp;action=edit&amp;redlink=1">
+                <label for="radio-ca-talk" class="namespace-choice-label"
+                  title="Overleg over deze pagina (de pagina bestaat niet) [t]">Overleg</label>
+              </div>
+            </li>
             <li class="navigation-item info">Meer</li>
             <li id="ca-delete" class="mw-list-item navigation-item"><a
-                href="/index.php?title=YouriTest&amp;action=delete" title="Deze pagina verwijderen [⌃⌥d]" accesskey="d"
-                class="navigation-link">Verwijderen</a></li>
+                href="/index.php?title=Informatie&amp;action=delete" title="Deze pagina verwijderen [ctrl-option-d]"
+                accesskey="d" class="navigation-link">Verwijderen</a></li>
             <li id="ca-move" class="mw-list-item navigation-item"><a
-                href="/index.php/Speciaal:PaginaHernoemen/YouriTest" title="Deze pagina hernoemen [⌃⌥m]" accesskey="m"
-                class="navigation-link">Hernoemen</a></li>
+                href="/index.php/Speciaal:PaginaHernoemen/Informatie" title="Deze pagina hernoemen [ctrl-option-m]"
+                accesskey="m" class="navigation-link">Hernoemen</a></li>
             <li id="ca-protect" class="mw-list-item navigation-item"><a
-                href="/index.php?title=YouriTest&amp;action=protect" title="Deze pagina beveiligen [⌃⌥=]" accesskey="="
-                class="navigation-link">Beveiligen</a></li>
-            <li id="ca-unwatch" class="mw-watchlink mw-list-item navigation-item"><a
-                href="/index.php?title=YouriTest&amp;action=unwatch" data-mw="interface"
-                title="Deze pagina van mijn volglijst verwijderen [⌃⌥w]" accesskey="w" class="navigation-link"
-                aria-controls="mw-watchlink-notification">Niet volgen</a></li>
+                href="/index.php?title=Informatie&amp;action=protect" title="Deze pagina beveiligen [ctrl-option-=]"
+                accesskey="=" class="navigation-link">Beveiligen</a></li>
             <li id="ca-smartbooks" class="mw-list-item navigation-item"><a
-                href="https://nora2.staging.wikixl.nl/index.php?title=YouriTest&amp;action=smartbook"
+                href="https://nora2.dev139.wikixl.nl/index.php?title=Informatie&amp;action=smartbook"
                 class="navigation-link">Pagina exporteren</a></li>
-            <li id="ca-purge" class="mw-list-item navigation-item"><a href="/index.php?title=YouriTest&amp;action=purge"
-                class="navigation-link">Vernieuwen</a></li>
+            <li id="ca-purge" class="mw-list-item navigation-item"><a
+                href="/index.php?title=Informatie&amp;action=purge" class="navigation-link">Vernieuwen</a></li>
 
           </ul>
         </li>
@@ -615,7 +635,7 @@
                   </dd>
                 </dl>
               </nav>
-          </div>
+            </div>
 
         </section>
       </div>
@@ -993,6 +1013,7 @@
     </div>
   </footer>
 
+  <script type="module" src="demo.js"></script>
 </body>
 
 </html>

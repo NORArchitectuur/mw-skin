@@ -6,9 +6,13 @@ $( document ).ready( function () {
 		$( this ).parent().attr( 'title', $( this ).text() );
 		$( this ).parent().tooltip( {
 			position: {
-				my: "left top+5",
-				at: "left bottom"
-			}
+				my: "center top+4",
+				at: "center bottom", 
+				collision: "fit" 
+			},
+			show: false,
+			hide: false,
+			tooltipClass: "nora-tooltip",
 		} );
 
 	} );

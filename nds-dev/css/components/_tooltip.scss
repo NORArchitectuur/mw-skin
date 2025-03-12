@@ -1,0 +1,13 @@
+.ui-tooltip.nora-tooltip {
+  background-color: var(--nora-color-blue-950);
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: var(--nora-box-shadow-sm);
+  color: var(--nora-color-white);
+  font-family: var(--nora-document-font-family);
+  font-size: var(--nora-typography-font-size-xs);
+  line-height: var(--nora-typography-line-height-135);
+  max-width: 20rem;
+  padding-block: var(--nora-space-75);
+  padding-inline: var(--nora-space-150);
+}
