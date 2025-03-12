@@ -76,7 +76,7 @@ $dropdown-link-icons: (
 		}
 	}
 
-	>.navigation-item:not(#ca-nstab-main, #ca-talk) {
+	>.navigation-item {
 		>.navigation-link {
 			color: inherit;
 			display: flex;
@@ -116,51 +116,54 @@ $dropdown-link-icons: (
 		}
 	}
 
-	>.navigation-item#ca-nstab-main,
-	>.navigation-item#ca-talk {
-		display: block;
-		float: left;
-		margin-bottom: var(--nora-space-100);
+	.namespace-choice-container {
+		display: flex;
+		padding-inline: var(--nora-space-200);
+	}
 
-		>.navigation-link {
-			display: block;
-			font-size: var(--nora-typography-font-size-sm);
-			line-height: var(--nora-typography-line-height-115);
-			padding-block: var(--nora-space-100);
-			padding-inline: var(--nora-space-150);
-			text-decoration-line: none;
-			background-color: var(--nora-color-gray-50);
-			color: inherit;
-		}
+	.namespace-choice-radio {
+		@include helpers.visually-hidden;
 
-		&.selected >.navigation-link {
+		&:checked+.namespace-choice-label {
 			background-color: var(--nora-color-blue-700);
+			border-color: transparent;
 			color: var(--nora-color-white);
 			cursor: default;
-			pointer-events: none;
 		}
 
-		&:not(.selected) >.navigation-link:hover {
+		&:not(:checked)+.namespace-choice-label:hover {
 			color: var(--nora-interaction-color);
+			background-color: var(--nora-color-white);
+		}
+
+		&:focus-visible+.namespace-choice-label {
+			outline: 2px solid #000;
+			outline-offset: 1px;
 		}
 	}
 
-	>.navigation-item#ca-nstab-main {
-		padding-left: var(--nora-space-200);
-	}
+	.namespace-choice-label {
+		border: var(--nora-size-25) solid var(--nora-color-gray-100);
+		background-color: var(--nora-color-gray-50);
+		color: inherit;
+		cursor: pointer;
+		display: block;
+		font-size: var(--nora-typography-font-size-sm);
+		line-height: var(--nora-typography-line-height-115);
+		padding-block: var(--nora-space-100);
+		padding-inline: var(--nora-space-150);
+		text-decoration-line: none;
 
-	>.navigation-item#ca-nstab-main >.navigation-link {
-		border-start-start-radius: var(--nora-border-radius-sm);
-		border-end-start-radius: var(--nora-border-radius-sm);
-	}
+		&:first-of-type {
+			border-end-start-radius: var(--nora-border-radius-sm);
+			border-inline-end-width: 0;
+			border-start-start-radius: var(--nora-border-radius-sm);
+		}
 
-	>.navigation-item#ca-talk >.navigation-link {
-		border-start-end-radius: var(--nora-border-radius-sm);
-		border-end-end-radius: var(--nora-border-radius-sm);
+		&:last-of-type {
+			border-end-end-radius: var(--nora-border-radius-sm);
+			border-inline-start-width: 0;
+			border-start-end-radius: var(--nora-border-radius-sm);
+		}
 	}
-
-	>.navigation-item#ca-talk + .navigation-item.info {
-		clear: left;
-	}
-
 }

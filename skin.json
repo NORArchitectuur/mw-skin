@@ -43,8 +43,7 @@
       "styles": [
         "dist/assets/mw-nora-components.css",
         "dist/assets/mw-custom.css",
-        "resources/css/main.less",
-        "resources/css/namespace-choice.less"
+        "resources/css/main.less"
       ]
     },
     "skins.nora.smartcomments": {
