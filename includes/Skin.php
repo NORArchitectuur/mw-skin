@@ -70,14 +70,19 @@ class Skin extends SkinMustache {
 	 */
 	private function getSkinComponents( Rewriter $rewriter ): array {
 		$informationPanel = new InformationPanel( $this->getTitle(), $rewriter );
-		$backgroundImage = new BackgroundImage( $this->getTitle(), $rewriter );
+		$coverImage = new BackgroundImage( $this->getTitle(), $rewriter );
+		$tocImage = new BackgroundImage( $this->getTitle(), $rewriter, 'NoraTocImageProperty' );
 
 		$res = [
 			'information-panel' => $informationPanel->getData()
 		];
 
-		if ( count( $backgroundImage->getData() ) >= 1 ) {
-			$res['background-image'] = $backgroundImage->getData()[0];
+		if ( count( $coverImage->getData() ) >= 1 ) {
+			$res['background-image'] = $coverImage->getData()[0];
+		}
+
+		if ( count( $tocImage->getData() ) >= 1 ) {
+			$res['toc-image'] = $tocImage->getData()[0];
 		}
 
 		return $res;
