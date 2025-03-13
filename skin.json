@@ -88,13 +88,10 @@
   ],
   "config": {
     "NoraBackgroundCoverProperty": {
-      "value": "Plaatje"
+      "value": "Banner"
     },
-    "NoraElementtypeProperty": {
-      "value": "Elementtype"
-    },
-    "NoraLandingspageElementtype": {
-      "value": "Landingspagina"
+    "NoraTocImageProperty": {
+      "value": "Afbeelding"
     },
     "NoraHelpTitle": {
       "value": "Project:Help"

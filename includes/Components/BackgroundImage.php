@@ -16,9 +16,15 @@ class BackgroundImage implements IComponent {
 	/**
 	 * @inheritDoc
 	 */
-	public function __construct( Title $title, Rewriter $rewriter ) {
+	public function __construct(
+		Title $title,
+		Rewriter $rewriter,
+		string $propertyName = 'NoraBackgroundCoverProperty'
+	) {
 		$this->dataItem = DIWikiPage::newFromTitle( $title );
-		$this->propertyName = MediaWikiServices::getInstance()->getMainConfig()->get( 'NoraBackgroundCoverProperty' );
+		$this->propertyName = MediaWikiServices::getInstance()->getMainConfig()->get(
+			$propertyName
+		);
 	}
 
 	/**
