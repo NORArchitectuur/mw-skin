@@ -5,11 +5,11 @@
   @include article-section.article-section;
 }
 
-.content-navigation {
+.page-section-article__side-column {
   @include article-section.side-column;
 }
 
-.content-container {
+.page-section-article__content {
   @include article-section.content;
 }
 
