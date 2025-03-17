@@ -1,29 +1,19 @@
-{{#components.toc-image}}
-<!-- Table of Contents image -->
-<figure class="content-navigation-image">
-    <img
-        src="{{components.toc-image}}"
-        class="content-navigation-image__image"
-        alt=""
-    />
-</figure>
-<!-- /Table of Contents image -->
-{{/components.toc-image}}
-
 <!-- Table of Contents -->
-<h6>
-    <a href="#" aria-haspopup="true" aria-expanded="false" aria-controls="contentNavigationNav">
-        {{skinMessages.tocHeading}}
-    </a>
-</h6>
-<ul class="content-navigation-nav" id="contentNavigationNav" aria-hidden="true">
-    {{#array-sections}}
-        {{!
-            The design only shows the first level of the TOC, hence we don't have an array of sub-sections.
-        !}}
-        <li class="navigation-item">
-            <a class="navigation-link" href="#{{anchor}}">{{line}}</a>
-        </li>
-    {{/array-sections}}
-</ul>
+<div class="content-navigation-container">
+    <h6>
+        <a href="#" aria-haspopup="true" aria-expanded="false" aria-controls="contentNavigationNav">
+            {{skinMessages.tocHeading}}
+        </a>
+    </h6>
+    <ul class="content-navigation-nav" id="contentNavigationNav" aria-hidden="true">
+        {{#array-sections}}
+            {{!
+                The design only shows the first level of the TOC, hence we don't have an array of sub-sections.
+            !}}
+            <li class="navigation-item">
+                <a class="navigation-link" href="#{{anchor}}">{{line}}</a>
+            </li>
+        {{/array-sections}}
+    </ul>
+</div>
 <!-- /Table of Contents -->

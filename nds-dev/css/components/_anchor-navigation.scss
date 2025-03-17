@@ -2,6 +2,8 @@
 @use '../abstracts/icon';
 @use '../themes/nora/abstracts/helpers';
 
+
+
 .content-navigation-container {
   border-radius: .25rem;
   border: 1px solid var(--nora-color-gray-100);
@@ -10,13 +12,8 @@
   gap: .5rem;
   padding: .5rem;
 
-  .content-navigation-image {
-      width: auto;
-      .content-navigation-image__image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }  
+  @at-root .nora-figure + & {
+    margin-block-start: var(--nora-space-500);
   }
 
   @include helpers.large-vw {

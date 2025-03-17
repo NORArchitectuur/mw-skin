@@ -1,7 +1,16 @@
 <section class="content-navigation">
-    <div class="content-navigation-container">
-        {{>components/TableOfContents}}
-    </div>
+    {{#components.toc-image}}
+    <!-- Table of Contents image -->
+    <figure class="nora-figure">
+        <img src="{{components.toc-image}}" class="nora-figure__media" alt="" />
+        <figcaption class="nora-figure__caption">
+            <a href="#" class="nora-figure__info-link">Afbeeldingsinformatie</a>
+        </figcaption>
+    </figure>
+    <!-- /Table of Contents image -->
+    {{/components.toc-image}}
+    
+    {{>components/TableOfContents}}
     {{!
         @todo add semantic slot here
     !}}
