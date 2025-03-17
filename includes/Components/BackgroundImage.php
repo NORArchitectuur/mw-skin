@@ -13,6 +13,8 @@ class BackgroundImage implements IComponent {
 
 	private string $propertyName;
 
+	private ?string $propertyValue;
+
 	/**
 	 * @inheritDoc
 	 */
@@ -25,6 +27,16 @@ class BackgroundImage implements IComponent {
 		$this->propertyName = MediaWikiServices::getInstance()->getMainConfig()->get(
 			$propertyName
 		);
+		$this->propertyValue = SemanticStore::getInstance()->getPropertyValue( $this->dataItem, $this->propertyName );
+	}
+
+	/**
+	 * Get the property value
+	 *
+	 * @return string
+	 */
+	public function getPropertyValue(): string {
+		return Title::newFromText( $this->propertyValue, NS_FILE )->getLocalURL();
 	}
 
 	/**

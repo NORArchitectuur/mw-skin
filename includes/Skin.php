@@ -83,6 +83,7 @@ class Skin extends SkinMustache {
 
 		if ( count( $tocImage->getData() ) >= 1 ) {
 			$res['toc-image'] = $tocImage->getData()[0];
+			$res['toc-image-url'] = $tocImage->getPropertyValue();
 		}
 
 		return $res;
