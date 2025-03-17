@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--nora-figure-gap);
+  margin: 0;
 }
 
 @mixin media {
@@ -18,4 +19,15 @@
   font-size: var(--nora-figure-figcaption-font-size);
   gap: var(--nora-figure-figcaption-gap);
   line-height: var(--nora-figure-figcaption-line-height);
+}
+
+@mixin info-link {
+  align-items: center;
+  display: flex;
+  gap: .25em;
+  margin-inline-start: auto;
+
+  &:any-link {
+    color: inherit;
+  }
 }
