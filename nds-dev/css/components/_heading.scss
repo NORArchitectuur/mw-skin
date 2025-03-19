@@ -24,24 +24,29 @@
   margin-block-end: revert;
 }
 
-.mw-body-content {
+.mw-parser-output {
 
-  @include heading-2.utrecht-html-h2;
-  @include heading-3.utrecht-html-h3;
-  @include heading-4.utrecht-html-h4;
-  @include heading-5.utrecht-html-h5;
-  @include heading-6.utrecht-html-h6;
+  &> {
+    @include heading-2.utrecht-html-h2;
+    @include heading-3.utrecht-html-h3;
+    @include heading-4.utrecht-html-h4;
+    @include heading-5.utrecht-html-h5;
+    @include heading-6.utrecht-html-h6;
+  }
 
   /**
    * Revert margins to browser default
    */
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-block-end: revert;
-    margin-block-start: revert;
+
+  &> {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-block-end: revert;
+      margin-block-start: revert;
+    }
   }
 
 }
