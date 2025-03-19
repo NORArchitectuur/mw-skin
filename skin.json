@@ -42,6 +42,7 @@
     "skins.nora.styles": {
       "styles": [
         "dist/assets/mw-nora-components.css",
+        "dist/assets/mw-templates.css",
         "dist/assets/mw-custom.css",
         "resources/css/main.less"
       ]

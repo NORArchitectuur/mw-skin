@@ -20,6 +20,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         'mw-nora-components': path.resolve(__dirname, 'nds-dev/css/mw-nora-components.scss'),
+        'mw-templates': path.resolve(__dirname, 'nds-dev/css/mw-templates.scss'),
         'mw-custom': path.resolve(__dirname, 'nds-dev/css/mw-custom.scss')
       },
       output: {
