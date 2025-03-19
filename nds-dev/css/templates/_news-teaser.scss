@@ -1,0 +1,13 @@
+@use '../abstracts/teaser';
+
+.nora-news-teaser {
+  @include teaser.teaser;
+}
+
+.nora-news-teaser__date {
+  @include teaser.date;
+}
+
+.nora-news-teaser__title {
+  @include teaser.title;
+}

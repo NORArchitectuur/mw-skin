@@ -1,0 +1,26 @@
+@mixin teaser {
+  display: flex;
+  flex-flow: column;
+  gap: var(--nora-space-50);
+}
+
+@mixin date {
+  color: var(--nora-document-subtle-color);
+  font-size: var(--nora-typography-font-size-sm);
+  line-height: var(--nora-typography-line-height-120);
+  margin: 0;
+}
+
+@mixin title {
+  font-size: var(--nora-typography-font-size-md);
+  line-height: var(--nora-typography-line-height-120);
+  margin: 0;
+
+  a:any-link {
+    text-decoration-line: none;
+  }
+
+  a:hover {
+    text-decoration-line: underline;
+  }
+}

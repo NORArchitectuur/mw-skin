@@ -26,6 +26,7 @@
   padding-inline: var(--nora-space-400);
   position: relative;
   overflow: hidden;
+  z-index: 0;
 
   &::after {
     display: block;
@@ -102,7 +103,7 @@
     }
   
     &[href^="http"]::before {
-      content: icon.$ti-image-maximize;
+      content: icon.$ti-external-link;
     }
   }
 }

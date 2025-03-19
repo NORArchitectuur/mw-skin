@@ -1,0 +1,29 @@
+@use '../abstracts/teaser';
+
+.nora-event-teaser {
+  @include teaser.teaser;
+
+  justify-content: center;
+  min-height: 4rem;
+  padding-inline-start: 5rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    left: 0;
+    background-image: url('/images/calendar-purple.svg');
+    background-size: 100%;
+    position: absolute;
+  }
+}
+
+.nora-event-teaser__date {
+  @include teaser.date;
+}
+
+.nora-event-teaser__title {
+  @include teaser.title;
+}

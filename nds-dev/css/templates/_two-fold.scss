@@ -1,0 +1,14 @@
+@use '../themes/nora/abstracts/helpers';
+
+.nora-two-fold {
+  display: flex;
+  flex-flow: column;
+  gap: var(--nora-space-400);
+  margin-block-end: var(--nora-space-600);
+  margin-block-start: var(--nora-space-400);
+
+  @include helpers.large-vw {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

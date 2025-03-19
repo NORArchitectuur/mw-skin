@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/skins/NORA/dist/",
+    "build": "vite build --base=/skins/NORA/dist/ --emptyOutDir",
     "preview": "vite preview"
   },
   "devDependencies": {
