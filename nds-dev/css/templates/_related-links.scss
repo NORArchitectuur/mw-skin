@@ -102,7 +102,7 @@
     }
   
     &[href^="http"]::before {
-      content: icon.$ti-image-maximize;
+      content: icon.$ti-external-link;
     }
   }
 }
