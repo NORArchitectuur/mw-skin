@@ -1,0 +1,26 @@
+@use '../abstracts/short-list';
+
+.nora-latest-news {
+  @include short-list.short-list;
+}
+
+.nora-latest-news__header {
+  @include short-list.header;
+}
+
+.nora-latest-news__heading {
+  @include short-list.heading;
+}
+
+.nora-latest-news__list {
+  @include short-list.list;
+}
+
+.nora-latest-news__item {
+  @include short-list.item;
+}
+
+.nora-latest-news__more-link {
+  @include short-list.more-link;
+}
+

@@ -1,0 +1,65 @@
+@use '../abstracts/icon';
+@use '@utrecht/heading-4-css/src/mixin' as heading-4;
+
+@mixin short-list {
+  display: flex;
+  flex-flow: column;
+  gap: var(--nora-space-200);
+  margin-block-end: var(--nora-space-600);
+  margin-block-start: var(--nora-space-400);
+
+  @at-root .nora-two-fold & {
+    margin-block: 0;
+  }
+}
+
+@mixin header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a:any-link {
+    color: var(--nora-document-subtle-color);
+    font-size: var(--nora-typography-font-size-sm);
+  }
+}
+
+@mixin heading {
+  @include heading-4.utrecht-heading-4;
+}
+
+@mixin list {
+  border: var(--nora-size-25) solid var(--nora-color-gray-75);
+  border-radius: var(--nora-border-radius-sm);
+}
+
+@mixin item {
+  padding-block: var(--nora-space-150);
+  padding-inline: var(--nora-space-200);
+
+  &:not(:last-child) {
+    border-block-end: var(--nora-size-25) solid var(--nora-color-gray-75);
+  }
+}
+
+@mixin more-link {
+  p {
+    margin: 0;
+  }
+  
+  a:any-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--nora-typography-font-size-sm);
+    padding-block: var(--nora-space-150);
+    padding-inline: var(--nora-space-200);
+    text-decoration-line: none;
+
+    &::after {
+      @include icon.make(icon.$ti-arrow-right);
+
+      font-size: 1.125rem;
+    }
+  }
+}

@@ -3,8 +3,9 @@
 .nora-two-fold {
   display: flex;
   flex-flow: column;
-  gap: var(--nora-space-150);
-  margin-block: var(--nora-space-400);
+  gap: var(--nora-space-400);
+  margin-block-end: var(--nora-space-600);
+  margin-block-start: var(--nora-space-400);
 
   @include helpers.large-vw {
     display: grid;

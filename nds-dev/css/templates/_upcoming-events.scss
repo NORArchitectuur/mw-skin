@@ -1,0 +1,26 @@
+@use '../abstracts/short-list';
+
+.nora-upcoming-events {
+  @include short-list.short-list;
+}
+
+.nora-upcoming-events__header {
+  @include short-list.header;
+}
+
+.nora-upcoming-events__heading {
+  @include short-list.heading;
+}
+
+.nora-upcoming-events__list {
+  @include short-list.list;
+}
+
+.nora-upcoming-events__item {
+  @include short-list.item;
+}
+
+.nora-upcoming-events__more-link {
+  @include short-list.more-link;
+}
+
