@@ -20,7 +20,8 @@
   @include short-list.item;
 }
 
-.nora-latest-news__more-link {
+.nora-latest-news__more-link,
+.nora-latest-news__list .smw-template-furtherresults {
   @include short-list.more-link;
 }
 

@@ -20,7 +20,9 @@
   @include short-list.item;
 }
 
-.nora-upcoming-events__more-link {
+.nora-upcoming-events__more-link,
+.nora-upcoming-events__list .smw-template-furtherresults {
   @include short-list.more-link;
 }
+
 
