@@ -1,0 +1,21 @@
+.mw-editsection {
+  border-inline-start: var(--nora-size-25) solid var(--nora-color-gray-100);
+  display: inline-block;
+  font-size: var(--nora-typography-font-size-sm);
+  font-weight: var(--nora-typography-font-weight-normal);
+  margin-left: var(--nora-space-150);
+  padding-inline-start: var(--nora-space-150);
+  vertical-align: middle;
+
+  a:any-link {
+    color: var(--nora-document-subtle-color);
+  }
+
+  a:hover {
+    color: var(--nl-link-hover-color);
+  }
+}
+
+.mw-editsection-bracket {
+  display: none;
+}
