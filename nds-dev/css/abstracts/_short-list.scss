@@ -76,4 +76,9 @@
   display: flex;
   align-items: center;
   text-wrap: balance;
+  justify-content: center;
+
+  p {
+    max-width: 50ch;
+  }
 }
