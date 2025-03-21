@@ -1,0 +1,64 @@
+@use '../themes/nora/abstracts/helpers';
+
+.nora-user-profile-header {
+  background-color: var(--nora-color-blue-50);
+  border-radius: var(--nora-border-radius-md);
+  display: flex;
+  flex-flow: column;
+  gap: var(--nora-space-200) var(--nora-space-400);
+  padding-block: var(--nora-space-200);
+  padding-inline: var(--nora-space-300);
+  margin-block: var(--nora-space-400);
+
+  @include helpers.large-vw {
+    align-items: center;
+    flex-flow: row;
+    padding-block: var(--nora-space-300);
+    padding-inline: var(--nora-space-400);
+  }
+}
+
+.nora-user-profile-header__avatar-wrapper {
+  align-self: center;
+
+  a {
+    display: block;
+    width: 12rem;
+
+    img {
+      border-radius: var(--nora-border-radius-sm);
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+.nora-user-profile-header__details {
+  display: flex;
+  flex-flow: column;
+  gap: var(--nora-space-75);
+  font-size: var(--nora-typography-font-size-sm);
+  line-height: var(--nora-typography-line-height-120);
+  padding: 0;
+  margin: 0;
+
+  @include helpers.large-vw {
+    font-size: var(--nora-typography-font-size-md2);
+  }
+}
+
+.nora-user-profile-header__details-group {
+  display: flex;
+  gap: 0 var(--nora-space-50);
+  flex-wrap: wrap;
+
+  dt {
+    white-space: nowrap;
+  }
+
+  dd {
+    margin: 0;
+    font-weight: var(--nora-typography-font-weight-bold);
+  }
+}
