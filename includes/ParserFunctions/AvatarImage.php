@@ -27,15 +27,13 @@ class AvatarImage extends MustacheParserFunction {
 	 * @return array
 	 */
 	public static function render( Parser $parser, array $options = [] ) {
-		if ( $hasErrors = parent::hasErrors( $parser, $options ) ) {
-			return $hasErrors;
+		if ( parent::hasErrors( $parser, $options ) ) {
+			return '';
 		}
 
 		$page = Title::newFromText( $options['user'], NS_USER );
 		if ( $page === null ) {
-			return self::renderErrorMessage(
-				wfMessage( 'nora-parser-function-error-parameter', basename( __CLASS__ ), $options['user'] )
-			);
+			return '';
 		}
 
 		return parent::renderWithMustacheTemplate( [

@@ -65,3 +65,20 @@
     }
   }
 }
+
+@mixin clean-slate {
+  font-size: var(--nora-typography-font-size-sm);
+  padding-block: var(--nora-space-150);
+  padding-inline: var(--nora-space-400);
+  min-height: 8rem;
+  text-align: center;
+  color: var(--nora-document-subtle-color);
+  display: flex;
+  align-items: center;
+  text-wrap: balance;
+  justify-content: center;
+
+  p {
+    max-width: 50ch;
+  }
+}

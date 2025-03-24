@@ -6,6 +6,9 @@
 @use './components/dropdown';
 @use './components/tooltip';
 
+@use './custom/content-width';
+@use './custom/edit-section-links';
+
 .visually-hidden {
 	@include helpers.visually-hidden;
 }

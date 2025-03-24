@@ -3,4 +3,4 @@ node_modules/
 vendor/
 .DS_Store
 dist/images/
-nora-design-system/public/
+nds-dev/public/

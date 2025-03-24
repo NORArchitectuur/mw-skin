@@ -100,7 +100,7 @@ class Skin extends SkinMustache {
 	 * @throws \Exception
 	 */
 	private function buildPortletData( array $data, BaseRewriter $rewriter ): array {
-		$hideActionIds = [ 'ca-watch' ];
+		$hideActionIds = [ 'ca-watch', 'ca-unwatch' ];
 		return [
 			'userMenu' => ( new Portlet( $data['data-portlets']['data-personal'] ) )->rewrite(),
 			'contentMenus' => [

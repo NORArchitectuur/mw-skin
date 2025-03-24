@@ -1,0 +1,31 @@
+/**
+ * Set max-width on components when inside page-section-wide in 
+ * order to mimic the same column width as page-section-article__content
+*/
+.page-section-wide {
+  &> h1 {
+    max-width: var(--nora-page-section-article-content-max-width);
+  }
+
+  .mw-parser-output {
+    &> {
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      ol,
+      ul,
+      .thumb,
+      .link-overview,
+      .nora-user-profile-header,
+      .nora-two-fold,
+      .nora-upcoming-events,
+      .nora-latest-news,
+      .nora-related-links {
+        max-width: var(--nora-page-section-article-content-max-width);
+      }
+    }
+  }
+}

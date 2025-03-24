@@ -25,4 +25,6 @@
   @include short-list.more-link;
 }
 
-
+.nora-upcoming-events__empty {
+  @include short-list.clean-slate;
+}

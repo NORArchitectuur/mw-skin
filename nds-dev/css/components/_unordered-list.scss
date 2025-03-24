@@ -8,14 +8,18 @@
   --utrecht-unordered-list-item-margin-block-start: .5rem;
 }
 
-.mw-body-content {
-  @include unordered-list.utrecht-html-ul;
+.mw-parser-output {
+
+  &> {
+    @include unordered-list.utrecht-html-ul;
+  }
+
 
   /**
    * Revert margins to browser default
    */
-   ul {
-     margin-block-end: revert;
-     margin-block-start: revert;
-   }
+  &> ul {
+    margin-block-end: revert;
+    margin-block-start: revert;
+  }
 }
