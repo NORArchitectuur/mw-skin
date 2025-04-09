@@ -95,7 +95,7 @@
       "value": "Afbeelding rechts"
     },
     "NoraHelpTitle": {
-      "value": "Project:Help"
+      "value": "Help"
     }
   },
   "load_composer_autoloader": true,
