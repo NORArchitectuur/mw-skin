@@ -62,6 +62,10 @@
     @include utrecht-table.utrecht-table__cell--numeric-column;
   }
 
+  thead>tr>th a:any-link:not(:focus-visible) {
+    color: var(--utrecht-table-header-color);
+  }
+
   td.numeric {
     @include utrecht-table.utrecht-table__cell--numeric-column;
     @include utrecht-table.utrecht-table__cell--numeric-data;
