@@ -1,0 +1,47 @@
+$breakpoint-sm: 30rem;
+
+.mw-parser-output {
+  dl:not([class]) {
+    border: var(--nora-size-25) solid var(--nora-color-gray-75);
+    line-height: var(--nora-typography-line-height-120);
+    padding: var(--nora-space-100) var(--nora-space-200);
+    font-size: var(--nora-typography-font-size-md);
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    container-type: inline-size;
+
+    dt {
+      grid-column: 1 / 3;
+      font-weight: var(--nora-typography-font-weight-normal);
+      padding-block-start: .75rem;
+
+      @container (min-width: #{$breakpoint-sm}) {
+        grid-column: 1 / 2;
+        max-width: 32ch;
+        padding-block: 0.75rem;
+        padding-inline-end: 1rem;
+
+        &:not(:last-of-type) {
+          border-bottom: 1px solid var(--nora-color-gray-75);
+        }
+      }
+    }
+
+    dd {
+      grid-column: 1 / 3;
+      font-weight: var(--nora-typography-font-weight-bold);
+      margin: 0;
+      padding-block-end: .75rem;
+      padding-block-start: .25rem;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid var(--nora-color-gray-75);
+      }
+
+      @container (min-width: #{$breakpoint-sm}) {
+        grid-column: 2 / 3;
+        padding-block: 0.75rem;
+      }
+    }
+  }
+}

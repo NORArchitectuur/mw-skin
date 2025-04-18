@@ -9,10 +9,11 @@ html {
 }
 
 body {
+	color: var(--nora-document-color);
 	font-family: var(--nora-document-font-family);
 	font-size: var(--nora-document-font-size);
-	line-height: var(--nora-document-line-height);
 	font-weight: var(--nora-document-font-weight);
+	line-height: var(--nora-document-line-height);
 	margin: 0;
 	overflow-x: hidden;
 }
