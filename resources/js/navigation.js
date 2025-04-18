@@ -38,7 +38,7 @@ $( document ).ready( function () {
 	}
 
 	var $contentTogglers = [
-		$( '.content-navigation' ),
+		$( '.content-navigation-container' ),
 	]
 
 	$( window ).on( 'resize', function () {
@@ -59,11 +59,11 @@ $( document ).ready( function () {
 	} );
 
 
-	$( window ).on( 'scroll', function() {
+	$( window ).on( 'scroll', function () {
 		$( 'body' ).addClass( 'page-body--scrolled' );
 		if ( $( window ).scrollTop() === 0 ) {
 			$( 'body' ).removeClass( 'page-body--scrolled' );
 		}
-	})
+	} )
 
 } );
