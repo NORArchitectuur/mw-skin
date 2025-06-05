@@ -3,12 +3,28 @@
 .nora-two-fold {
   display: flex;
   flex-flow: column;
-  gap: var(--nora-space-400);
+  gap: var(--nora-space-200) var(--nora-space-400);
   margin-block-end: var(--nora-space-600);
   margin-block-start: var(--nora-space-400);
 
   @include helpers.large-vw {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    &--wide {
+      gap: var(--nora-space-800);
+    }
+
+    &--centered {
+      align-items: center;
+    }
+
+    &--3-2 {
+      grid-template-columns: 3fr 2fr;
+    }
+
+    &--2-3 {
+      grid-template-columns: 2fr 3fr;
+    }
   }
 }

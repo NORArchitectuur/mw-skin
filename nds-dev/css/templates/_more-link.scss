@@ -1,0 +1,32 @@
+@use '../abstracts/icon';
+
+.more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  position: relative;
+  color: var(--nl-link-color);
+
+  &:hover {
+    color: var(--nl-link-hover-color);
+  }
+
+  &::after {
+    @include icon.make(icon.$ti-arrow-right);
+  }
+
+  a:any-link {
+    text-decoration-line: none;
+
+    &::before {
+      content: '';
+      display: block;
+      inset: 0;
+      position: absolute;
+    }
+  }
+
+  a:hover {
+    text-decoration-line: underline;
+  }
+}
