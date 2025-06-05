@@ -8,6 +8,7 @@
 
 @use './custom/content-width';
 @use './custom/edit-section-links';
+@use './custom/image';
 
 .visually-hidden {
 	@include helpers.visually-hidden;
