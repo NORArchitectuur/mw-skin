@@ -2,7 +2,8 @@
 
 .mw-parser-output {
 
-  &> {
+  &>,
+  .nora-two-fold__column> {
     p {
       @include paragraph.utrecht-paragraph;
 
@@ -15,7 +16,8 @@
   /**
    * Revert margins to browser default
    */
-  &> {
+  &>,
+  .nora-two-fold__column> {
     p {
       margin-block-end: revert;
       margin-block-start: revert;
