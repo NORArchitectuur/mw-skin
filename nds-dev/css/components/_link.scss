@@ -30,3 +30,11 @@ a:any-link:focus-visible {
   --_nl-link-state-text-decoration-line: var(--utrecht-link-focus-visible-text-decoration);
   background-color: var(--utrecht-link-focus-background-color);
 }
+
+a:any-link.new {
+  color: var(--nora-color-red-600);
+
+  &:hover {
+    color: var(--nora-color-red-500);
+  }
+}
