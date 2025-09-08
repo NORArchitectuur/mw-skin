@@ -32,9 +32,6 @@ a:any-link:focus-visible {
 }
 
 a:any-link.new {
-  color: var(--nora-color-red-600);
-
-  &:hover {
-    color: var(--nora-color-red-500);
-  }
+  --nl-link-color: var(--nora-color-red-600);
+  --nl-link-hover-color: var(--nora-color-red-500);
 }
