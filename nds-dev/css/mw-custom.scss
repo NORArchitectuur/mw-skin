@@ -10,6 +10,7 @@
 @use './custom/edit-section-links';
 @use './custom/image';
 @use './custom/imagepage';
+@use './custom/lingo';
 
 .visually-hidden {
 	@include helpers.visually-hidden;
@@ -37,8 +38,3 @@ h1#firstHeading {
     margin-left: .25em;
   }
 }
-
-.mw-lingo-tooltip {
-  display: none;
-}
-
