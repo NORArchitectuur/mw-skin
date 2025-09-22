@@ -11,6 +11,7 @@
 @use './custom/image';
 @use './custom/imagepage';
 @use './custom/lingo';
+@use './custom/pagination';
 
 .visually-hidden {
 	@include helpers.visually-hidden;
