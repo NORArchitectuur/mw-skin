@@ -35,17 +35,17 @@ class SkinTemplateNavigation__Universal{
 		$toolIcons = [ 'views.edit', 'views.formedit' ];
 		if ( isset ( $links['actions']['watch'] ) ) {
 			$toolIcons[] = 'actions.watch';
-		}  else if ( isset ( $links['actions']['unwatch'] ) ) {
+		} else if ( isset ( $links['actions']['unwatch'] ) ) {
 			$toolIcons[] = 'actions.unwatch';
 		}
 		$toolIcons[] = 'views.history';
 		$skinToolIconsMenu = [];
 
-		foreach( $toolIcons as $toolReference ) {
+		foreach ( $toolIcons as $toolReference ) {
 			$toolReference = explode( '.', $toolReference );
 			$toolReferenceKey = $toolReference[0];
 			$toolReferenceInfo = $toolReference[1];
-			if ( isset( $links[ $toolReferenceKey ][ $toolReferenceInfo ] ) ) {
+			if ( isset( $links[$toolReferenceKey][$toolReferenceInfo] ) ) {
 				$skinToolIconsMenu[$toolReferenceInfo] = $links[$toolReferenceKey][$toolReferenceInfo];
 				$skinToolIconsMenu[$toolReferenceInfo]['class'] = 'tools-item navigation-item navigation-item-icon-only';
 				$skinToolIconsMenu[$toolReferenceInfo]['link-class'] = "tool-{$toolReferenceInfo} navigation-link";

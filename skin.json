@@ -33,10 +33,20 @@
       ]
     }
   },
+  "ExtensionMessagesFiles": {
+    "NORAMagic": "includes/Magic.php"
+  },
   "MessagesDirs": {
     "NORA": [
       "i18n"
     ]
+  },
+  "Hooks": {
+    "BeforePageDisplay": "MediaWiki\\Skin\\NORA\\Hooks\\BeforePageDisplay::onBeforePageDisplay",
+    "ParserAfterTidy": "MediaWiki\\Skin\\NORA\\Hooks\\ParserAfterTidy::onParserAfterTidy",
+    "SkinBuildSidebar": "MediaWiki\\Skin\\NORA\\Hooks\\SkinBuildSidebar::onSkinBuildSidebar",
+    "SkinTemplateNavigation::Universal": "MediaWiki\\Skin\\NORA\\Hooks\\SkinTemplateNavigation__Universal::onSkinTemplateNavigation__Universal",
+    "ParserFirstCallInit": "MediaWiki\\Skin\\NORA\\Hooks\\ParserFirstCallInit::onParserFirstCallInit"
   },
   "ResourceModules": {
     "skins.nora.styles": {
@@ -84,9 +94,6 @@
     "localBasePath": "",
     "remoteSkinPath": "NORA"
   },
-  "ExtensionFunctions": [
-    "MediaWiki\\Skin\\NORA\\Setup::onExtensionFunction"
-  ],
   "config": {
     "NoraBackgroundCoverProperty": {
       "value": "Banner"
