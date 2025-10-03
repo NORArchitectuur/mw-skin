@@ -2,5 +2,4 @@ composer.lock
 node_modules/
 vendor/
 .DS_Store
-dist/images/
 nds-dev/public/
