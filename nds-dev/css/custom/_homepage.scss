@@ -63,4 +63,12 @@
   .nora-two-fold {
     margin-block: 0;
   }
+  
+  .link-overview .items {
+    border-block-start-color: var(--nora-color-blue-100);
+  }
+
+  .link-overview .link-item > a {
+    border-block-end-color: var(--nora-color-blue-100);
+  }
 }
