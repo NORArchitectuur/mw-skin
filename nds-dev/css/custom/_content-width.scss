@@ -20,7 +20,7 @@
       .thumb,
       .link-overview,
       .nora-user-profile-header,
-      .nora-two-fold,
+      .nora-two-fold:not(.nora-two-fold--wide),
       .nora-upcoming-events,
       .nora-latest-news,
       .nora-related-links {

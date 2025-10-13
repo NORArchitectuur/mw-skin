@@ -45,6 +45,12 @@
 	img {
 		@include navigation-bar.logo-image;
 	}
+
+	&:focus-visible {
+		img {
+			filter: invert(1);
+		}
+	}
 }
 
 .navigation-bar-navigation {

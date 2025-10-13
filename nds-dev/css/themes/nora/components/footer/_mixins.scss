@@ -41,7 +41,7 @@
   line-height: var(--nora-footer-link-line-height);
 
   &:any-link {
-    color: var(--nora-footer-link-color);
+    --nl-link-color: var(--nora-footer-link-color);
     text-decoration: none;
   }
 }

@@ -1,7 +1,7 @@
 $breakpoint-sm: 30rem;
 
 .mw-parser-output {
-  dl:not([class]) {
+  dl:not([class]):not(.entity-details dl) {
     border: var(--nora-size-25) solid var(--nora-color-gray-75);
     line-height: var(--nora-typography-line-height-120);
     padding: var(--nora-space-100) var(--nora-space-200);

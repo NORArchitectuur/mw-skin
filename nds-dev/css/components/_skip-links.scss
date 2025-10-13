@@ -1,0 +1,20 @@
+@use '../themes/nora/abstracts/helpers/visually-hidden';
+
+.skip-links {
+  display: flex;
+
+  a {
+    @include visually-hidden.visually-hidden;
+
+    &:focus-visible {
+      clip: initial;
+      clip-path: initial; 
+      margin: var(--nora-space-100);
+      padding: var(--nora-space-25) var(--nora-space-50);
+      position: initial;
+      display: inline-block;
+      height: initial;
+      width: initial;
+    }
+  }
+}

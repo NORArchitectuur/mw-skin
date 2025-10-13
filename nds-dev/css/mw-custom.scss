@@ -8,6 +8,11 @@
 
 @use './custom/content-width';
 @use './custom/edit-section-links';
+@use './custom/homepage';
+@use './custom/image';
+@use './custom/imagepage';
+@use './custom/lingo';
+@use './custom/pagination';
 
 .visually-hidden {
 	@include helpers.visually-hidden;
@@ -35,8 +40,3 @@ h1#firstHeading {
     margin-left: .25em;
   }
 }
-
-.mw-lingo-tooltip {
-  display: none;
-}
-

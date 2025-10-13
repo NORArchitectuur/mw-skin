@@ -1,0 +1,74 @@
+@use '@utrecht/heading-1-css/src/mixin' as heading-1;
+@use '../themes/nora/abstracts/helpers/visually-hidden';
+
+.page-Nederlandse_Overheid_Referentie_Architectuur_NORA {
+  .page-section-wide:first-child {
+    padding-block-start: 0;
+  }
+
+  .mw-first-heading {
+    @include visually-hidden.visually-hidden()
+  }
+}
+
+.header-content {
+  position: relative;
+  isolation: isolate;
+  padding-block-start: 8rem;
+  padding-block-end: 4rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-color: var(--nora-color-blue-50);
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    transform: translateX(calc(-50% + 100px));
+    background-image: url("/images/header-content-background.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 1000px;
+    background-position: center top;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .8;
+
+    /* fade out naar beneden */
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+  }
+
+  h2,
+  .nora-two-fold__column > h2 {
+    @include heading-1.utrecht-heading-1;
+  }
+
+  .nora-two-fold {
+    margin-block: 0;
+  }
+  
+  .link-overview .items {
+    border-block-start-color: var(--nora-color-blue-100);
+  }
+
+  .link-overview .link-item > a {
+    border-block-end-color: var(--nora-color-blue-100);
+  }
+}

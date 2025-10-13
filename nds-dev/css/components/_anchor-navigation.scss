@@ -29,9 +29,10 @@
   h6 {
     @include anchor-navigation.heading;
 
-    a {
+    a:any-link {
+      --nl-link-color: var(--nora-anchor-nav-header-color);
+
       align-items: center;
-      color: inherit;
       display: flex;
       justify-content: space-between;
       padding-block: .25rem;

@@ -1,0 +1,38 @@
+a.mw-lingo-term {
+  border: none;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-color: var(--nl-link-color) !important;
+  cursor: help;
+  border-radius: var(--nora-border-radius-sm);
+
+  &:hover {
+    background-color: var(--nora-color-blue-50);
+  }
+}
+
+.mw-lingo-definition {
+  font-size: var(--nora-typography-font-size-xs);
+  line-height: var(--nora-typography-line-height-120);
+}
+
+.mw-lingo-definition-link {
+  position: initial;
+  transform: none;
+  display: block;
+
+  &>a::after {
+    display: none;
+  }
+
+  span.mw-lingo-definition-link-container {
+    /* undo visually hidden */
+    position: initial;
+    width: initial;
+    height: initial;
+    padding: 0;
+    margin: 0;
+    overflow: initial;
+    clip: initial;
+  }
+}
