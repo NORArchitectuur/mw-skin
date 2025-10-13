@@ -55,25 +55,32 @@ class LinkOverview extends MustacheParserFunction {
 	 */
 	private static function parseItems( string $itemsString ) {
 		$items = [];
-		$pattern = '/\[\[([^|\]]+)\|([^|\]]+)\|([^|\]]+)\]\]/'; // Matches [[link|anchor|description]]
+		// Matches [[link|anchor]] or [[link|anchor|description]] (description optional)
+		$pattern = '/\[\[([^|\]]+)\|([^|\]]+)(?:\|([^|\]]*))?\]\]/';
 
 		preg_match_all( $pattern, $itemsString, $matches, PREG_SET_ORDER );
 
 		foreach ( $matches as $match ) {
-			// Validate each item has all components
+			// Validate each item has required components (link and anchor); description is optional
 			$link = trim( $match[1] ?? '' );
 			$anchor = trim( $match[2] ?? '' );
 			$description = trim( $match[3] ?? '' );
 
-			if ( empty( $link ) || empty( $anchor ) || empty( $description ) ) {
+			if ( empty( $link ) || empty( $anchor ) ) {
 				return wfMessage( 'nora-link-overview-invalid-items-string' )->text();
 			}
 
-			$items[] = [
+			$item = [
 				'href' => $link,
 				'name' => $anchor,
-				'description' => $description
 			];
+
+			if ( !empty( $description ) ) {
+				$item['show-description'] = true;
+				$item['description'] = $description;
+			}
+
+			$items[] = $item;
 		}
 
 		// If no valid items are found, return an error
