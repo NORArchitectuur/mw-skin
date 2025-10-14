@@ -7,12 +7,14 @@
 @use './components/tooltip';
 
 @use './custom/content-width';
+@use './custom/data-table';
 @use './custom/edit-section-links';
 @use './custom/homepage';
 @use './custom/image';
 @use './custom/imagepage';
 @use './custom/lingo';
 @use './custom/pagination';
+@use './custom/search';
 
 .visually-hidden {
 	@include helpers.visually-hidden;
