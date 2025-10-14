@@ -112,10 +112,6 @@
       font-size: 1.25rem;
       margin-block-start: .1em;
     }
-  
-    &[href^="http"]::before {
-      content: icon.$ti-external-link;
-    }
   }
 }
 
