@@ -13,6 +13,7 @@
 @use './custom/imagepage';
 @use './custom/lingo';
 @use './custom/pagination';
+@use './custom/search';
 
 .visually-hidden {
 	@include helpers.visually-hidden;
