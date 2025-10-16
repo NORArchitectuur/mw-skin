@@ -66,6 +66,14 @@
     {{^is-specialpage}}
     <div class="tools-container">
         <ul class="tools">
+            {{^is-view-action}}
+            <li class="tools-item back-to-page-item">
+                <a href="{{view-page-url}}" class="back-to-page-link">
+                    <i class="ti ti-arrow-left"></i>
+                    <span>Terug naar pagina</span>
+                </a>
+            </li>
+            {{/is-view-action}}
             {{>components/ToolIcons}}
             {{>components/ToolActions}}
         </ul>
