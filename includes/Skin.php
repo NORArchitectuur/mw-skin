@@ -280,4 +280,21 @@ class Skin extends SkinMustache {
 		];
 	}
 
+	/**
+	 * Temporary hotfix for 1.43
+	 * @param $desc
+	 * @param $page
+	 * @return string|void
+	 */
+	public function footerLink( $desc, $page ) {
+		if ( !$this->getTitle() ) {
+			return;
+		}
+
+		return \Html::element( 'a',
+			[ 'href' => $this->getTitle()->fixSpecialName()->getLinkURL() ],
+			$this->msg( $desc )->text()
+		);
+	}
+
 }
