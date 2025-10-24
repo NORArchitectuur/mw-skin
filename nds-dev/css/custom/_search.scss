@@ -4,7 +4,9 @@ span.smwsearch a {
   background: none;
   padding-right: 0;
   margin-right: 0;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nora-space-50);
   color: var(--nl-link-color);
 
   &::after {
