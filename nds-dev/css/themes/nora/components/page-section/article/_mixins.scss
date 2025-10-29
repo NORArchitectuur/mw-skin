@@ -7,8 +7,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--nora-page-section-article-container-gap);
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  overflow-wrap: break-word;
+  word-break: normal;
   hyphens: auto;
 
   // Word-break en hypenation niet toepassen binnen tabellen (evt. later toepassen)
