@@ -39,6 +39,7 @@ class FooterItem extends ParserFunction {
 		}
 
 		$html = Html::openElement( 'div', [ 'class' => 'footer-top-item' ] );
+		$html .= Html::openElement( 'h2' );
 		$html .= Html::element(
 			'a',
 			[
@@ -47,6 +48,7 @@ class FooterItem extends ParserFunction {
 			],
 			$options['heading']
 		);
+		$html .= Html::closeElement( 'h2' );
 		$html .= $parser->recursiveTagParseFully( $options['contents'] );
 		$html .= Html::closeElement( 'div' );
 
