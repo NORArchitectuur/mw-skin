@@ -67,6 +67,9 @@ class Skin extends SkinMustache {
 			$data['components'] = $this->getSkinComponents( $rewriter );
 		}
 
+		// Set has-sidebar flag if either TOC or toc-image exists
+		$data['has-sidebar'] = !empty( $data['data-toc'] ) || !empty( $data['components']['toc-image'] );
+
 		return $rewriter->getModifiedTemplateData( $data );
 	}
 
@@ -100,7 +103,9 @@ class Skin extends SkinMustache {
 		}
 
 		if ( count( $tocImage->getData() ) >= 1 ) {
-			$res['toc-image'] = $tocImage->getData()[0];
+			$data = $tocImage->getData();
+			$res['toc-image'] = $data[0];
+			$res['toc-alt'] = $data[1];
 			$res['toc-image-url'] = $tocImage->getPropertyValue();
 		}
 

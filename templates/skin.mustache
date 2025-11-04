@@ -99,15 +99,15 @@
     <!-- Content -->
     <main id="content" class="page-content__content-wrapper">
         <!-- Article -->
-        <div class="{{#data-toc}}page-section-article{{/data-toc}}{{^data-toc}}page-section-wide{{/data-toc}}">
-            {{#data-toc}}
+        <div class="{{#has-sidebar}}page-section-article{{/has-sidebar}}{{^has-sidebar}}page-section-wide{{/has-sidebar}}">
+            {{#has-sidebar}}
                 {{>components/Sidebar}}
-            {{/data-toc}}
+            {{/has-sidebar}}
 
             <!-- Main content -->
-            {{#data-toc}}<section class="page-section-article__content">{{/data-toc}}
+            {{#has-sidebar}}<section class="page-section-article__content">{{/has-sidebar}}
                 {{>components/MainContent}}
-            {{#data-toc}}</section>{{/data-toc}}
+            {{#has-sidebar}}</section>{{/has-sidebar}}
             <!-- /Main content -->
         </div>
         <!-- /Article -->
