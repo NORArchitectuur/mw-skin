@@ -9,9 +9,8 @@
     </figure>
     <!-- /Table of Contents image -->
     {{/components.toc-image}}
-    
-    {{>components/TableOfContents}}
-    {{!
-        @todo add semantic slot here
-    !}}
+
+    {{#has-toc}}
+        {{>components/TableOfContents}}
+    {{/has-toc}}
 </section>
