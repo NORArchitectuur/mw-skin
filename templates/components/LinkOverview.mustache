@@ -1,6 +1,8 @@
 <div class="link-overview">
     <div class="heading">
-        {{heading}}
+        <h2>
+            {{heading}}
+        </h2>
     </div>
     <div class="items">
         {{#items}}
@@ -8,7 +10,9 @@
             <a href="{{href}}">
                 <div class="link-item-content">
                     <span class="name">{{name}}</span>
+                    {{#show-description}}
                     <span class="description">{{description}}</span>
+                    {{/show-description}}
                 </div>
             </a>
         </div>

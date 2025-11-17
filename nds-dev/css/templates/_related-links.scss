@@ -68,6 +68,17 @@
       inset: .5rem 1rem auto auto;
     }
   }
+
+  &--contextual {
+    grid-column: 2 / 4;
+    grid-row: 3;
+
+    &::after {
+      inset: -2rem auto auto 50%;
+      transform: rotate(90deg);
+      margin-inline-start: -4.25rem;
+    }
+  }
 }
 
 .nora-related-links__group-heading {
@@ -100,10 +111,6 @@
   
       font-size: 1.25rem;
       margin-block-start: .1em;
-    }
-  
-    &[href^="http"]::before {
-      content: icon.$ti-external-link;
     }
   }
 }

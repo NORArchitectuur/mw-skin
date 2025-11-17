@@ -3,6 +3,7 @@
 namespace MediaWiki\Skin\NORA;
 
 use ExtensionRegistry;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Skin\NORA\Components\BackgroundImage;
 use MediaWiki\Skin\NORA\Components\InformationPanel;
 use MediaWiki\Skin\NORA\HTMLRewriter\BaseRewriter;
@@ -18,6 +19,16 @@ class Skin extends SkinMustache {
 	private const DEFAULT_MENU_LI_CLASS = 'navigation-item';
 	private const DEFAULT_MENU_A_CLASS = 'navigation-link';
 
+	public function __construct( $options = null ) {
+		if ( version_compare( FARM_VERSION, '1.43', '>=' ) ) {
+			// templateDirectory was overwritten from MW1.43
+			// @note https://app.asana.com/1/565132877083/project/1209235036366813/task/1210725502434402?focus=true
+			$options[ "templateDirectory" ] = "skins/NORA/templates";
+		}
+
+		parent::__construct( $options );
+	}
+
 	public function getTemplateData(): array {
 		$data = parent::getTemplateData();
 		$rewriter = new Rewriter();
@@ -29,6 +40,13 @@ class Skin extends SkinMustache {
 		$data['skip-links'] = $this->buildSkipLinks();
 		$data['main-navigation'] = $this->buildSecondaryNavigation();
 		$data['footer'] = $this->buildFooterData( $rewriter );
+		$data['current-action'] = $this->getActionName();
+		$data['is-view-action'] = $this->getActionName() === 'view' && $this->getTitle() && !$this->getTitle()->isTalkPage();
+		if ( $this->getTitle() ) {
+			$data['view-page-url'] = $this->getTitle()->isTalkPage()
+				? $this->getTitle()->getSubjectPage()->getLocalURL()
+				: $this->getTitle()->getLocalURL();
+		}
 		$data['portletsModified'] = $this->buildPortletData( $data, $rewriter );
 		$data['skinMessages'] = $this->getSkinMessages();
 		$data['has-smartcomments'] = self::hasSmartComments();
@@ -48,6 +66,11 @@ class Skin extends SkinMustache {
 		) {
 			$data['components'] = $this->getSkinComponents( $rewriter );
 		}
+
+		// Set has-sidebar flag if either TOC or toc-image exists
+		$data['has-sidebar'] = !empty( $data['data-toc'] ) || !empty( $data['components']['toc-image'] );
+		$data['has-sidebar-image'] = !empty( $data['components']['toc-image'] );
+		$data['has-toc'] = !empty( $data['data-toc'] );
 
 		return $rewriter->getModifiedTemplateData( $data );
 	}
@@ -82,11 +105,55 @@ class Skin extends SkinMustache {
 		}
 
 		if ( count( $tocImage->getData() ) >= 1 ) {
-			$res['toc-image'] = $tocImage->getData()[0];
+			$data = $tocImage->getData();
+			$res['toc-image'] = $data[0];
+			$res['toc-alt'] = $data[1];
 			$res['toc-image-url'] = $tocImage->getPropertyValue();
 		}
 
 		return $res;
+	}
+
+	/**
+	 * Process the talk link HTML to add navigation classes and spacing
+	 *
+	 * @param string $htmlItems The HTML items from the namespaces portlet
+	 *
+	 * @return array|null Array with 'html-items' key containing modified HTML, or null if no talk link found
+	 */
+	private function buildTalkLinkHtml( string $htmlItems ): ?array {
+		// Parse HTML to find and modify the talk link
+		$dom = new \DOMDocument();
+		@$dom->loadHTML( '<?xml encoding="utf-8" ?>' . $htmlItems, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+		$xpath = new \DOMXPath( $dom );
+
+		// Find the <li> with id="ca-talk"
+		$talkItem = $xpath->query( '//li[@id="ca-talk"]' )->item( 0 );
+
+		if ( !$talkItem ) {
+			return null;
+		}
+
+		// Add navigation-item class to <li>
+		$liClass = $talkItem->getAttribute( 'class' );
+		$talkItem->setAttribute( 'class', trim( $liClass . ' navigation-item' ) );
+
+		// Get the <a> tag inside
+		$linkNode = $xpath->query( './/a', $talkItem )->item( 0 );
+		if ( $linkNode ) {
+			// Add navigation-link class to <a>
+			$aClass = $linkNode->getAttribute( 'class' );
+			$linkNode->setAttribute( 'class', trim( $aClass . ' navigation-link' ) );
+
+			// Add space after icon
+			$space = $dom->createTextNode( ' ' );
+			$linkNode->insertBefore( $space, $linkNode->firstChild->nextSibling );
+		}
+
+		// Get the modified HTML
+		$modifiedHtml = str_replace( '<?xml encoding="utf-8" ?>', '', $dom->saveHTML( $talkItem ) );
+
+		return [ 'html-items' => $modifiedHtml ];
 	}
 
 	/**
@@ -101,32 +168,28 @@ class Skin extends SkinMustache {
 	 */
 	private function buildPortletData( array $data, BaseRewriter $rewriter ): array {
 		$hideActionIds = [ 'ca-watch', 'ca-unwatch' ];
+		$isViewAction = $this->getActionName() === 'view';
+
+		$contentMenus = [];
+
+		// Only show namespace link on view action
+		if ( $isViewAction && isset( $data['data-portlets']['data-namespaces']['html-items'] ) ) {
+			$talkLinkHtml = $this->buildTalkLinkHtml( $data['data-portlets']['data-namespaces']['html-items'] );
+			if ( $talkLinkHtml !== null ) {
+				$contentMenus[] = $talkLinkHtml;
+			}
+		}
+
+		// Always show actions (without label)
+		$contentMenus[] = ( new Portlet( $data['data-portlets']['data-actions'] ) )->rewrite(
+			self::DEFAULT_MENU_LI_CLASS,
+			self::DEFAULT_MENU_A_CLASS,
+			$hideActionIds
+		);
+
 		return [
 			'userMenu' => ( new Portlet( $data['data-portlets']['data-personal'] ) )->rewrite(),
-			'contentMenus' => [
-				[
-					'html-items' =>
-						'<li class="navigation-item info">' .
-							$data['data-portlets']['data-namespaces']['label'] .
-						'</li>'
-				],
-				( new PortletChoice( $data['data-portlets']['data-namespaces'] ) )->rewrite(
-					'namespace-choice-container',
-					'namespace-choice-radio',
-					'namespace-choice-label'
-				),
-				[
-					'html-items' =>
-						'<li class="navigation-item info">' .
-							$data['data-portlets']['data-actions']['label'] .
-						'</li>'
-				],
-				( new Portlet( $data['data-portlets']['data-actions'] ) )->rewrite(
-					self::DEFAULT_MENU_LI_CLASS,
-					self::DEFAULT_MENU_A_CLASS,
-					$hideActionIds
-				)
-			],
+			'contentMenus' => $contentMenus,
 			'toolMenus' => [
 				( new Portlet( $data['data-portlets-sidebar']['array-portlets-rest'][0] ?? [] ) )->rewrite(
 					self::DEFAULT_MENU_LI_CLASS,
@@ -222,6 +285,23 @@ class Skin extends SkinMustache {
 			'smartComments' => $this->msg( 'nora-smart-comments' ),
 			'informationPanelToggleExpand' => $this->msg( 'nora-information-panel-toggle-expand' )
 		];
+	}
+
+	/**
+	 * Temporary hotfix for 1.43
+	 * @param $desc
+	 * @param $page
+	 * @return string|void
+	 */
+	public function footerLink( $desc, $page ) {
+		if ( !$this->getTitle() ) {
+			return;
+		}
+
+		return \Html::element( 'a',
+			[ 'href' => $this->getTitle()->fixSpecialName()->getLinkURL() ],
+			$this->msg( $desc )->text()
+		);
 	}
 
 }

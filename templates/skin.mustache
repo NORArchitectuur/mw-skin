@@ -17,16 +17,16 @@
 
     <!-- Logo -->
     <a href="{{link-mainpage}}" class="navigation-bar-logo">
-        <img src="/skins/NORA/resources/images/logo-nora.svg" alt="NORA" />
+        <img src="/skins/NORA/resources/images/logo-nora.svg" alt="NORA logo (terug naar de homepage)" />
     </a>
     <!-- /Logo -->
 
     <!-- Menu items -->
-    <div class="navigation-bar-navigation-container">
-        <ul class="navigation-bar-navigation" role="menu" id="mainNavigation">
+    <nav class="navigation-bar-navigation-container" aria-label="Hoofdnavigatie">
+        <ul class="navigation-bar-navigation" id="mainNavigation">
             {{>components/MainNavigation}}
         </ul>
-    </div>
+    </nav>
     <!-- /Menu items -->
 
     <div class="navigation-bar-search-links-container">
@@ -66,6 +66,14 @@
     {{^is-specialpage}}
     <div class="tools-container">
         <ul class="tools">
+            {{^is-view-action}}
+            <li class="tools-item back-to-page-item">
+                <a href="{{view-page-url}}" class="back-to-page-link">
+                    <i class="ti ti-arrow-left"></i>
+                    <span>Terug naar pagina</span>
+                </a>
+            </li>
+            {{/is-view-action}}
             {{>components/ToolIcons}}
             {{>components/ToolActions}}
         </ul>
@@ -91,15 +99,15 @@
     <!-- Content -->
     <main id="content" class="page-content__content-wrapper">
         <!-- Article -->
-        <div class="{{#data-toc}}page-section-article{{/data-toc}}{{^data-toc}}page-section-wide{{/data-toc}}">
-            {{#data-toc}}
+        <div class="{{#has-sidebar}}page-section-article{{/has-sidebar}}{{^has-sidebar}}page-section-wide{{/has-sidebar}}">
+            {{#has-sidebar}}
                 {{>components/Sidebar}}
-            {{/data-toc}}
+            {{/has-sidebar}}
 
             <!-- Main content -->
-            {{#data-toc}}<section class="page-section-article__content">{{/data-toc}}
+            {{#has-sidebar}}<section class="page-section-article__content">{{/has-sidebar}}
                 {{>components/MainContent}}
-            {{#data-toc}}</section>{{/data-toc}}
+            {{#has-sidebar}}</section>{{/has-sidebar}}
             <!-- /Main content -->
         </div>
         <!-- /Article -->

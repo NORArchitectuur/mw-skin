@@ -28,6 +28,6 @@
   margin-inline-start: auto;
 
   &:any-link {
-    color: inherit;
+    --nl-link-color: var(--nora-figure-figcaption-color);
   }
 }

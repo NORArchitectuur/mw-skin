@@ -71,7 +71,7 @@ class BaseRewriter {
 			$title = Title::newFromText( "AttributeParser" . uniqid() );
 		}
 
-		$wikiPage = WikiPage::factory( $title );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$parserOptions = ParserOptions::newFromContext( $context );
 
 		$options = [

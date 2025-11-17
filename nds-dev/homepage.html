@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="nl" class="nora-theme">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NORA Components</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- jQuery UI Stylesheet -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- jQuery UI JavaScript -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="css/mw-nora-components.scss">
+  <link rel="stylesheet" href="css/mw-templates.scss">
+  <link rel="stylesheet" href="css/mw-custom.scss">
+  <style>
+    .link-overview .description {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="page-Nederlandse_Overheid_Referentie_Architectuur_NORA">
+
+  <section class="skip-links">
+    <a href="#content" class="navigation-item"> Naar de inhoud </a>
+    <a href="#mainNavigation" class="navigation-item"> Naar de navigatie </a>
+  </section>
+
+  <header class="navigation-bar">
+
+    <!-- Navigation toggler -->
+    <div class="navigation-toggle-container">
+      <button class="theme-button navigation-toggle" aria-label="Toon menu" aria-haspopup="true" aria-expanded="false"
+        aria-controls="mainNavigation">
+        <!-- CHANGED: ti-menu instead of ti-menu2 -->
+        <i class="ti ti-menu"></i>
+        <!-- /CHANGED -->
+      </button>
+    </div>
+    <!-- Navigation toggler -->
+
+    <!-- Logo -->
+    <a href="/index.php/NORA_online" class="navigation-bar-logo">
+      <img src="https://www.noraonline.nl/skins/NORA/resources/images/logo-nora.svg" alt="NORA">
+    </a>
+    <!-- /Logo -->
+
+    <!-- Menu items -->
+    <div class="navigation-bar-navigation-container">
+      <ul class="navigation-bar-navigation" role="menu" id="mainNavigation" aria-expanded="false">
+
+        <li class="navigation-item">
+          <a href="/index.php/Referentiearchitectuur" id="n-Referentiearchitectuur" class="navigation-link">
+            Referentiearchitectuur
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/Kennismodel" id="n-Kennismodel" class="navigation-link">
+            Kennismodel
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/Kennisdeling" id="n-Kennisdeling" class="navigation-link">
+            Kennisdeling
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/NORA_Familie" id="n-NORA-Familie" class="navigation-link">
+            NORA Familie
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/Toolbox" id="n-Toolbox" class="navigation-link">
+            Toolbox
+          </a>
+        </li>
+
+        <li class="navigation-item">
+          <a href="/index.php/Vakmanschap" id="n-Vakmanschap" class="navigation-link">
+            Vakmanschap
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- /Menu items -->
+
+    <div class="navigation-bar-search-links-container">
+      <!-- Searchbar -->
+      <div class="navigation-bar-search">
+        <form id="searchform" class="search-block-form show-block collapsible-menu-item" action="/index.php">
+          <input type="hidden" name="title" value="Speciaal:Zoeken">
+          <input type="search" name="search" placeholder="Doorzoek NORA2" aria-label="Doorzoek NORA2"
+            autocapitalize="sentences" title="Doorzoek NORA2 [⌃⌥f]" accesskey="f" id="searchInput">
+          <input type="submit" name="go" value="OK" title="Naar een pagina met deze naam gaan als deze bestaat"
+            class="searchButton" id="searchButton">
+        </form>
+      </div>
+      <!-- /Searchbar -->
+
+      <!-- Secondary nav -->
+      <ul class="navigation-bar-secondary-nav">
+        <!-- CHANGED: added extra item for search -->
+        <li class="navigation-item">
+          <a href="/index.php/Speciaal:Zoeken" class="navigation-link">
+            <span class="visually-hidden">Zoeken</span>
+            <i class="ti ti-search"></i>
+          </a>
+        </li>
+        <!-- /CHANGED -->
+        <li class="navigation-item">
+          <a href="/index.php/NORA2:Help" class="navigation-link">
+            <span class="visually-hidden">Gebruikersmenu</span>
+            <i class="ti ti-help"></i>
+          </a>
+        </li>
+        <li class="navigation-item with-dropdown">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
+            <span class="visually-hidden"></span>
+            <i class="ti ti-user-circle"></i>
+          </a>
+          <ul class="navigation-item-dropdown-menu align-left" aria-hidden="true" role="menu" id="userMenu">
+            <li id="pt-userpage" class="mw-list-item navigation-item"><a href="/index.php/Gebruiker:Yvdbogert"
+                title="Uw gebruikerspagina [⌃⌥.]" accesskey="." class="navigation-link">Yvdbogert</a></li>
+            <li id="pt-mytalk" class="mw-list-item navigation-item"><a href="/index.php/Overleg_gebruiker:Yvdbogert"
+                class="new navigation-link" title="Uw overlegpagina (de pagina bestaat niet) [⌃⌥n]"
+                accesskey="n">Overleg</a></li>
+            <li id="pt-adminlinks" class="mw-list-item navigation-item"><a
+                href="/index.php/Speciaal:Beheerdersverwijzingen" class="navigation-link">Koppelingen voor
+                beheerders</a></li>
+            <li id="pt-preferences" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:Voorkeuren"
+                title="Uw voorkeuren" class="navigation-link">Voorkeuren</a></li>
+            <li id="pt-watchlist" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:Volglijst"
+                title="Overzicht van pagina's die u volgt [⌃⌥l]" accesskey="l" class="navigation-link">Volglijst</a>
+            </li>
+            <li id="pt-mycontris" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:Bijdragen/Yvdbogert"
+                title="Overzicht van uw bijdragen [⌃⌥y]" accesskey="y" class="navigation-link">Bijdragen</a></li>
+            <li id="pt-logout" class="mw-list-item navigation-item"><a
+                href="/index.php?title=Speciaal:Afmelden&amp;returnto=YouriTest" data-mw="interface" title="Afmelden"
+                class="navigation-link">Afmelden</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /Secondary nav -->
+    </div>
+
+  </header>
+
+  <section class="breadcrumb-tools-container">
+    <div class="breadcrumb-container">
+      <div id="breadcrumbs2">
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs2-no-arrow breadcrumb-item"><a href="/index.php/NORA_online" title="NORA online"
+              class="breadcrumb-link">NORA</a></li>
+          <li class="breadcrumb-item"><a class="breadcrumb-link" href="">Nederlandse Overheid Referentie Architectuur
+              (NORA)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tools-container">
+      <ul class="tools">
+        <li id="ca-edit" class="tools-item navigation-item navigation-item-icon-only mw-list-item"><a
+            href="/index.php?title=Informatie&amp;action=edit" class="tool-edit navigation-link"
+            title="Bron bewerken"><span class="visually-hidden">Bron bewerken</span><i class="ti ti-edit"></i></a></li>
+        <li id="ca-formedit" class="tools-item navigation-item navigation-item-icon-only mw-list-item"><a
+            href="/index.php?title=Informatie&amp;action=formedit" class="tool-formedit navigation-link"
+            title="Bewerken"><span class="visually-hidden">Bewerken</span><i class="ti ti-formedit"></i></a></li>
+        <li id="ca-watch" class="tools-item navigation-item navigation-item-icon-only mw-list-item"><a
+            href="/index.php?title=Informatie&amp;action=watch" class="tool-watch navigation-link" data-mw="interface"
+            title="Volgen"><span class="visually-hidden">Volgen</span><i class="ti ti-watch"></i></a></li>
+        <li id="ca-history" class="tools-item navigation-item navigation-item-icon-only mw-list-item"><a
+            href="/index.php?title=Informatie&amp;action=history" class="tool-history navigation-link"
+            title="Geschiedenis weergeven"><span class="visually-hidden">Geschiedenis weergeven</span><i
+              class="ti ti-history"></i></a></li>
+
+        <li class="tools-item navigation-item smartcomments-toggler with-background with-dropdown">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false"
+            aria-controls="smartCommentsMenu">
+            SmartComments <span class="status">Uit</span>
+          </a>
+          <ul class="navigation-item-dropdown-menu align-left" role="menu" id="smartCommentsMenu" aria-hidden="true">
+            <li class="navigation-item sic-enable-commenting" id="ca-comments" role="none">
+              <a class="navigation-link" href="#">Aan</a>
+            </li>
+          </ul>
+        </li>
+        <li class="tools-item navigation-item with-background with-dropdown navigation-item-icon-only expanded">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu"
+            title="Tools menu">
+            <span class="visually-hidden">Tools menu</span>
+            <i class="ti ti-tools"></i>
+          </a>
+          <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="toolsMenu">
+            <li id="t-whatlinkshere" class="mw-list-item navigation-item"><a
+                href="/index.php/Speciaal:VerwijzingenNaarHier/Informatie"
+                title="Lijst met alle pagina's die naar deze pagina verwijzen [ctrl-option-j]" accesskey="j"
+                class="navigation-link">Verwijzingen naar deze pagina</a></li>
+            <li id="t-upload" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:Uploaden"
+                title="Bestanden uploaden [ctrl-option-u]" accesskey="u" class="navigation-link">Bestand uploaden</a>
+            </li>
+            <li id="t-specialpages" class="mw-list-item navigation-item"><a href="/index.php/Speciaal:SpecialePaginas"
+                title="Lijst met alle speciale pagina's [ctrl-option-q]" accesskey="q" class="navigation-link">Speciale
+                pagina's</a></li>
+            <li id="t-permalink" class="mw-list-item navigation-item"><a
+                href="/index.php?title=Informatie&amp;oldid=70655"
+                title="Permanente koppeling naar deze versie van deze pagina" class="navigation-link">Permanente
+                koppeling</a></li>
+            <li id="t-smwbrowselink" class="mw-list-item navigation-item"><a
+                href="/index.php/Speciaal:Bekijken/:Informatie" rel="search" class="navigation-link">Eigenschappen
+                bekijken</a></li>
+
+          </ul>
+        </li>
+        <li class="tools-item navigation-item with-background with-dropdown navigation-item-icon-only">
+          <a href="#" class="navigation-link" aria-haspopup="true" aria-expanded="false" aria-controls="contentMenu"
+            title="Overige pagina handelingen bekijken">
+            <span class="visually-hidden">Overige pagina handelingen bekijken</span>
+            <i class="ti ti-dots"></i>
+          </a>
+          <ul class="navigation-item-dropdown-menu align-left" role="menu" aria-hidden="true" id="contentMenu">
+            <li class="navigation-item info">Naamruimten</li>
+            <li class="portlet-choice-container">
+              <div class="namespace-choice-container">
+                <input type="radio" id="radio-ca-nstab-main" name="namespace-choice" class="namespace-choice-radio"
+                  value="ca-nstab-main" data-href="/index.php/Informatie" checked="">
+                <label for="radio-ca-nstab-main" class="namespace-choice-label"
+                  title="Inhoudspagina bekijken [c]">Pagina</label>
+                <input type="radio" id="radio-ca-talk" name="namespace-choice" class="namespace-choice-radio"
+                  value="ca-talk" data-href="/index.php?title=Overleg:Informatie&amp;action=edit&amp;redlink=1">
+                <label for="radio-ca-talk" class="namespace-choice-label"
+                  title="Overleg over deze pagina (de pagina bestaat niet) [t]">Overleg</label>
+              </div>
+            </li>
+            <li class="navigation-item info">Meer</li>
+            <li id="ca-delete" class="mw-list-item navigation-item"><a
+                href="/index.php?title=Informatie&amp;action=delete" title="Deze pagina verwijderen [ctrl-option-d]"
+                accesskey="d" class="navigation-link">Verwijderen</a></li>
+            <li id="ca-move" class="mw-list-item navigation-item"><a
+                href="/index.php/Speciaal:PaginaHernoemen/Informatie" title="Deze pagina hernoemen [ctrl-option-m]"
+                accesskey="m" class="navigation-link">Hernoemen</a></li>
+            <li id="ca-protect" class="mw-list-item navigation-item"><a
+                href="/index.php?title=Informatie&amp;action=protect" title="Deze pagina beveiligen [ctrl-option-=]"
+                accesskey="=" class="navigation-link">Beveiligen</a></li>
+            <li id="ca-smartbooks" class="mw-list-item navigation-item"><a
+                href="https://nora2.dev139.wikixl.nl/index.php?title=Informatie&amp;action=smartbook"
+                class="navigation-link">Pagina exporteren</a></li>
+            <li id="ca-purge" class="mw-list-item navigation-item"><a
+                href="/index.php?title=Informatie&amp;action=purge" class="navigation-link">Vernieuwen</a></li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="page-content">
+
+    <main id="content" class="page-content__content-wrapper">
+
+      <div class="page-section-wide">
+
+        <h1 id="firstHeading" class="firstHeading mw-first-heading" style="display: flex; align-items: center;"><span
+            class="mw-page-title-main">Nederlandse Overheid Referentie Architectuur (NORA)</span></h1>
+        <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="nl" dir="ltr">
+          <div class="mw-parser-output">
+
+            <div class="header-content">
+              <div class="nora-two-fold nora-two-fold--wide nora-two-fold--3-2">
+                <div class="nora-two-fold__column">
+                  <h2><span class="mw-headline" id="Hier_werken_architecten_samen_aan_goede_dienstverlening">Hier werken
+                      architecten samen aan goede dienstverlening</span><span class="mw-editsection"><span
+                        class="mw-editsection-bracket">[</span><a
+                        href="/index.php?title=Nederlandse_Overheid_Referentie_Architectuur_(NORA)&amp;action=edit&amp;section=1"
+                        title="Deelpagina bewerken: Hier werken architecten samen aan goede dienstverlening">bewerken</a><span
+                        class="mw-editsection-bracket">]</span></span></h2>
+                  <p>Burgers vertrouwen op overheden voor collectieve oplossingen voor maatschappelijke problemen:
+                    overheidsdiensten.
+                  </p>
+                  <p>Goede diensten ontstaan niet vanzelf maar <a href="javascript:void(0);" class="mw-lingo-term"
+                      data-lingo-term-id="6cdc96756b9dc9ad5b5dde4f4f248f6b" data-hasqtip="0">ontwerp</a> je bewust, op
+                    basis van (ervarings-)kennis uit talloze vakgebieden. Architecten brengen die kennis samen in één <a
+                      href="javascript:void(0);" class="mw-lingo-term"
+                      data-lingo-term-id="6cdc96756b9dc9ad5b5dde4f4f248f6b" data-hasqtip="1">ontwerp</a> waarin de
+                    hoofdlijnen de details bepalen.
+                  </p>
+                  <p>Dat doen we steeds meer samen. Verschillende types architecten uit verschillende
+                    overheidsorganisaties vullen elkaar aan, maken afspraken en helpen elkaar verder. Zo leveren we met
+                    dezelfde inspanning meer kwaliteit.
+                    <span class="more-link"><a href="/wiki/Sandbox:Grote_verhaal_van_NORA"
+                        title="Sandbox:Grote verhaal van NORA">Sandbox:Grote verhaal van NORA</a></span>
+                  </p>
+                </div>
+                <div class="nora-two-fold__column">
+                  <div class="link-overview">
+                    <div class="heading">Snel naar</div>
+                    <div class="items">
+                      <div class="link-item"><a href="PSA%20(Project%20Startarchitectuur)">
+                          <div class="link-item-content"><span class="name">PSA (Project Startarchitectuur)</span><span
+                              class="description">-</span></div>
+                        </a></div>
+                      <div class="link-item"><a href="NORA%20Gebruikersraad">
+                          <div class="link-item-content"><span class="name">Gebruikersraad</span><span
+                              class="description">-</span></div>
+                        </a></div>
+                      <div class="link-item"><a href="Architectuurprincipes">
+                          <div class="link-item-content"><span class="name">Architectuurprincipes</span><span
+                              class="description">-</span></div>
+                        </a></div>
+                      <div class="link-item"><a href="NORA%20Begrippenkader">
+                          <div class="link-item-content"><span class="name">Begrippenkader</span><span
+                              class="description">-</span></div>
+                        </a></div>
+                      <div class="link-item"><a href="Sectorregistraties">
+                          <div class="link-item-content"><span class="name">Sectorregistraties</span><span
+                              class="description">-</span></div>
+                        </a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nora-two-fold nora-two-fold--wide nora-two-fold--2-3 nora-two-fold--centered">
+              <div class="nora-two-fold__column">
+                <p><a href="/wiki/Bestand:Referentiearchitectuur_als_voorbeeld_voor_eigen_werk.webp" class="image"><img
+                      alt="Referentiearchitectuur als voorbeeld voor eigen werk.webp"
+                      src="/images/noraonline/thumb/c/c7/Referentiearchitectuur_als_voorbeeld_voor_eigen_werk.webp/1024px-Referentiearchitectuur_als_voorbeeld_voor_eigen_werk.webp.png"
+                      decoding="async" width="1024" height="1024"></a>
+                </p>
+              </div>
+              <div class="nora-two-fold__column">
+                <h2><span class="mw-headline" id="NORA_is_de_Nederlandse_Overheid_Referentie_Architectuur">NORA is de
+                    Nederlandse Overheid Referentie Architectuur</span><span class="mw-editsection"><span
+                      class="mw-editsection-bracket">[</span><a
+                      href="/index.php?title=Nederlandse_Overheid_Referentie_Architectuur_(NORA)&amp;action=edit&amp;section=2"
+                      title="Deelpagina bewerken: NORA is de Nederlandse Overheid Referentie Architectuur">bewerken</a><span
+                      class="mw-editsection-bracket">]</span></span></h2>
+                <p>Alle overheidsorganisaties kunnen de NORA gebruiken bij het vorm geven en inrichten van hun
+                  dienstverlening. De kern bestaat uit de Verbindende Architectuurafspraken en een uitwerking van het
+                  Vijflaagsmodel. Daarnaast delen we sets met relevante architectuurinformatie zoals Begrippen,
+                  Standaarden en Bouwstenen.
+                </p>
+                <p>Via Referentiearchitectuur lees je het grote verhaal in samenhang, met haakjes naar specifieke
+                  afspraken, standaarden et cetera. Via Kennismodel vind je de lijsten met alle afspraken, standaarden
+                  et cetera, en <a href="javascript:void(0);" class="mw-lingo-term"
+                    data-lingo-term-id="ec4138cb1915628e5e893edf45f069b2" data-hasqtip="2">informatie</a> over gebruik
+                  en <a href="javascript:void(0);" class="mw-lingo-term"
+                    data-lingo-term-id="16bdf9fab24309d554a890a232419b06" data-hasqtip="3">beheer</a> daar van.
+                </p>
+                <p><span class="more-link"><a href="/wiki/Referentiearchitectuur"
+                      title="Referentiearchitectuur">Referentiearchitectuur</a></span><br>
+                  <span class="more-link"><a href="/wiki/Kennismodel" title="Kennismodel">Kennismodel</a></span>
+                </p>
+              </div>
+            </div>
+            <div class="nora-two-fold nora-two-fold--wide nora-two-fold--3-2">
+              <div class="nora-two-fold__column">
+                <h2><span id="NORA_Familie_is_de_community_van_architecten_.26_architecturen"></span><span
+                    class="mw-headline" id="NORA_Familie_is_de_community_van_architecten_&amp;_architecturen">NORA
+                    Familie is de community van architecten &amp; architecturen</span><span class="mw-editsection"><span
+                      class="mw-editsection-bracket">[</span><a
+                      href="/index.php?title=Nederlandse_Overheid_Referentie_Architectuur_(NORA)&amp;action=edit&amp;section=3"
+                      title="Deelpagina bewerken: NORA Familie is de community van architecten &amp; architecturen">bewerken</a><span
+                      class="mw-editsection-bracket">]</span></span></h2>
+                <p>De kenniscommunity van architecten en (beheerders van) architecturen in de publieke sector noemen we
+                  de NORA Familie. Het is een moderne samengestelde familie, zonder strikte hiërarchie maar wel met
+                  herkenbare familietrekjes en sterke meningen.
+                </p>
+                <p>Architecten gebruiken referentie-architecturen bij het maken en toepassen van <a
+                    href="javascript:void(0);" class="mw-lingo-term"
+                    data-lingo-term-id="9b60596e7d6835f38cf1b5288f568502" data-hasqtip="4">architectuur</a> in hun eigen
+                  <a href="javascript:void(0);" class="mw-lingo-term"
+                    data-lingo-term-id="a3bdbe7c5655bcf50e17f3c47a6f72ee" data-hasqtip="5">domein</a>, overheidslaag en
+                  <a href="javascript:void(0);" class="mw-lingo-term"
+                    data-lingo-term-id="b36024f7beb0d4f5d9470b88b451b0c5" data-hasqtip="6">keten</a>. Goede verbanden
+                  tussen de architecturen zijn dus belangrijk en de NORA Familie is waar we die versterken en
+                  verschillen bespreekbaar worden.
+                </p>
+                <p><span class="more-link"><a href="/wiki/NORA_Familie" title="NORA Familie">NORA Familie</a></span><br>
+                </p>
+              </div>
+              <div class="nora-two-fold__column">
+                <div class="thumb tright">
+                  <div class="thumbinner" style="width:452px;"><a href="/wiki/Bestand:NORA_Familie_familieportret.png"
+                      class="image"><img alt=""
+                        src="/images/noraonline/thumb/f/f2/NORA_Familie_familieportret.png/450px-NORA_Familie_familieportret.png"
+                        decoding="async" width="450" height="450" class="thumbimage"
+                        srcset="/images/noraonline/thumb/f/f2/NORA_Familie_familieportret.png/675px-NORA_Familie_familieportret.png 1.5x, /images/noraonline/thumb/f/f2/NORA_Familie_familieportret.png/900px-NORA_Familie_familieportret.png 2x"></a>
+                    <div class="thumbcaption">
+                      <div class="magnify"><a href="/wiki/Bestand:NORA_Familie_familieportret.png" class="internal"
+                          title="Vergroten"></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nora-two-fold nora-two-fold--wide nora-two-fold--2-3">
+              <div class="nora-two-fold__column">
+                <div class="link-overview">
+                  <div class="heading">Wordt actief in de NORA Familie</div>
+                  <div class="items">
+                    <div class="link-item"><a href="Architecturen%20NORA%20Familie">
+                        <div class="link-item-content"><span class="name">Alle architecturen</span><span
+                            class="description">-</span></div>
+                      </a></div>
+                    <div class="link-item"><a href="Gebruikers">
+                        <div class="link-item-content"><span class="name">Alle gebruikers</span><span
+                            class="description">-</span></div>
+                      </a></div>
+                    <div class="link-item"><a
+                        href="Help:Ik%20wil%20mijn%20gebruikersprofiel%20invullen%20of%20aanpassen">
+                        <div class="link-item-content"><span class="name">Gebruikersprofiel aanmaken</span><span
+                            class="description">-</span></div>
+                      </a></div>
+                    <div class="link-item"><a href="NORA%20Gebruikersraad">
+                        <div class="link-item-content"><span class="name">NORA Gebruikersraad</span><span
+                            class="description">-</span></div>
+                      </a></div>
+                    <div class="link-item"><a href="Alle%20groepen%20binnen%20NORA">
+                        <div class="link-item-content"><span class="name">Alle groepen</span><span
+                            class="description">-</span></div>
+                      </a></div>
+                    <div class="link-item"><a href="Zelf%20een%20groep%20aanmaken">
+                        <div class="link-item-content"><span class="name">Zelf een groep aanmaken</span><span
+                            class="description">-</span></div>
+                      </a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="nora-two-fold__column">
+                <h2><span class="mw-headline" id="Wordt_lid_van_de_NORA_Familie">Wordt lid van de NORA
+                    Familie</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a
+                      href="/index.php?title=Nederlandse_Overheid_Referentie_Architectuur_(NORA)&amp;action=edit&amp;section=4"
+                      title="Deelpagina bewerken: Wordt lid van de NORA Familie">bewerken</a><span
+                      class="mw-editsection-bracket">]</span></span></h2>
+                <p>De NORA Familie bestaat op het moment uit <b>29</b> actieve architecturen en <b>15</b> actieve
+                  groepen. In de afgelopen maand (<i>september</i>) waren er <b>9</b> bijeenkomsten en voor heel 2025
+                  zijn er <b>53</b> bijeenkomsten geweest of gepland.
+                </p>
+                <p>We nodigen alle professionals die zich bezig houden met <a href="javascript:void(0);"
+                    class="mw-lingo-term" data-lingo-term-id="9b60596e7d6835f38cf1b5288f568502"
+                    data-hasqtip="7">architectuur</a> binnen de publieke sector van harte uit om een gebruikersprofiel
+                  aan te maken op noraonline. Er zijn al <b>106</b> Gebruikers met een profielpagina, waarvan <b>79</b>
+                  ook (deels) zijn ingevuld. Sinds de start van de wiki in 2013 hebben <b>180</b> verschillende
+                  gebruikers zelf wijzigingen aangebracht op noraonline.
+                  <span class="more-link"><a href="/wiki/Help:Ik_wil_mijn_gebruikersprofiel_invullen_of_aanpassen"
+                      title="Help:Ik wil mijn gebruikersprofiel invullen of aanpassen">Gebruikersprofiel
+                      aanmaken</a></span><br>
+                </p>
+              </div>
+            </div>
+            <div class="nora-two-fold nora-two-fold--wide nora-two-fold--3-2">
+              <div class="nora-two-fold__column">
+                <h2><span class="mw-headline" id="Kennis_op_noraonline">Kennis op noraonline</span><span
+                    class="mw-editsection"><span class="mw-editsection-bracket">[</span><a
+                      href="/index.php?title=Nederlandse_Overheid_Referentie_Architectuur_(NORA)&amp;action=edit&amp;section=5"
+                      title="Deelpagina bewerken: Kennis op noraonline">bewerken</a><span
+                      class="mw-editsection-bracket">]</span></span></h2>
+                <p>De website noraonline is niet alleen het publicatieplatform voor de refrerentiearchitectuur, maar ook
+                  het kennisplatform voor de NORA Familie. Elke deelnemer kan relevante kennis delen, op eigen titel of
+                  namens een groep.
+                </p>
+                <p>Inhoudelijke architectuurkennis delen we binnen Kennisdeling. Architectuurproducten, modellen en
+                  andere toepasbare kennis delen we binnen Toolbox. En binnen Vakmanschap gaan we het gesprek aan over
+                  het vak van overheidsarchitect.
+                </p>
+                <p><span class="more-link"><a href="/wiki/Kennisdeling" title="Kennisdeling">Kennisdeling</a></span><br>
+                  <span class="more-link"><a href="/wiki/Toolbox" title="Toolbox">Toolbox</a></span><br>
+                  <span class="more-link"><a href="/wiki/Vakmanschap" title="Vakmanschap">Vakmanschap</a></span>
+                </p>
+              </div>
+              <div class="nora-two-fold__column">
+                <div class="link-overview">
+                  <div class="heading">Kennis</div>
+                  <div class="items">
+                    <div class="link-item"><a href="Volledig%20overzicht%20van%20alle%20onderwerpen%20in%20de%20wiki">
+                        <div class="link-item-content"><span class="name">Alle onderwerpen</span><span
+                            class="description">-</span></div>
+                      </a></div>
+                    <div class="link-item"><a href="Hoe%20deel%20ik%20mijn%20kennis%20op%20noraonline">
+                        <div class="link-item-content"><span class="name">Hoe deel ik mijn kennis op
+                            noraonline</span><span class="description">-</span></div>
+                      </a></div>
+                    <div class="link-item"><a href="Beheerregimes">
+                        <div class="link-item-content"><span class="name">Afspraken rond beheer van kennis
+                            (Beheerregimes)</span><span class="description">-</span></div>
+                      </a></div>
+                    <div class="link-item"><a href="Speciaal:WillekeurigeUitCategorie/Onderwerpen">
+                        <div class="link-item-content"><span class="name">Random pagina in Onderwerpen</span><span
+                            class="description">-</span></div>
+                      </a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nora-two-fold nora-two-fold--wide nora-two-fold--3-2">
+              <div class="nora-two-fold__column">
+                <p><br>
+                </p>
+                <div class="nora-two-fold__column">
+                  <div class="nora-upcoming-events">
+                    <div class="nora-upcoming-events__header">
+                      <h2 class="nora-upcoming-events__heading"><span class="mw-headline" id="Agenda">Agenda</span></h2>
+                      <a href="/wiki/Agenda" title="Agenda">Alle geplande bijeenkomsten</a>
+                    </div>
+                    <div class="nora-upcoming-events__list">
+                      <div class="nora-upcoming-events__item">
+                        <div class="nora-event-teaser">
+                          <p class="nora-event-teaser__date">
+                            <time datetime="2025-10-09T10:00:00.000Z">
+                              9 oktober 2025 10:00
+                            </time>
+                          </p>
+                          <h3 class="nora-event-teaser__title"><span class="mw-headline"
+                              id="Expertgroep_gegevensmanagement_oktober_2025"><a
+                                href="/wiki/Expertgroep_gegevensmanagement_oktober_2025"
+                                title="Expertgroep gegevensmanagement oktober 2025">Expertgroep gegevensmanagement
+                                oktober 2025</a></span></h3>
+                        </div>
+                      </div>
+                      <div class="nora-upcoming-events__item">
+                        <div class="nora-event-teaser">
+                          <p class="nora-event-teaser__date">
+                            <time datetime="2025-10-09T14:00:00.000Z">
+                              9 oktober 2025 14:00
+                            </time>
+                          </p>
+                          <h3 class="nora-event-teaser__title"><span class="mw-headline"
+                              id="Expertgroep_Zaakgericht_Werken_oktober_2025"><a
+                                href="/wiki/Expertgroep_Zaakgericht_Werken_oktober_2025"
+                                title="Expertgroep Zaakgericht Werken oktober 2025">Expertgroep Zaakgericht Werken
+                                oktober 2025</a></span></h3>
+                        </div>
+                      </div>
+                      <div class="nora-upcoming-events__item">
+                        <div class="nora-event-teaser">
+                          <p class="nora-event-teaser__date">
+                            <time datetime="2025-11-07T11:00:00.000Z">
+                              7 november 2025 11:00
+                            </time>
+                          </p>
+                          <h3 class="nora-event-teaser__title"><span class="mw-headline"
+                              id="Expertgroep_Dienstverlening_november_2025"><a
+                                href="/wiki/Expertgroep_Dienstverlening_november_2025"
+                                title="Expertgroep Dienstverlening november 2025">Expertgroep Dienstverlening november
+                                2025</a></span></h3>
+                        </div>
+                      </div><span class="smw-template-furtherresults"><a rel="nofollow" class="external text"
+                          href="https://www.noraonline.nl/index.php?title=Speciaal:Ask&amp;x=-5B-5BElementtype%3A%3ABijeenkomst-5D-5D-20-5B-5BToon-20op-20landingspagina%3A%3A%2B-5D-5D-20-5B-5BDatum-20en-20Tijd%3A%3A%E2%89%A52-20oktober-202025-5D-5D%2F-3FDatum-20en-20Tijd-23-2DF-5BU-5D%3Ddt-5Fts%2F-3FDatum-20en-20Tijd-23-2DF-5BY-2Dm-2Dd-5CTH%3Ai%3As.000-5CZ-5D%3Ddt-5Fiso%2F-3FTitel%2F-3F-23%3Dpaginanaam&amp;mainlabel=&amp;limit=3&amp;order=asc&amp;sort=Datum%20en%20Tijd&amp;offset=3&amp;format=template&amp;link=none&amp;default=%3Cdiv%20class%3D%22nora-upcoming-events%26%2395%3B%26%2395%3Bempty%22%3E%3Cp%3EEr%20staan%20geen%20bijeenkomsten%20gepland%20die%20gekoppeld%20zijn%20aan%20tenminste%201%20landingspagina%20%5Bhttps%3A%2F%2Fwww.noraonline.nl%2Fwiki%2FSpeciaal%3AGegevensBewerken%2FElement%3FElement%255Belementtype%255D%3DBijeenkomst%20Bijeenkomst%20aanmaken%5D%3C%2Fp%3E%3C%2Fdiv%3E&amp;template=Bijeenkomstitem%20landingspagina&amp;named%20args=1">...
+                          meer resultaten</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nora-two-fold__column">
+                <div class="thumb tright">
+                  <div class="thumbinner" style="width:452px;"><a href="/wiki/Bestand:Bijeenkomst_klein.png"
+                      class="image"><img alt=""
+                        src="/images/noraonline/thumb/f/f0/Bijeenkomst_klein.png/450px-Bijeenkomst_klein.png"
+                        decoding="async" width="450" height="288" class="thumbimage"
+                        srcset="/images/noraonline/thumb/f/f0/Bijeenkomst_klein.png/675px-Bijeenkomst_klein.png 1.5x, /images/noraonline/f/f0/Bijeenkomst_klein.png 2x"></a>
+                    <div class="thumbcaption">
+                      <div class="magnify"><a href="/wiki/Bestand:Bijeenkomst_klein.png" class="internal"
+                          title="Vergroten"></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nora-two-fold nora-two-fold--wide nora-two-fold--2-3">
+              <div class="nora-two-fold__column">
+                <div class="thumb tright">
+                  <div class="thumbinner" style="width:452px;"><a href="/wiki/Bestand:Nieuwsbericht_klein.png"
+                      class="image"><img alt=""
+                        src="/images/noraonline/thumb/a/a9/Nieuwsbericht_klein.png/450px-Nieuwsbericht_klein.png"
+                        decoding="async" width="450" height="288" class="thumbimage"
+                        srcset="/images/noraonline/thumb/a/a9/Nieuwsbericht_klein.png/675px-Nieuwsbericht_klein.png 1.5x, /images/noraonline/a/a9/Nieuwsbericht_klein.png 2x"></a>
+                    <div class="thumbcaption">
+                      <div class="magnify"><a href="/wiki/Bestand:Nieuwsbericht_klein.png" class="internal"
+                          title="Vergroten"></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nora-two-fold__column">
+                <p><br>
+                </p>
+                <div class="nora-latest-news">
+                  <div class="nora-latest-news__header">
+                    <h2 class="nora-latest-news__heading"><span class="mw-headline" id="Nieuws">Nieuws</span></h2><a
+                      href="/wiki/Alle_nieuwsberichten" title="Alle nieuwsberichten">Al het NORA Nieuws</a>
+                  </div>
+                  <div class="nora-latest-news__list">
+                    <div class="nora-latest-news__item">
+                      <div class="nora-news-teaser">
+                        <p class="nora-news-teaser__date">
+                          <time datetime="18 september 2025">18 september 2025</time>
+                        </p>
+                        <h3 class="nora-news-teaser__title"><span class="mw-headline"
+                            id="Nieuwsbrief_NORA_Familie_september_2025_verschenen">
+                            <a rel="nofollow" class="external text"
+                              href="https://www.noraonline.nl/wiki/Nieuws:Nieuwsbericht-00020">Nieuwsbrief NORA Familie
+                              september 2025 verschenen</a>
+                          </span></h3>
+                      </div>
+                    </div>
+                    <div class="nora-latest-news__item">
+                      <div class="nora-news-teaser">
+                        <p class="nora-news-teaser__date">
+                          <time datetime="17 september 2025">17 september 2025</time>
+                        </p>
+                        <h3 class="nora-news-teaser__title"><span
+                            id="Open_Huis_van_de_Architectuur_23_september_.E2.80.93_Publiek_Regelbeheer_centraal"></span><span
+                            class="mw-headline"
+                            id="Open_Huis_van_de_Architectuur_23_september_–_Publiek_Regelbeheer_centraal">
+                            <a rel="nofollow" class="external text"
+                              href="https://www.noraonline.nl/wiki/Nieuws:Nieuwsbericht-00019">Open Huis van de
+                              Architectuur 23 september – Publiek Regelbeheer centraal</a>
+                          </span></h3>
+                      </div>
+                    </div>
+                    <div class="nora-latest-news__item">
+                      <div class="nora-news-teaser">
+                        <p class="nora-news-teaser__date">
+                          <time datetime="16 september 2025">16 september 2025</time>
+                        </p>
+                        <h3 class="nora-news-teaser__title"><span
+                            id="Dag_van_de_Interoperabiliteit_2025_.E2.80.93_14_oktober_2025"></span><span
+                            class="mw-headline" id="Dag_van_de_Interoperabiliteit_2025_–_14_oktober_2025">
+                            <a rel="nofollow" class="external text"
+                              href="https://www.noraonline.nl/wiki/Nieuws:Nieuwsbericht-00018">Dag van de
+                              Interoperabiliteit 2025 – 14 oktober 2025</a>
+                          </span></h3>
+                      </div>
+                    </div><span class="smw-template-furtherresults"><a rel="nofollow" class="external text"
+                        href="https://www.noraonline.nl/index.php?title=Speciaal:Ask&amp;x=-5B-5BElementtype%3A%3ANieuwsbericht-5D-5D-20-5B-5BToon-20op-20landingspagina%3A%3A%2B-5D-5D%2F-3FPublicatiedatum%2F-3FTitel%3DTitelNieuws%2F-3F-23%3Dpaginanaam&amp;mainlabel=&amp;limit=3&amp;order=desc&amp;sort=Publicatiedatum&amp;offset=3&amp;format=template&amp;link=none&amp;searchlabel=%5B%5BSpeciaal%3AVragen%2F-5B-5BElementtype%3A%3ANieuwsbericht-5D-5D-5B-5BToon%20op%20landingspagina%3A%3A%7B%7B%7B1%7D%7D%7D-5D-5D%2F-3FPublicatiedatum%2F-3FTitel%253DTitelNieuws%2F-3F-23%253Dpaginanaam%2Fmainlabel%253D%2Flimit%258D100%2Forder%253Ddesc%2Fsort%253DPublicatiedatum%2Fformat%253Dtemplate%2Flink%253Dnone%2Ftemplate%253DNieuwsitem-20landingspagina%2Fnamed-20args%253D1%7CMeer%20nieuws%5D%5D&amp;default=%3Cdiv%20class%3D%22nora-latest-news%26%2395%3B%26%2395%3Bempty%22%3E%3Cp%3EEr%20is%20nog%20geen%20nieuws%20over%20dit%20onderwerp.%20%5Bhttps%3A%2F%2Fwww.noraonline.nl%2Fwiki%2FSpeciaal%3AGegevensBewerken%2FElement%3FElement%255Belementtype%255D%3DNieuwsbericht%20Nieuwsbericht%20aanmaken%5D%3C%2Fp%3E%3C%2Fdiv%3E&amp;template=Nieuwsitem%20landingspagina&amp;named%20args=1">Meer
+                        nieuws</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <!-- /CHANGED -->
+    <div class="noglossary footer-container-top">
+      <div class="footer-top-item"><a href="/index.php/Referentiearchitectuur"
+          class="navigation-header-item navigation-item">Referentiearchitectuur</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a href="/index.php/Dienstverlening" class="navigation-link"
+              title="Dienstverlening">Dienstverlening</a></li>
+          <li class="navigation-item"><a href="/index.php/Grondslagenlaag" class="navigation-link"
+              title="Grondslagenlaag">Grondslagenlaag</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Organisatielaag&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Organisatielaag (de pagina bestaat niet)">Organisatielaag</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Informatiellaag&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Informatiellaag (de pagina bestaat niet)">Informatiellaag</a></li>
+          <li class="navigation-item"><a href="/index.php/Applicatielaag" class="navigation-link"
+              title="Applicatielaag">Applicatielaag</a></li>
+          <li class="navigation-item"><a href="/index.php?title=IT-infrastructuurlaag&amp;action=edit&amp;redlink=1"
+              class="new navigation-link"
+              title="IT-infrastructuurlaag (de pagina bestaat niet)">IT-infrastructuurlaag</a></li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/Kennismodel"
+          class="navigation-header-item navigation-item">Kennismodel</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a href="/index.php/Bindende_Architectuurafspraken" class="navigation-link"
+              title="Bindende Architectuurafspraken">Bindende Architectuurafspraken</a></li>
+          <li class="navigation-item"><a href="/index.php?title=DNA_NORA_Familie&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="DNA NORA Familie (de pagina bestaat niet)">DNA NORA Familie</a></li>
+          <li class="navigation-item"><a
+              href="/index.php?title=Overige_architectuurelementen&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Overige architectuurelementen (de pagina bestaat niet)">Overige
+              architectuurelementen</a></li>
+          <li class="navigation-item"><a
+              href="/index.php?title=Kennismodel_Community_%26_Structuur&amp;action=edit&amp;redlink=1"
+              class="new navigation-link"
+              title="Kennismodel Community &amp;amp; Structuur (de pagina bestaat niet)">Kennismodel Community &amp;
+              Structuur</a></li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/Kennisdeling"
+          class="navigation-header-item navigation-item">Kennisdeling</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a href="/index.php/Basisconcept_van_Dienstverlening" class="navigation-link"
+              title="Basisconcept van Dienstverlening">Basisconcept van Dienstverlening</a></li>
+          <li class="navigation-item"><a href="/index.php/Gegevensmanagement" class="navigation-link"
+              title="Gegevensmanagement">Gegevensmanagement</a></li>
+          <li class="navigation-item"><a href="/index.php/Identity_%26_Access_Management_(IAM)" class="navigation-link"
+              title="Identity &amp;amp; Access Management (IAM)">Identity &amp; Access Management (IAM)</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Overige_thema%27s&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Overige thema&amp;#39;s (de pagina bestaat niet)">Overige thema's</a>
+          </li>
+          <li class="navigation-item"><a href="/index.php?title=Overige_onderwerpen&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Overige onderwerpen (de pagina bestaat niet)">Overige onderwerpen</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/NORA_Familie" class="navigation-header-item navigation-item">NORA
+          Familie</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a
+              href="/index.php?title=Nederlandse_Overheidsarchitecturen&amp;action=edit&amp;redlink=1"
+              class="new navigation-link"
+              title="Nederlandse Overheidsarchitecturen (de pagina bestaat niet)">Nederlandse Overheidsarchitecturen</a>
+          </li>
+          <li class="navigation-item"><a href="/index.php?title=EU_Architectuur&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="EU Architectuur (de pagina bestaat niet)">EU Architectuur</a></li>
+          <li class="navigation-item"><a href="/index.php?title=ADO&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="ADO (de pagina bestaat niet)">ADO</a></li>
+          <li class="navigation-item"><a
+              href="/index.php?title=Groepen_binnen_de_NORA_Familie&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Groepen binnen de NORA Familie (de pagina bestaat niet)">Groepen binnen
+              de NORA Familie</a></li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/Toolbox"
+          class="navigation-header-item navigation-item">Toolbox</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a href="/index.php/PSA" class="mw-redirect navigation-link" title="PSA">PSA
+              (Project Startarchitectuur)</a></li>
+          <li class="navigation-item"><a href="/index.php/Vijflaagsmodel" class="navigation-link"
+              title="Vijflaagsmodel">Vijflaagsmodel</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Archimate&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Archimate (de pagina bestaat niet)">Archimate</a></li>
+          <li class="navigation-item"><a
+              href="/index.php?title=Semantisch_Zoeken_%26_Exporteren&amp;action=edit&amp;redlink=1"
+              class="new navigation-link"
+              title="Semantisch Zoeken &amp;amp; Exporteren (de pagina bestaat niet)">Semantisch Zoeken &amp;
+              Exporteren</a></li>
+        </ul>
+      </div>
+      <div class="footer-top-item"><a href="/index.php/Vakmanschap"
+          class="navigation-header-item navigation-item">Vakmanschap</a>
+        <ul class="footer-block-navigation">
+          <li class="navigation-item"><a
+              href="/index.php?title=Beginnend_Overheidsarchitecten&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Beginnend Overheidsarchitecten (de pagina bestaat niet)">Beginnend
+              Overheidsarchitecten</a></li>
+          <li class="navigation-item"><a href="/index.php?title=NORA_Review&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="NORA Review (de pagina bestaat niet)">NORA Review</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Meeloopdagen&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Meeloopdagen (de pagina bestaat niet)">Meeloopdagen</a></li>
+          <li class="navigation-item"><a href="/index.php/Opleidingen" class="navigation-link"
+              title="Opleidingen">Opleidingen</a></li>
+          <li class="navigation-item"><a href="/index.php?title=Kennissessies&amp;action=edit&amp;redlink=1"
+              class="new navigation-link" title="Kennissessies (de pagina bestaat niet)">Kennissessies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-container-bottom">
+      <div class="footer-quick-links">
+        <div class="noglossary">
+          <ul class="footer-quick-navigation">
+            <li class="navigation-item"><a href="/index.php?title=NORA_Online&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="NORA Online (de pagina bestaat niet)">Home</a></li>
+            <li class="navigation-item"><a href="/index.php/Over_NORA" class="navigation-link" title="Over NORA">Over
+                NORA</a></li>
+            <li class="navigation-item"><a href="/index.php/Actueel" class="mw-redirect navigation-link"
+                title="Actueel">Nieuws &amp; Agenda</a></li>
+            <li class="navigation-item"><a href="/index.php?title=Contact&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="Contact (de pagina bestaat niet)">Contact</a></li>
+            <li class="navigation-item"><a href="/index.php?title=Help&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="Help (de pagina bestaat niet)">Help</a></li>
+            <li class="navigation-item"><a href="/index.php?title=Groepen&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="Groepen (de pagina bestaat niet)">Groepen</a></li>
+            <li class="navigation-item"><a href="/index.php?title=Profielen&amp;action=edit&amp;redlink=1"
+                class="new navigation-link" title="Profielen (de pagina bestaat niet)">Profielen</a></li>
+            <li class="navigation-item"><a
+                href="/index.php?title=Compliancy_%26_Verantwoording&amp;action=edit&amp;redlink=1"
+                class="new navigation-link"
+                title="Compliancy &amp;amp; Verantwoording (de pagina bestaat niet)">Compliancy &amp; Verantwoording</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="noglossary">
+          <p>NORA wordt beheerd door ICTU</p>
+          <div class="mw-lingo-tooltip" id="99666c88feb5c87872f455e90fba2eac">
+            <div class="mw-lingo-definition navigation-not-searchable">
+              <div class="mw-lingo-definition-text">
+                <p>Nederlandse Overheid Referentie Architectuur.
+                </p>
+              </div>
+              <div class="mw-lingo-definition-link"><a href="https://nora2.staging.wikixl.nl/index.php/NORA"
+                  rel="nofollow" class="external text"><span class="mw-lingo-definition-link-container">Ga naar de
+                    pagina met de definitie van 'NORA'</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="demo.js"></script>
+</body>
+
+</html>

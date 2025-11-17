@@ -3,7 +3,12 @@
 namespace MediaWiki\Skin\NORA\Hooks;
 
 use InvalidArgumentException;
-use MediaWiki\Skin\NORA\Setup;
+use MediaWiki\Skin\NORA\ParserFunctions\AvatarImage;
+use MediaWiki\Skin\NORA\ParserFunctions\FooterItem;
+use MediaWiki\Skin\NORA\ParserFunctions\IconLink;
+use MediaWiki\Skin\NORA\ParserFunctions\LabelLink;
+use MediaWiki\Skin\NORA\ParserFunctions\LinkOverview;
+use MediaWiki\Skin\NORA\ParserFunctions\NavigationLinks;
 use Parser;
 
 class ParserFirstCallInit {
@@ -18,7 +23,12 @@ class ParserFirstCallInit {
 	 * @return void
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
-		Setup::$parserFunctions->register( $parser );
+		AvatarImage::onParserFirstCallInit( $parser );
+		FooterItem::onParserFirstCallInit( $parser );
+		IconLink::onParserFirstCallInit( $parser );
+		LabelLink::onParserFirstCallInit( $parser );
+		LinkOverview::onParserFirstCallInit( $parser );
+		NavigationLinks::onParserFirstCallInit( $parser );
 	}
 
 }

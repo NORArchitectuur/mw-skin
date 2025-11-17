@@ -1,0 +1,17 @@
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+  background-size: .75rem 1rem;
+}
+
+table.dataTable thead .sorting {
+  background-image: url('data:image/svg+xml,<svg viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 6L6 1L11 6H1Z" fill="%230049E5"/><path d="M1 10L6 15L11 10H1Z" fill="%230049E5"/></svg>');
+}
+
+table.dataTable thead .sorting_asc {
+  background-image: url('data:image/svg+xml,<svg viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 6L6 1L11 6H1Z" fill="%230049E5"/></svg>');
+}
+
+table.dataTable thead .sorting_desc {
+  background-image: url('data:image/svg+xml,<svg viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 10L6 15L11 10H1Z" fill="%230049E5"/></svg>');
+}

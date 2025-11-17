@@ -7,7 +7,25 @@
   display: flex;
   flex-direction: column;
   gap: var(--nora-page-section-article-container-gap);
-  position: relative;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+
+  // Word-break en hypenation niet toepassen binnen tabellen (evt. later toepassen)
+  table {
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: manual;
+  }
+
+  // Hyphenation niet toepassen op mailto en tel links
+  a[href^="/mailto:"],
+  a[href^="mailto:"],
+  a[href^="tel:"],
+  a[href^="+"] {
+    hyphens: none;
+  }
+
 
   @include helpers.large-vw {
     flex-direction: row-reverse;
@@ -33,22 +51,5 @@
     flex: 1;
     max-width: var(--nora-page-section-article-content-max-width);
     min-width: var(--nora-page-section-article-content-min-width);
-  }
-}
-
-@mixin background-decorator {
-  @include helpers.large-vw {
-    background-color: var(--nora-page-section-article-background-decorator-background-color);
-    border-radius: var(--nora-page-section-article-background-decorator-border-radius);
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -3.5rem;
-    left: -3.5rem;
-    bottom: auto;
-    height: 10rem;
-    pointer-events: none;
-    z-index: -1;
   }
 }

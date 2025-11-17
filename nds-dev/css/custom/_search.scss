@@ -1,0 +1,24 @@
+@use '../abstracts/icon';
+
+span.smwsearch a {
+  background: none;
+  padding-right: 0;
+  margin-right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nora-space-50);
+  color: var(--nl-link-color);
+
+  &::after {
+    @include icon.make(icon.$ti-search);
+
+    font-size: 1.125rem;
+  }
+
+  &:hover {
+    background: none;
+    padding-right: 0;
+    margin-right: 0;
+    color: var(--nl-link-hover-color);
+  }
+}

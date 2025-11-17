@@ -5,15 +5,16 @@
             {{skinMessages.tocHeading}}
         </a>
     </h6>
+
     <ul class="content-navigation-nav" id="contentNavigationNav" aria-hidden="true">
-        {{#array-sections}}
+        {{#data-toc.array-sections}}
             {{!
                 The design only shows the first level of the TOC, hence we don't have an array of sub-sections.
             !}}
             <li class="navigation-item">
                 <a class="navigation-link" href="#{{anchor}}">{{line}}</a>
             </li>
-        {{/array-sections}}
+        {{/data-toc.array-sections}}
     </ul>
 </div>
 <!-- /Table of Contents -->

@@ -2,16 +2,15 @@
     {{#components.toc-image}}
     <!-- Table of Contents image -->
     <figure class="nora-figure">
-        <img src="{{components.toc-image}}" class="nora-figure__media" alt="" />
+        <img src="{{components.toc-image}}" class="nora-figure__media" alt="{{components.toc-alt}}" />
         <figcaption class="nora-figure__caption">
             <a href="{{components.toc-image-url}}" class="nora-figure__info-link">Afbeeldingsinformatie</a>
         </figcaption>
     </figure>
     <!-- /Table of Contents image -->
     {{/components.toc-image}}
-    
-    {{>components/TableOfContents}}
-    {{!
-        @todo add semantic slot here
-    !}}
+
+    {{#has-toc}}
+        {{>components/TableOfContents}}
+    {{/has-toc}}
 </section>

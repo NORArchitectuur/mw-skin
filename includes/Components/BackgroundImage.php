@@ -57,7 +57,8 @@ class BackgroundImage implements IComponent {
 		}
 
 		return [
-			$url
+			$url,
+			$this->getAltText()
 		];
 	}
 
@@ -71,5 +72,17 @@ class BackgroundImage implements IComponent {
 		return $imageTitle && $fileRepository->findFile( $imageTitle )
 			? $fileRepository->findFile( $imageTitle )->getUrl()
 			: null;
+	}
+
+	/**
+	 * @return string
+	 */
+	private function getAltText(): ?string {
+		$imageTitle = Title::newFromText( $this->propertyValue, NS_FILE );
+		$dataItem = DIWikiPage::newFromTitle( $imageTitle );
+		return SemanticStore::getInstance()->getPropertyValue(
+			$dataItem,
+			'Alt-tekst'
+		);
 	}
 }

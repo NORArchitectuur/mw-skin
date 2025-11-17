@@ -19,7 +19,7 @@
   justify-content: space-between;
 
   a:any-link {
-    color: var(--nora-document-subtle-color);
+    --nl-link-color: var(--nora-document-subtle-color);
     font-size: var(--nora-typography-font-size-sm);
   }
 }

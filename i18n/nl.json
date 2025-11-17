@@ -31,7 +31,7 @@
   "nora-information-panel-versies": "Versies",
   "nora-information-panel-mate_van_verplichting": "Mate van verplichting",
   "nora-information-panel-publicatiedatum": "Publicatiedatum",
-  "nora-link-overview-invalid-items-string": "De parameter 'items' van de link-overzicht-functie bevat een ongeldige string. Het formaat is als volgt: [[pagina|link tekst|omschrijving tekst]].",
+  "nora-link-overview-invalid-items-string": "De parameter 'items' van de link-overzicht-functie bevat een ongeldige string. Het formaat is als volgt: [[pagina|link tekst|omschrijving tekst (optioneel)]].",
   "nora-information-panel-toggle-collapse": "Verberg details",
   "nora-information-panel-toggle-expand": "Toon meer details"
 }
