@@ -4,7 +4,7 @@
 .link-overview {
   @include link-overview.link-overview;
 
-  .heading {
+  .heading h2 {
     @include link-overview.heading;
   }
 
