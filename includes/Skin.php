@@ -10,6 +10,7 @@ use MediaWiki\Skin\NORA\HTMLRewriter\BaseRewriter;
 use MediaWiki\Skin\NORA\HTMLRewriter\Components\IconOnlyPortlet;
 use MediaWiki\Skin\NORA\HTMLRewriter\Components\Portlet;
 use MediaWiki\Skin\NORA\HTMLRewriter\Components\PortletChoice;
+use MediaWiki\Skin\NORA\HTMLRewriter\Components\RewriteBodyContent;
 use MediaWiki\Skin\NORA\HTMLRewriter\Rewriter;
 use SkinMustache;
 use Title;
@@ -71,6 +72,9 @@ class Skin extends SkinMustache {
 		$data['has-sidebar'] = !empty( $data['data-toc'] ) || !empty( $data['components']['toc-image'] );
 		$data['has-sidebar-image'] = !empty( $data['components']['toc-image'] );
 		$data['has-toc'] = !empty( $data['data-toc'] );
+
+		$bodyContentRewriter = new RewriteBodyContent( $data );
+		$data[ 'html-body-content' ] = $bodyContentRewriter->rewrite()[ 'html-body-content' ];
 
 		return $rewriter->getModifiedTemplateData( $data );
 	}
