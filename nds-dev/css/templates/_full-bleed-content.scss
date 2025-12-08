@@ -1,0 +1,34 @@
+@use '../themes/nora/abstracts/helpers';
+
+.full-bleed-content {
+  @include helpers.large-vw {
+    background-color: var(--nora-document-background-color);
+    position: relative;
+    width: 100vw;
+    padding-inline-start: var(--nora-page-section-article-padding-inline-start);
+    padding-inline-end: var(--nora-page-section-article-padding-inline-end);
+  }
+}
+
+// In page-section-article context: compenseer voor side-column
+.page-section-article .full-bleed-content {
+  @include helpers.large-vw {
+    margin-left: calc(
+      50% - 50vw +
+      (var(--nora-page-section-article-container-max-gap, 0px) + var(--nora-page-section-article-navigation-max-width, 0px)) * 0.5
+    );
+    margin-right: calc(
+      50% - 50vw +
+      (var(--nora-page-section-article-container-max-gap, 0px) + var(--nora-page-section-article-navigation-max-width, 0px)) * 0.5
+    );
+  }
+}
+
+// In page-section-wide context: geen side-column, dus eenvoudigere berekening
+.page-section-wide .full-bleed-content {
+  @include helpers.large-vw {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+}
+
