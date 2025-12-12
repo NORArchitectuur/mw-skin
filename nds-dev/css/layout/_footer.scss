@@ -20,6 +20,13 @@
   @include footer.link-group;
 }
 
+.footer-top-item>h2:first-child {
+  font-size: var(--nora-footer-link-header-font-size);
+  font-weight: var(--nora-footer-link-header-font-weight);
+  line-height: var(--nora-footer-link-line-height);
+  margin: 0;
+}
+
 .navigation-header-item {
   @include footer.group-heading-link;
 }
@@ -28,7 +35,7 @@
   @include footer.link-group-sub-links-list;
 }
 
-.footer-container-bottom { 
+.footer-container-bottom {
   @include footer.secondary-wrapper;
 
   /** Mimic the presence of a footer.container element by adding margin and max-width. */
