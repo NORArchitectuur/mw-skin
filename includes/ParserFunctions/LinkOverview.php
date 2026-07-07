@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Skin\NORA\ParserFunctions;
 
+use MediaWiki\Title\Title;
 use Parser;
 
 /**
@@ -66,12 +67,14 @@ class LinkOverview extends MustacheParserFunction {
 			$anchor = trim( $match[2] ?? '' );
 			$description = trim( $match[3] ?? '' );
 
-			if ( empty( $link ) || empty( $anchor ) ) {
+			$linkTitle = Title::newFromText( urldecode( $link ) );
+
+			if ( empty( $link ) || empty( $anchor ) || !$linkTitle ) {
 				return wfMessage( 'nora-link-overview-invalid-items-string' )->text();
 			}
 
 			$item = [
-				'href' => $link,
+				'href' => $linkTitle->getFullURL(),
 				'name' => $anchor,
 			];
 
